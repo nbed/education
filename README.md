@@ -7,8 +7,11 @@ Reasons for being:
 - simpler to use
 - single source of truth (ie. one update and everyone's document is updated)
 
-## Build
-
+## Build and Run
+For `single-file`, open in any web browser
+For `www`,
+- locally: run `node test-app.js` and open to your localhost with displayed port
+- web: see github static pages deployment process
 
 ## Navigating the project
 

@@ -17,6 +17,7 @@ For `www`,
 
 ### `original-docs` directory
 Contains the original document and predecessor HTML
+- A useful tool for document-to-formatted-html: https://html-online.com/editor/
 
 ### `single-file` directory
 This convention was chosed by the predecessor. One HTML file with all the CSS, Javascript, and HTML. The image assets are siblings.

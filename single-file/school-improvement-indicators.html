@@ -16,6 +16,9 @@
 
 		:root {
 			--d1-color-secondary: #f79646;
+			--d2-color-secondary: #9e2cf5;
+			--d3-color-secondary: #3f902f;
+			--d4-color-secondary: #1e79e4;
 		}
 
 		.rcorners {
@@ -121,7 +124,7 @@
 			border-bottom-left-radius: 17px;
 			border-bottom-right-radius: 17px;
 			/* border-radius: 17px; */
-			border: 1px solid #9e2cf5;
+			border: 1px solid var(--d2-color-secondary);
 			border-top-width: 0px;
 			padding-left: 25pt;
 			padding-top: 10pt;
@@ -133,7 +136,7 @@
 			border-bottom-left-radius: 17px;
 			border-bottom-right-radius: 17px;
 			/* border-radius: 17px; */
-			border: 1px solid #3f902f;
+			border: 1px solid var(--d3-color-secondary);
 			border-top-width: 0px;
 			padding-left: 25pt;
 			padding-top: 10pt;
@@ -145,7 +148,7 @@
 			border-bottom-left-radius: 17px;
 			border-bottom-right-radius: 17px;
 			/* border-radius: 17px; */
-			border: 1px solid #1e79e4;
+			border: 1px solid var(--d4-color-secondary);
 			border-top-width: 0px;
 			padding-left: 25pt;
 			padding-top: 10pt;
@@ -237,12 +240,34 @@
 			padding-bottom: 10pt;
 			margin-right: 5px;
 			background: #fff;
-
 		}
 
 		.myTabHeader:hover {
-			text-shadow: -1px -1px 0px rgba(255, 255, 255, 0.3), 1px 1px 0px #c7c7c7;
 			cursor: pointer;
+			border-top: 2px solid;
+			border-bottom: none;
+		}
+
+		.tab-selected {
+			border-bottom: 1px solid #fff;
+			border-top-width: 2px;
+			border-top-style: solid;
+		}
+
+		#dom-1 .tab-selected, #dom-1 .myTabHeader:hover {
+			border-top-color: var(--d1-color-secondary);
+		}
+
+		#dom-2 .tab-selected, #dom-2 .myTabHeader:hover {
+			border-top-color: var(--d2-color-secondary);
+		}
+
+		#dom-3 .tab-selected, #dom-3 .myTabHeader:hover {
+			border-top-color: var(--d3-color-secondary);
+		}
+
+		#dom-4 .tab-selected, #dom-4 .myTabHeader:hover {
+			border-top-color: var(--d4-color-secondary);
 		}
 
 		.myTabContent {
@@ -448,13 +473,11 @@
 		} */
 
 		#metadata {
-			position: absolute;
-			top: 48px;
-			right: 64px;
+			float: right;
+			padding: 16px 10%;
 			background-color: white;
 			opacity: 0.3;
 			color: black;
-			padding: 5px;
 		}
 
 		@media (max-width: 690px) {
@@ -526,7 +549,7 @@
 				}
 			}
 		}
-		function myFunction(id, id2) {
+		function onHeaderSelected(id, id2) {
 			var x = document.getElementById(id);
 			if (x.style.display === "none") {
 				x.style.display = "block";
@@ -542,7 +565,7 @@
 				x.parentElement.classList.remove("header-selected");
 			}
 		}
-		function expandTab(id, num, headerID, color) {
+		function expandTab(id, num, headerID) {
 			var allDiv = document.getElementsByClassName(num);
 			var divIter;
 
@@ -555,18 +578,15 @@
 
 			var idToFind = "Domain" + headerID.split('-')[0];
 			console.log(idToFind);
-			var x = document.querySelectorAll('[id^=' + idToFind + ']');
+			var x = document.querySelectorAll('[id^=' + idToFind + '-]');
 			console.log(x);
 			for (divIter = 0; divIter < x.length; divIter++) {
 				console.log(x[divIter].innerText);
-				x[divIter].style.borderBottom = "1px solid #ddd";
-				x[divIter].style.borderTop = "1px solid #ddd";
+				x[divIter].classList.remove("tab-selected");
 			}
 
 			var x = document.getElementById("Domain" + headerID);
-			x.style.borderBottom = "1px solid #ffffff";
-			x.style.borderTop = "2px solid " + color;
-
+			x.classList.add("tab-selected");
 		}
 	</script>
 </head>
@@ -576,7 +596,7 @@
 	<nav id="menu" class="menu" role='navigation'>
 		<ol>
 			<li class="menu-item">
-				<a href="#topAnchor">Home</a>
+				<a href="#topAnchor">Top</a>
 			</li>
 
 			<li class="menu-item" aria-haspopup="true">
@@ -612,11 +632,6 @@
 		</ol>
 	</nav>
 
-	<!-- metadata -->
-	<div id="metadata">
-		NB School Improvement Indicators with Explanatory Notes – Updated September 28, 2018
-	</div>
-
 	<!-- content -->
 	<div id="menuSpacer"></div>
 	<div id="menuSection">
@@ -627,7 +642,7 @@
 			<u>New Brunswick School Improvement Indicators</u>
 		</h2>
 
-		<div class="headerSection" onclick="myFunction('visionDiv', 'vis')">
+		<div class="headerSection" onclick="onHeaderSelected('visionDiv', 'vis')">
 			<h3 class="inline-child1">The Vision</h3>
 			<h3 class="inline-child2" style="float:right" id="vis">+</h3>
 		</div>
@@ -667,7 +682,7 @@
 
 		<br>
 
-		<div class="headerSection" ; onclick="myFunction('10yearDiv', '10year')">
+		<div class="headerSection" ; onclick="onHeaderSelected('10yearDiv', '10year')">
 			<h3 class="inline-child1">The 10-year Education Plan</h3>
 			<h3 class="inline-child2" style="float:right" id="10year">+</h3>
 		</div>
@@ -701,7 +716,7 @@
 
 		<br>
 
-		<div class="headerSection" ; onclick="myFunction('orgOfDoc', 'orgDoc')">
+		<div class="headerSection" ; onclick="onHeaderSelected('orgOfDoc', 'orgDoc')">
 			<h3 class="inline-child1">Organization of This Document</h3>
 			<h3 class="inline-child2" style="float:right" id="orgDoc">+</h3>
 		</div>
@@ -805,7 +820,7 @@
 
 		<br>
 
-		<div class="headerSection" ; onclick="myFunction('usingDoc', 'docUse')">
+		<div class="headerSection" ; onclick="onHeaderSelected('usingDoc', 'docUse')">
 			<h3 class="inline-child1">Using This Document</h3>
 			<h3 class="inline-child2" style="float:right" id="docUse">+</h3>
 		</div>
@@ -875,7 +890,7 @@
 
 		<br>
 
-		<div class="headerSection" ; onclick="myFunction('ratingDesc', 'ratDesc')">
+		<div class="headerSection" ; onclick="onHeaderSelected('ratingDesc', 'ratDesc')">
 			<h3 class="inline-child1">Rating Descriptors</h3>
 			<h3 class="inline-child2" style="float:right" id="ratDesc">+</h3>
 		</div>
@@ -975,7 +990,7 @@
 		<div class="domainSectionHeader" style="background-color: rgba(247, 150, 70, 0.6); text-align: center; border-top-left-radius: 17px; border-top-right-radius: 17px;">
 			<h3>Domain I: Systemic School Planning</h3>
 		</div>
-		<div class="domainSectionBodyOrange">
+		<div id="dom-1" class="domainSectionBodyOrange">
 			<div class="domainSectionHeader">
 				<h4>Guiding Questions</h4>
 			</div>
@@ -1013,13 +1028,13 @@
 			<div class="tabbedSection">
 				<div class="container">
 					<div class="inner">
-						<div class="myTabHeader" onclick="expandTab('tab1-1', 'indicator1', '1-1', 'var(--d1-color-secondary)')"
-						 id="Domain1-1" style="border-bottom: 1px solid #ffffff; border-top: 2px solid var(--d1-color-secondary)">
+						<div class="myTabHeader tab-selected" onclick="expandTab('tab1-1', 'indicator1', '1-1')"
+						 id="Domain1-1">
 							Indicator 1
 						</div>
 					</div>
 					<div class="inner">
-						<div class="myTabHeader" onclick="expandTab('tab1-2', 'indicator1', '1-2', 'var(--d1-color-secondary)')"
+						<div class="myTabHeader" onclick="expandTab('tab1-2', 'indicator1', '1-2')"
 						 id="Domain1-2">
 							Indicator 2
 						</div>
@@ -1033,7 +1048,7 @@
 								Expand all Indicator 1</div>
 						</div>
 
-						<div class="headerSection" ; onclick="myFunction('indicator1MAIN', 'ind1MAIN')"
+						<div class="headerSection" ; onclick="onHeaderSelected('indicator1MAIN', 'ind1MAIN')"
 						 ; style="margin: 1em 0">
 							<h3 class="inline-child1" style="font-size: 14px;">
 								Indicator 1<br>
@@ -1113,7 +1128,7 @@
 							</div>
 						</div>
 
-						<div class="headerSection" ; onclick="myFunction('indicator1-1', 'ind1-1')"
+						<div class="headerSection" ; onclick="onHeaderSelected('indicator1-1', 'ind1-1')"
 						 ; style="margin:1em 0">
 							<h3 class="inline-child1" style="font-size: 14px; font-weight: normal">
 								<i>1.1 The School Improvement Plan is developed based on the review of
@@ -1144,7 +1159,7 @@
 							</div>
 						</div>
 
-						<div class="headerSection" ; onclick="myFunction('indicator1-2', 'ind1-2')"
+						<div class="headerSection" ; onclick="onHeaderSelected('indicator1-2', 'ind1-2')"
 						 ; style="margin:1em 0">
 							<h3 class="inline-child1" style="font-size: 14px; font-weight: normal">
 								<i>1.2. Staff members know their roles and work toward the realization
@@ -1199,7 +1214,7 @@
 							</div>
 						</div>
 
-						<div class="headerSection" ; onclick="myFunction('indicator1-3', 'ind1-3')"
+						<div class="headerSection" ; onclick="onHeaderSelected('indicator1-3', 'ind1-3')"
 						 ; style="margin:1em 0">
 							<h3 class="inline-child1" style="font-size: 14px; font-weight: normal">
 								<i>1.3. The school vision, mission, and school improvement goals are
@@ -1228,7 +1243,7 @@
 							</div>
 						</div>
 
-						<div class="headerSection" ; onclick="myFunction('indicator1-4', 'ind1-4')"
+						<div class="headerSection" ; onclick="onHeaderSelected('indicator1-4', 'ind1-4')"
 						 ; style="margin:1em 0">
 							<h3 class="inline-child1" style="font-size: 14px; font-weight: normal">
 								<i>1.4. There is a logical connection between the SIP goals, the
@@ -1246,7 +1261,7 @@
 							</div>
 						</div>
 
-						<div class="headerSection" ; onclick="myFunction('indicator1-5', 'ind1-5')"
+						<div class="headerSection" ; onclick="onHeaderSelected('indicator1-5', 'ind1-5')"
 						 ; style="margin:1em 0">
 							<h3 class="inline-child1" style="font-size: 14px; font-weight: normal">
 								<i>1.5. The School Improvement Plan is monitored routinely to gauge
@@ -1275,7 +1290,7 @@
 								Expand all Indicator 2</div>
 						</div>
 
-						<div class="headerSection" ; onclick="myFunction('indicator2MAIN', 'ind2MAIN')"
+						<div class="headerSection" ; onclick="onHeaderSelected('indicator2MAIN', 'ind2MAIN')"
 						 ; style="margin: 1em 0">
 							<h3 class="inline-child1" style="font-size: 14px;">
 								Indicator 2<br>
@@ -1326,7 +1341,7 @@
 							</div>
 						</div>
 
-						<div class="headerSection" ; onclick="myFunction('indicator2-1', 'ind2-1')"
+						<div class="headerSection" ; onclick="onHeaderSelected('indicator2-1', 'ind2-1')"
 						 ; style="margin:1em 0">
 							<h3 class="inline-child1" style="font-size: 14px; font-weight: normal">
 								<i>2.1 Staff members design, share, and work toward their professional
@@ -1346,7 +1361,7 @@
 							</div>
 						</div>
 
-						<div class="headerSection" ; onclick="myFunction('indicator2-2', 'ind2-2')"
+						<div class="headerSection" ; onclick="onHeaderSelected('indicator2-2', 'ind2-2')"
 						 ; style="margin:1em 0">
 							<h3 class="inline-child1" style="font-size: 14px; font-weight: normal">
 								<i>2.2 Processes are in place for monitoring the impact of professional
@@ -1412,19 +1427,19 @@
 			<div class="tabbedSection">
 				<div class="container">
 					<div class="inner">
-						<div class="myTabHeader" onclick="expandTab('tab2-1', 'indicator2', '2-1', 'var(--d1-color-secondary)')"
-						 id="Domain2-1" style="border-bottom: 1px solid #ffffff; border-top: 2px solid var(--d1-color-secondary)">
+						<div class="myTabHeader tab-selected" onclick="expandTab('tab2-1', 'indicator2', '2-1')"
+						 id="Domain2-1">
 							Indicator 3
 						</div>
 					</div>
 					<div class="inner">
-						<div class="myTabHeader" onclick="expandTab('tab2-2', 'indicator2', '2-2', 'var(--d1-color-secondary)')"
+						<div class="myTabHeader" onclick="expandTab('tab2-2', 'indicator2', '2-2')"
 						 id="Domain2-2">
 							Indicator 4
 						</div>
 					</div>
 					<div class="inner">
-						<div class="myTabHeader" onclick="expandTab('tab2-3', 'indicator2', '2-3', 'var(--d1-color-secondary)')"
+						<div class="myTabHeader" onclick="expandTab('tab2-3', 'indicator2', '2-3')"
 						 id="Domain2-3">
 							Indicator 5
 						</div>
@@ -1438,7 +1453,7 @@
 								Expand all Indicator 3</div>
 						</div>
 
-						<div class="headerSection" ; onclick="myFunction('indicator3MAIN', 'ind3MAIN')"
+						<div class="headerSection" ; onclick="onHeaderSelected('indicator3MAIN', 'ind3MAIN')"
 						 ; style="margin: 1em 0;">
 							<h3 class="inline-child1" style="font-size: 14px;">
 								Indicator 3<br>
@@ -1484,7 +1499,7 @@
 							</div>
 						</div>
 
-						<div class="headerSection" ; onclick="myFunction('indicator3-1', 'ind3-1')"
+						<div class="headerSection" ; onclick="onHeaderSelected('indicator3-1', 'ind3-1')"
 						 ; style="margin:1em 0">
 							<h3 class="inline-child1" style="font-size: 14px; font-weight: normal">
 								<i>3.1 Student development data (e.g., stretch learning, personal
@@ -1567,7 +1582,7 @@
 							</div>
 						</div>
 
-						<div class="headerSection" ; onclick="myFunction('indicator3-2', 'ind3-2')"
+						<div class="headerSection" ; onclick="onHeaderSelected('indicator3-2', 'ind3-2')"
 						 ; style="margin:1em 0">
 							<h3 class="inline-child1" style="font-size: 14px; font-weight: normal">
 								<i>3.2 Classroom and school-wide observation data are collected by
@@ -1622,7 +1637,7 @@
 							</div>
 						</div>
 
-						<div class="headerSection" ; onclick="myFunction('indicator3-3', 'ind3-3')"
+						<div class="headerSection" ; onclick="onHeaderSelected('indicator3-3', 'ind3-3')"
 						 ; style="margin:1em 0">
 							<h3 class="inline-child1" style="font-size: 14px; font-weight: normal">
 								<i>3.3 Pre-school, within-school, and school-to-school transitions are
@@ -1671,7 +1686,7 @@
 								Expand all Indicator 4</div>
 						</div>
 
-						<div class="headerSection" ; onclick="myFunction('indicator4MAIN', 'ind4MAIN')"
+						<div class="headerSection" ; onclick="onHeaderSelected('indicator4MAIN', 'ind4MAIN')"
 						 ; style="margin: 1em 0;">
 							<h3 class="inline-child1" style="font-size: 14px;">
 								Indicator 4<br>
@@ -1719,7 +1734,7 @@
 							</div>
 						</div>
 
-						<div class="headerSection" ; onclick="myFunction('indicator4-1', 'ind4-1')"
+						<div class="headerSection" ; onclick="onHeaderSelected('indicator4-1', 'ind4-1')"
 						 ; style="margin:1em 0">
 							<h3 class="inline-child1" style="font-size: 14px; font-weight: normal">
 								<i>4.1 School-wide responses with varied strategies for academic
@@ -1742,7 +1757,7 @@
 							</div>
 						</div>
 
-						<div class="headerSection" ; onclick="myFunction('indicator4-2', 'ind4-2')"
+						<div class="headerSection" ; onclick="onHeaderSelected('indicator4-2', 'ind4-2')"
 						 ; style="margin:1em 0">
 							<h3 class="inline-child1" style="font-size: 14px; font-weight: normal">
 								<i>4.2 The school has an effective process in place for identifying
@@ -1888,7 +1903,7 @@
 								Expand all Indicator 5</div>
 						</div>
 
-						<div class="headerSection" ; onclick="myFunction('indicator5MAIN', 'ind5MAIN')"
+						<div class="headerSection" ; onclick="onHeaderSelected('indicator5MAIN', 'ind5MAIN')"
 						 ; style="margin: 1em 0;">
 							<h3 class="inline-child1" style="font-size: 14px;">
 								Indicator 5<br>
@@ -1929,7 +1944,7 @@
 							</div>
 						</div>
 
-						<div class="headerSection" ; onclick="myFunction('indicator5-1', 'ind5-1')"
+						<div class="headerSection" ; onclick="onHeaderSelected('indicator5-1', 'ind5-1')"
 						 ; style="margin:1em 0">
 							<h3 class="inline-child1" style="font-size: 14px; font-weight: normal">
 								<i>5.1 School-wide responses with varied strategies for positive
@@ -1955,7 +1970,7 @@
 							</div>
 						</div>
 
-						<div class="headerSection" ; onclick="myFunction('indicator5-2', 'ind5-2')"
+						<div class="headerSection" ; onclick="onHeaderSelected('indicator5-2', 'ind5-2')"
 						 ; style="margin:1em 0">
 							<h3 class="inline-child1" style="font-size: 14px; font-weight: normal">
 								<i>5.2 The school has a proactive, systematic strategy for dealing with
@@ -1994,7 +2009,7 @@
 							</div>
 						</div>
 
-						<div class="headerSection" ; onclick="myFunction('indicator5-3', 'ind5-3')"
+						<div class="headerSection" ; onclick="onHeaderSelected('indicator5-3', 'ind5-3')"
 						 ; style="margin:1em 0">
 							<h3 class="inline-child1" style="font-size: 14px; font-weight: normal">
 								<i>5.3 Processes are in place, and staff members apply interventions,
@@ -2068,7 +2083,7 @@
 							</div>
 						</div>
 
-						<div class="headerSection" ; onclick="myFunction('indicator5-4', 'ind5-4')"
+						<div class="headerSection" ; onclick="onHeaderSelected('indicator5-4', 'ind5-4')"
 						 ; style="margin:1em 0">
 							<h3 class="inline-child1" style="font-size: 14px; font-weight: normal">
 								<i>5.4 The school has a proactive and systematic strategy for promoting
@@ -2113,25 +2128,25 @@
 			<div class="tabbedSection">
 				<div class="container">
 					<div class="inner">
-						<div class="myTabHeader" onclick="expandTab('tab3-1', 'indicator3', '3-1', 'var(--d1-color-secondary)')"
-						 id="Domain3-1" style="border-bottom: 1px solid #ffffff; border-top: 2px solid var(--d1-color-secondary)">
+						<div class="myTabHeader tab-selected" onclick="expandTab('tab3-1', 'indicator3', '3-1')"
+						 id="Domain3-1">
 							Indicator 6
 						</div>
 					</div>
 					<div class="inner">
-						<div class="myTabHeader" onclick="expandTab('tab3-2', 'indicator3', '3-2', 'var(--d1-color-secondary)')"
+						<div class="myTabHeader" onclick="expandTab('tab3-2', 'indicator3', '3-2')"
 						 id="Domain3-2">
 							Indicator 7
 						</div>
 					</div>
 					<div class="inner">
-						<div class="myTabHeader" onclick="expandTab('tab3-3', 'indicator3', '3-3', 'var(--d1-color-secondary)')"
+						<div class="myTabHeader" onclick="expandTab('tab3-3', 'indicator3', '3-3')"
 						 id="Domain3-3">
 							Indicator 8
 						</div>
 					</div>
 					<div class="inner">
-						<div class="myTabHeader" onclick="expandTab('tab3-4', 'indicator3', '3-4', 'var(--d1-color-secondary)')"
+						<div class="myTabHeader" onclick="expandTab('tab3-4', 'indicator3', '3-4')"
 						 id="Domain3-4">
 							Indicator 9
 						</div>
@@ -2145,7 +2160,7 @@
 								Expand all Indicator 6</div>
 						</div>
 
-						<div class="headerSection" ; onclick="myFunction('indicator6MAIN', 'ind6MAIN')"
+						<div class="headerSection" ; onclick="onHeaderSelected('indicator6MAIN', 'ind6MAIN')"
 						 ; style="margin: 1em 0;">
 							<h3 class="inline-child1" style="font-size: 14px;">
 								Indicator 6<br>
@@ -2195,7 +2210,7 @@
 							</div>
 						</div>
 
-						<div class="headerSection" ; onclick="myFunction('indicator6-1', 'ind6-1')"
+						<div class="headerSection" ; onclick="onHeaderSelected('indicator6-1', 'ind6-1')"
 						 ; style="margin:1em 0">
 							<h3 class="inline-child1" style="font-size: 14px; font-weight: normal">
 								<i>6.1 School leaders are actively involved in creating and furthering
@@ -2293,7 +2308,7 @@
 							</div>
 						</div>
 
-						<div class="headerSection" ; onclick="myFunction('indicator6-2', 'ind6-2')"
+						<div class="headerSection" ; onclick="onHeaderSelected('indicator6-2', 'ind6-2')"
 						 ; style="margin:1em 0">
 							<h3 class="inline-child1" style="font-size: 14px; font-weight: normal">
 								<i>6.2 Staff members are actively involved in creating and furthering
@@ -2379,7 +2394,7 @@
 							</div>
 						</div>
 
-						<div class="headerSection" ; onclick="myFunction('indicator6-3', 'ind6-3')"
+						<div class="headerSection" ; onclick="onHeaderSelected('indicator6-3', 'ind6-3')"
 						 ; style="margin:1em 0">
 							<h3 class="inline-child1" style="font-size: 14px; font-weight: normal">
 								<i>6.3 Students are actively involved in creating and furthering an
@@ -2480,7 +2495,7 @@
 								Expand all Indicator 7</div>
 						</div>
 
-						<div class="headerSection" ; onclick="myFunction('indicator7MAIN', 'ind7MAIN')"
+						<div class="headerSection" ; onclick="onHeaderSelected('indicator7MAIN', 'ind7MAIN')"
 						 ; style="margin: 1em 0;">
 							<h3 class="inline-child1" style="font-size: 14px;">
 								Indicator 7<br>
@@ -2585,7 +2600,7 @@
 							</div>
 						</div>
 
-						<div class="headerSection" ; onclick="myFunction('indicator7-1', 'ind7-1')"
+						<div class="headerSection" ; onclick="onHeaderSelected('indicator7-1', 'ind7-1')"
 						 ; style="margin:1em 0">
 							<h3 class="inline-child1" style="font-size: 14px; font-weight: normal">
 								<i>7.1 The school environment encourages and supports the engagement,
@@ -2676,7 +2691,7 @@
 							</div>
 						</div>
 
-						<div class="headerSection" ; onclick="myFunction('indicator7-2', 'ind7-2')"
+						<div class="headerSection" ; onclick="onHeaderSelected('indicator7-2', 'ind7-2')"
 						 ; style="margin:1em 0">
 							<h3 class="inline-child1" style="font-size: 14px; font-weight: normal">
 								<i>7.2 The school environment encourages and supports the engagement,
@@ -2748,7 +2763,7 @@
 							</div>
 						</div>
 
-						<div class="headerSection" ; onclick="myFunction('indicator7-3', 'ind7-3')"
+						<div class="headerSection" ; onclick="onHeaderSelected('indicator7-3', 'ind7-3')"
 						 ; style="margin:1em 0">
 							<h3 class="inline-child1" style="font-size: 14px; font-weight: normal">
 								<i>7.3 The school environment encourages and supports the engagement,
@@ -2777,7 +2792,7 @@
 							</div>
 						</div>
 
-						<div class="headerSection" ; onclick="myFunction('indicator7-4', 'ind7-4')"
+						<div class="headerSection" ; onclick="onHeaderSelected('indicator7-4', 'ind7-4')"
 						 ; style="margin:1em 0">
 							<h3 class="inline-child1" style="font-size: 14px; font-weight: normal">
 								<i>7.4 The school environment encourages and supports the engagement,
@@ -2850,7 +2865,7 @@
 								Expand all Indicator 8</div>
 						</div>
 
-						<div class="headerSection" ; onclick="myFunction('indicator8MAIN', 'ind8MAIN')"
+						<div class="headerSection" ; onclick="onHeaderSelected('indicator8MAIN', 'ind8MAIN')"
 						 ; style="margin: 1em 0;">
 							<h3 class="inline-child1" style="font-size: 14px;">
 								Indicator 8<br>
@@ -2904,7 +2919,7 @@
 								Expand all Indicator 9</div>
 						</div>
 
-						<div class="headerSection" ; onclick="myFunction('indicator9MAIN', 'ind9MAIN')"
+						<div class="headerSection" ; onclick="onHeaderSelected('indicator9MAIN', 'ind9MAIN')"
 						 ; style="margin: 1em 0;">
 							<h3 class="inline-child1" style="font-size: 14px;">
 								Indicator 9<br>
@@ -2959,7 +2974,7 @@
 							</div>
 						</div>
 
-						<div class="headerSection" ; onclick="myFunction('indicator9-1', 'ind9-1')"
+						<div class="headerSection" ; onclick="onHeaderSelected('indicator9-1', 'ind9-1')"
 						 ; style="margin:1em 0">
 							<h3 class="inline-child1" style="font-size: 14px; font-weight: normal">
 								<i>9.1 Families feel they are heard and treated with respect and that
@@ -2994,7 +3009,7 @@
 		<div class="domainSectionHeader" style="background-color: rgba(158, 44, 245, 0.47); text-align: center; border-top-left-radius: 17px; border-top-right-radius: 17px;">
 			<h3>Domain II: Leadership & Teaming</h3>
 		</div>
-		<div class="domainSectionBodyPurple">
+		<div id="dom-2" class="domainSectionBodyPurple">
 			<div class="domainSectionHeader">
 				<h4>Guiding Questions</h4>
 			</div>
@@ -3023,25 +3038,25 @@
 			<div class="tabbedSection">
 				<div class="container">
 					<div class="inner">
-						<div class="myTabHeader" onclick="expandTab('tab4-1', 'indicator4', '4-1', '#9e2cf5')"
-						 id="Domain4-1" style="border-bottom: 1px solid #ffffff; border-top: 2px solid #9e2cf5">
+						<div class="myTabHeader tab-selected" onclick="expandTab('tab4-1', 'indicator4', '4-1')"
+						 id="Domain4-1">
 							Indicator 10
 						</div>
 					</div>
 					<div class="inner">
-						<div class="myTabHeader" onclick="expandTab('tab4-2', 'indicator4', '4-2', '#9e2cf5')"
+						<div class="myTabHeader" onclick="expandTab('tab4-2', 'indicator4', '4-2')"
 						 id="Domain4-2">
 							Indicator 11
 						</div>
 					</div>
 					<div class="inner">
-						<div class="myTabHeader" onclick="expandTab('tab4-3', 'indicator4', '4-3', '#9e2cf5')"
+						<div class="myTabHeader" onclick="expandTab('tab4-3', 'indicator4', '4-3')"
 						 id="Domain4-3">
 							Indicator 12
 						</div>
 					</div>
 					<div class="inner">
-						<div class="myTabHeader" onclick="expandTab('tab4-4', 'indicator4', '4-4', '#9e2cf5')"
+						<div class="myTabHeader" onclick="expandTab('tab4-4', 'indicator4', '4-4')"
 						 id="Domain4-4">
 							Indicator 13
 						</div>
@@ -3055,7 +3070,7 @@
 								Expand all Indicator 10</div>
 						</div>
 
-						<div class="headerSection" ; onclick="myFunction('indicator10MAIN', 'ind10MAIN')"
+						<div class="headerSection" ; onclick="onHeaderSelected('indicator10MAIN', 'ind10MAIN')"
 						 ; style="margin: 1em 0">
 							<h3 class="inline-child1" style="font-size: 14px;">
 								Indicator 10<br>
@@ -3107,7 +3122,7 @@
 							</div>
 						</div>
 
-						<div class="headerSection" ; onclick="myFunction('indicator10-1', 'ind10-1')"
+						<div class="headerSection" ; onclick="onHeaderSelected('indicator10-1', 'ind10-1')"
 						 ; style="margin:1em 0">
 							<h3 class="inline-child1" style="font-size: 14px; font-weight: normal">
 								<i>10.1 Shared decision-making is an established practice.</i><br>
@@ -3133,7 +3148,7 @@
 							</div>
 						</div>
 
-						<div class="headerSection" ; onclick="myFunction('indicator10-2', 'ind10-2')"
+						<div class="headerSection" ; onclick="onHeaderSelected('indicator10-2', 'ind10-2')"
 						 ; style="margin:1em 0">
 							<h3 class="inline-child1" style="font-size: 14px; font-weight: normal">
 								<i>10.2 The principal encourages, welcomes and employs feedback from
@@ -3152,7 +3167,7 @@
 							</div>
 						</div>
 
-						<div class="headerSection" ; onclick="myFunction('indicator10-3', 'ind10-3')"
+						<div class="headerSection" ; onclick="onHeaderSelected('indicator10-3', 'ind10-3')"
 						 ; style="margin:1em 0">
 							<h3 class="inline-child1" style="font-size: 14px; font-weight: normal">
 								<i>10.3 Administrators facilitate and support engagement in
@@ -3197,7 +3212,7 @@
 								Expand all Indicator 11</div>
 						</div>
 
-						<div class="headerSection" ; onclick="myFunction('indicator11MAIN', 'ind11MAIN')"
+						<div class="headerSection" ; onclick="onHeaderSelected('indicator11MAIN', 'ind11MAIN')"
 						 ; style="margin: 1em 0">
 							<h3 class="inline-child1" style="font-size: 14px;">
 								Indicator 11<br>
@@ -3265,7 +3280,7 @@
 							</div>
 						</div>
 
-						<div class="headerSection" ; onclick="myFunction('indicator11-1', 'ind11-1')"
+						<div class="headerSection" ; onclick="onHeaderSelected('indicator11-1', 'ind11-1')"
 						 ; style="margin:1em 0">
 							<h3 class="inline-child1" style="font-size: 14px; font-weight: normal">
 								<i>11.1 School leaders prioritize tasks, create structures and manage
@@ -3298,7 +3313,7 @@
 							</div>
 						</div>
 
-						<div class="headerSection" ; onclick="myFunction('indicator11-2', 'ind11-2')"
+						<div class="headerSection" ; onclick="onHeaderSelected('indicator11-2', 'ind11-2')"
 						 ; style="margin:1em 0">
 							<h3 class="inline-child1" style="font-size: 14px; font-weight: normal">
 								<i>11.2 School leaders provide staff members and students with thanks
@@ -3318,7 +3333,7 @@
 							</div>
 						</div>
 
-						<div class="headerSection" ; onclick="myFunction('indicator11-3', 'ind11-3')"
+						<div class="headerSection" ; onclick="onHeaderSelected('indicator11-3', 'ind11-3')"
 						 ; style="margin:1em 0">
 							<h3 class="inline-child1" style="font-size: 14px; font-weight: normal">
 								<i>11.3 School administrators are visible throughout the school
@@ -3344,7 +3359,7 @@
 							</div>
 						</div>
 
-						<div class="headerSection" ; onclick="myFunction('indicator11-4', 'ind11-4')"
+						<div class="headerSection" ; onclick="onHeaderSelected('indicator11-4', 'ind11-4')"
 						 ; style="margin:1em 0">
 							<h3 class="inline-child1" style="font-size: 14px; font-weight: normal">
 								<i>11.4 The principal ensures structures are in place to observe and
@@ -3399,7 +3414,7 @@
 							</div>
 						</div>
 
-						<div class="headerSection" ; onclick="myFunction('indicator11-5', 'ind11-5')"
+						<div class="headerSection" ; onclick="onHeaderSelected('indicator11-5', 'ind11-5')"
 						 ; style="margin:1em 0">
 							<h3 class="inline-child1" style="font-size: 14px; font-weight: normal">
 								<i>11.5 All teachers receive a formal performance evaluation on a
@@ -3453,7 +3468,7 @@
 								Expand all Indicator 12</div>
 						</div>
 
-						<div class="headerSection" ; onclick="myFunction('indicator12MAIN', 'ind12MAIN')"
+						<div class="headerSection" ; onclick="onHeaderSelected('indicator12MAIN', 'ind12MAIN')"
 						 ; style="margin: 1em 0">
 							<h3 class="inline-child1" style="font-size: 14px;">
 								Indicator 12<br>
@@ -3535,7 +3550,7 @@
 								Expand all Indicator 13</div>
 						</div>
 
-						<div class="headerSection" ; onclick="myFunction('indicator13MAIN', 'ind13MAIN')"
+						<div class="headerSection" ; onclick="onHeaderSelected('indicator13MAIN', 'ind13MAIN')"
 						 ; style="margin: 1em 0">
 							<h3 class="inline-child1" style="font-size: 14px;">
 								Indicator 13<br>
@@ -3587,19 +3602,19 @@
 			<div class="tabbedSection">
 				<div class="container">
 					<div class="inner">
-						<div class="myTabHeader" onclick="expandTab('tab5-1', 'indicator5', '5-1', '#9e2cf5')"
-						 id="Domain5-1" style="border-bottom: 1px solid #ffffff; border-top: 2px solid #9e2cf5">
+						<div class="myTabHeader tab-selected" onclick="expandTab('tab5-1', 'indicator5', '5-1')"
+						 id="Domain5-1">
 							Indicator 14
 						</div>
 					</div>
 					<div class="inner">
-						<div class="myTabHeader" onclick="expandTab('tab5-2', 'indicator5', '5-2', '#9e2cf5')"
+						<div class="myTabHeader" onclick="expandTab('tab5-2', 'indicator5', '5-2')"
 						 id="Domain5-2">
 							Indicator 15
 						</div>
 					</div>
 					<div class="inner">
-						<div class="myTabHeader" onclick="expandTab('tab5-3', 'indicator5', '5-3', '#9e2cf5')"
+						<div class="myTabHeader" onclick="expandTab('tab5-3', 'indicator5', '5-3')"
 						 id="Domain5-3">
 							Indicator 16
 						</div>
@@ -3613,7 +3628,7 @@
 								Expand all Indicator 14</div>
 						</div>
 
-						<div class="headerSection" ; onclick="myFunction('indicator14MAIN', 'ind14MAIN')"
+						<div class="headerSection" ; onclick="onHeaderSelected('indicator14MAIN', 'ind14MAIN')"
 						 ; style="margin: 1em 0;">
 							<h3 class="inline-child1" style="font-size: 14px;">
 								Indicator 14<br>
@@ -3656,7 +3671,7 @@
 							</div>
 						</div>
 
-						<div class="headerSection" ; onclick="myFunction('indicator14-1', 'ind14-1')"
+						<div class="headerSection" ; onclick="onHeaderSelected('indicator14-1', 'ind14-1')"
 						 ; style="margin:1em 0">
 							<h3 class="inline-child1" style="font-size: 14px; font-weight: normal">
 								<i>14.1 Common language, understanding, and practices emerge from
@@ -3682,7 +3697,7 @@
 							</div>
 						</div>
 
-						<div class="headerSection" ; onclick="myFunction('indicator14-2', 'ind14-2')"
+						<div class="headerSection" ; onclick="onHeaderSelected('indicator14-2', 'ind14-2')"
 						 ; style="margin:1em 0">
 							<h3 class="inline-child1" style="font-size: 14px; font-weight: normal">
 								<i>14.2 Supports are in place for staff members who are new to the
@@ -3724,7 +3739,7 @@
 							</div>
 						</div>
 
-						<div class="headerSection" ; onclick="myFunction('indicator14-3', 'ind14-3')"
+						<div class="headerSection" ; onclick="onHeaderSelected('indicator14-3', 'ind14-3')"
 						 ; style="margin:1em 0">
 							<h3 class="inline-child1" style="font-size: 14px; font-weight: normal">
 								<i>14.3 Educational staff members participate in observation, coaching,
@@ -3758,7 +3773,7 @@
 								Expand all Indicator 15</div>
 						</div>
 
-						<div class="headerSection" ; onclick="myFunction('indicator15MAIN', 'ind15MAIN')"
+						<div class="headerSection" ; onclick="onHeaderSelected('indicator15MAIN', 'ind15MAIN')"
 						 ; style="margin: 1em 0;">
 							<h3 class="inline-child1" style="font-size: 14px;">
 								Indicator 15<br>
@@ -3801,7 +3816,7 @@
 							</div>
 						</div>
 
-						<div class="headerSection" ; onclick="myFunction('indicator15-1', 'ind15-1')"
+						<div class="headerSection" ; onclick="onHeaderSelected('indicator15-1', 'ind15-1')"
 						 ; style="margin:1em 0">
 							<h3 class="inline-child1" style="font-size: 14px; font-weight: normal">
 								<i>15.1 Effective common assessment practices are in place
@@ -3863,7 +3878,7 @@
 							</div>
 						</div>
 
-						<div class="headerSection" ; onclick="myFunction('indicator15-2', 'ind15-2')"
+						<div class="headerSection" ; onclick="onHeaderSelected('indicator15-2', 'ind15-2')"
 						 ; style="margin:1em 0">
 							<h3 class="inline-child1" style="font-size: 14px; font-weight: normal">
 								<i>15.2 Student achievement data are routinely gathered and monitored.</i><br>
@@ -3905,7 +3920,7 @@
 							</div>
 						</div>
 
-						<div class="headerSection" ; onclick="myFunction('indicator15-3', 'ind15-3')"
+						<div class="headerSection" ; onclick="onHeaderSelected('indicator15-3', 'ind15-3')"
 						 ; style="margin:1em 0">
 							<h3 class="inline-child1" style="font-size: 14px; font-weight: normal">
 								<i>15.3 Class and Individual student profiles are developed and shared
@@ -3999,7 +4014,7 @@
 							</div>
 						</div>
 
-						<div class="headerSection" ; onclick="myFunction('indicator15-4', 'ind15-4')"
+						<div class="headerSection" ; onclick="onHeaderSelected('indicator15-4', 'ind15-4')"
 						 ; style="margin:1em 0">
 							<h3 class="inline-child1" style="font-size: 14px; font-weight: normal">
 								<i>15.4 School leaders work with teachers and teams in gathering and
@@ -4038,7 +4053,7 @@
 								Expand all Indicator 16</div>
 						</div>
 
-						<div class="headerSection" ; onclick="myFunction('indicator16MAIN', 'ind16MAIN')"
+						<div class="headerSection" ; onclick="onHeaderSelected('indicator16MAIN', 'ind16MAIN')"
 						 ; style="margin: 1em 0;">
 							<h3 class="inline-child1" style="font-size: 14px;">
 								Indicator 16<br>
@@ -4090,7 +4105,7 @@
 							</div>
 						</div>
 
-						<div class="headerSection" ; onclick="myFunction('indicator16-1', 'ind16-1')"
+						<div class="headerSection" ; onclick="onHeaderSelected('indicator16-1', 'ind16-1')"
 						 ; style="margin:1em 0">
 							<h3 class="inline-child1" style="font-size: 14px; font-weight: normal">
 								<i>16.1 A variety of opportunities are initiated by the school to
@@ -4125,7 +4140,7 @@
 							</div>
 						</div>
 
-						<div class="headerSection" ; onclick="myFunction('indicator16-2', 'ind16-2')"
+						<div class="headerSection" ; onclick="onHeaderSelected('indicator16-2', 'ind16-2')"
 						 ; style="margin:1em 0">
 							<h3 class="inline-child1" style="font-size: 14px; font-weight: normal">
 								<i>16.2 A variety of opportunities are initiated by the school to
@@ -4175,7 +4190,7 @@
 							</div>
 						</div>
 
-						<div class="headerSection" ; onclick="myFunction('indicator16-3', 'ind16-3')"
+						<div class="headerSection" ; onclick="onHeaderSelected('indicator16-3', 'ind16-3')"
 						 ; style="margin:1em 0">
 							<h3 class="inline-child1" style="font-size: 14px; font-weight: normal">
 								<i>16.3 Families and community members are actively involved in the
@@ -4226,7 +4241,7 @@
 		<div class="domainSectionHeader" style="background-color: rgba(63, 144, 47, 0.55); text-align: center; border-top-left-radius: 17px; border-top-right-radius: 17px;">
 			<h3>Domain III: Learning Environments</h3>
 		</div>
-		<div class="domainSectionBodyGreen">
+		<div id="dom-3" class="domainSectionBodyGreen">
 			<div class="domainSectionHeader">
 				<h4>Guiding Questions</h4>
 			</div>
@@ -4251,19 +4266,19 @@
 			<div class="tabbedSection">
 				<div class="container">
 					<div class="inner">
-						<div class="myTabHeader" onclick="expandTab('tab6-1', 'indicator6', '6-1', '#3f902f')"
-						 id="Domain6-1" style="border-bottom: 1px solid #ffffff; border-top: 2px solid #3f902f">
+						<div class="myTabHeader tab-selected" onclick="expandTab('tab6-1', 'indicator6', '6-1')"
+						 id="Domain6-1">
 							Indicator 17
 						</div>
 					</div>
 					<div class="inner">
-						<div class="myTabHeader" onclick="expandTab('tab6-2', 'indicator6', '6-2', '#3f902f')"
+						<div class="myTabHeader" onclick="expandTab('tab6-2', 'indicator6', '6-2')"
 						 id="Domain6-2">
 							Indicator 18
 						</div>
 					</div>
 					<div class="inner">
-						<div class="myTabHeader" onclick="expandTab('tab6-3', 'indicator6', '6-3', '#3f902f')"
+						<div class="myTabHeader" onclick="expandTab('tab6-3', 'indicator6', '6-3')"
 						 id="Domain6-3">
 							Indicator 19
 						</div>
@@ -4277,7 +4292,7 @@
 								Expand all Indicator 17</div>
 						</div>
 
-						<div class="headerSection" ; onclick="myFunction('indicator17MAIN', 'ind17MAIN')"
+						<div class="headerSection" ; onclick="onHeaderSelected('indicator17MAIN', 'ind17MAIN')"
 						 ; style="margin: 1em 0">
 							<h3 class="inline-child1" style="font-size: 14px;">
 								Indicator 17<br>
@@ -4307,7 +4322,7 @@
 							</div>
 						</div>
 
-						<div class="headerSection" ; onclick="myFunction('indicator17-1', 'ind17-1')"
+						<div class="headerSection" ; onclick="onHeaderSelected('indicator17-1', 'ind17-1')"
 						 ; style="margin:1em 0">
 							<h3 class="inline-child1" style="font-size: 14px; font-weight: normal">
 								<i>17.1 School leaders create an atmosphere of high expectations collaboratively with teachers, staff, families and students.</i><br>
@@ -4374,7 +4389,7 @@
 							</div>
 						</div>
 
-						<div class="headerSection" ; onclick="myFunction('indicator17-2', 'ind17-2')"
+						<div class="headerSection" ; onclick="onHeaderSelected('indicator17-2', 'ind17-2')"
 						 ; style="margin:1em 0">
 							<h3 class="inline-child1" style="font-size: 14px; font-weight: normal">
 								<i>17.2 The school day is designed to achieve effective learning opportunities and interventions.</i><br>
@@ -4411,7 +4426,7 @@
 								Expand all Indicator 18</div>
 						</div>
 
-						<div class="headerSection" ; onclick="myFunction('indicator18MAIN', 'ind18MAIN')"
+						<div class="headerSection" ; onclick="onHeaderSelected('indicator18MAIN', 'ind18MAIN')"
 						 ; style="margin: 1em 0">
 							<h3 class="inline-child1" style="font-size: 14px;">
 								Indicator 18<br>
@@ -4449,7 +4464,7 @@
 							</div>
 						</div>
 
-						<div class="headerSection" ; onclick="myFunction('indicator18-1', 'ind18-1')"
+						<div class="headerSection" ; onclick="onHeaderSelected('indicator18-1', 'ind18-1')"
 						 ; style="margin:1em 0">
 							<h3 class="inline-child1" style="font-size: 14px; font-weight: normal">
 								<i>18.1 Staff members engage in ongoing professional learning and research to improve their understanding of current pedagogy and methods.</i><br>
@@ -4487,7 +4502,7 @@
 								Expand all Indicator 19</div>
 						</div>
 
-						<div class="headerSection" ; onclick="myFunction('indicator19MAIN', 'ind19MAIN')"
+						<div class="headerSection" ; onclick="onHeaderSelected('indicator19MAIN', 'ind19MAIN')"
 						 ; style="margin: 1em 0">
 							<h3 class="inline-child1" style="font-size: 14px;">
 								Indicator 19<br>
@@ -4526,7 +4541,7 @@
 							</div>
 						</div>
 
-						<div class="headerSection" ; onclick="myFunction('indicator19-1', 'ind19-1')"
+						<div class="headerSection" ; onclick="onHeaderSelected('indicator19-1', 'ind19-1')"
 						 ; style="margin:1em 0">
 							<h3 class="inline-child1" style="font-size: 14px; font-weight: normal">
 								<i>19.1 Teachers ensure ongoing and timely communication with families about expectations for and progress of their child.  </i><br>
@@ -4554,7 +4569,7 @@
 							</div>
 						</div>
 
-						<div class="headerSection" ; onclick="myFunction('indicator19-2', 'ind19-2')"
+						<div class="headerSection" ; onclick="onHeaderSelected('indicator19-2', 'ind19-2')"
 						 ; style="margin:1em 0">
 							<h3 class="inline-child1" style="font-size: 14px; font-weight: normal">
 								<i>19.2 Protocols and processes are in place for resolution of conflict involving students and/or adults within the school community.</i><br>
@@ -4604,8 +4619,8 @@
 			<div class="tabbedSection">
 				<div class="container">
 					<div class="inner">
-						<div class="myTabHeader" onclick="expandTab('tab7-1', 'indicator7', '7-1', '#3f902f')"
-						 id="Domain7-1" style="border-bottom: 1px solid #ffffff; border-top: 2px solid #3f902f">
+						<div class="myTabHeader tab-selected" onclick="expandTab('tab7-1', 'indicator7', '7-1')"
+						 id="Domain7-1">
 							Indicator 20
 						</div>
 					</div>
@@ -4618,7 +4633,7 @@
 								Expand all Indicator 20</div>
 						</div>
 
-						<div class="headerSection" ; onclick="myFunction('indicator20MAIN', 'ind20MAIN')"
+						<div class="headerSection" ; onclick="onHeaderSelected('indicator20MAIN', 'ind20MAIN')"
 						 ; style="margin: 1em 0;">
 							<h3 class="inline-child1" style="font-size: 14px;">
 								Indicator 20<br>
@@ -4664,7 +4679,7 @@
 							</div>
 						</div>
 
-						<div class="headerSection" ; onclick="myFunction('indicator20-1', 'ind20-1')"
+						<div class="headerSection" ; onclick="onHeaderSelected('indicator20-1', 'ind20-1')"
 						 ; style="margin:1em 0">
 							<h3 class="inline-child1" style="font-size: 14px; font-weight: normal">
 								<i>20.1 Boundaries and expectations are co-constructed, explicitly taught, modeled, regularly reviewed with students, and positively reinforced. Students and families know these expectations.</i><br>
@@ -4692,7 +4707,7 @@
 							</div>
 						</div>
 
-						<div class="headerSection" ; onclick="myFunction('indicator20-2', 'ind20-2')"
+						<div class="headerSection" ; onclick="onHeaderSelected('indicator20-2', 'ind20-2')"
 						 ; style="margin:1em 0">
 							<h3 class="inline-child1" style="font-size: 14px; font-weight: normal">
 								<i>20.2 Staff members use a restorative practice approach to respond to inappropriate behaviours, help students learn appropriate behaviours, and repair relationships that have been damaged.</i><br>
@@ -4719,7 +4734,7 @@
 							</div>
 						</div>
 
-						<div class="headerSection" ; onclick="myFunction('indicator20-3', 'ind20-3')"
+						<div class="headerSection" ; onclick="onHeaderSelected('indicator20-3', 'ind20-3')"
 						 ; style="margin:1em 0">
 							<h3 class="inline-child1" style="font-size: 14px; font-weight: normal">
 								<i>20.3 The school has a systematic, evidence-informed strategy for dealing with disruptive behaviour including online behaviour that negatively influences the learning environment.</i><br>
@@ -4778,7 +4793,7 @@
 							</div>
 						</div>
 
-						<div class="headerSection" ; onclick="myFunction('indicator20-4', 'ind20-4')"
+						<div class="headerSection" ; onclick="onHeaderSelected('indicator20-4', 'ind20-4')"
 						 ; style="margin:1em 0">
 							<h3 class="inline-child1" style="font-size: 14px; font-weight: normal">
 								<i>20.4 Recognition of academic and pro-social/behavioural success occurs regularly and in a personalized way that reinforces intrinsic motivation.</i><br>
@@ -4794,7 +4809,7 @@
 							</div>
 						</div>
 
-						<div class="headerSection" ; onclick="myFunction('indicator20-5', 'ind20-5')"
+						<div class="headerSection" ; onclick="onHeaderSelected('indicator20-5', 'ind20-5')"
 						 ; style="margin:1em 0">
 							<h3 class="inline-child1" style="font-size: 14px; font-weight: normal">
 								<i>20.5 Staff members are present and visible during unstructured time within the school day.</i><br>
@@ -4824,7 +4839,7 @@
 		<div class="domainSectionHeader" style="background-color: rgba(30, 121, 228, 0.45); text-align: center; border-top-left-radius: 17px; border-top-right-radius: 17px;">
 			<h3>Domain IV: Classroom Practice</h3>
 		</div>
-		<div class="domainSectionBodyBlue">
+		<div id="dom-4" class="domainSectionBodyBlue">
 			<div class="domainSectionHeader">
 				<h4>Guiding Questions</h4>
 			</div>
@@ -4856,13 +4871,13 @@
 			<div class="tabbedSection">
 				<div class="container">
 					<div class="inner">
-						<div class="myTabHeader" onclick="expandTab('tab8-1', 'indicator8', '8-1', '#1e79e4')"
-						 id="Domain8-1" style="border-bottom: 1px solid #ffffff; border-top: 2px solid #1e79e4">
+						<div class="myTabHeader tab-selected" onclick="expandTab('tab8-1', 'indicator8', '8-1')"
+						 id="Domain8-1">
 							Indicator 21
 						</div>
 					</div>
 					<div class="inner">
-						<div class="myTabHeader" onclick="expandTab('tab8-2', 'indicator8', '8-2', '#1e79e4')"
+						<div class="myTabHeader" onclick="expandTab('tab8-2', 'indicator8', '8-2')"
 						 id="Domain8-2">
 							Indicator 22
 						</div>
@@ -4876,7 +4891,7 @@
 								Expand all Indicator 21</div>
 						</div>
 
-						<div class="headerSection" ; onclick="myFunction('indicator21MAIN', 'ind21MAIN')"
+						<div class="headerSection" ; onclick="onHeaderSelected('indicator21MAIN', 'ind21MAIN')"
 						 ; style="margin: 1em 0">
 							<h3 class="inline-child1" style="font-size: 14px;">
 								Indicator 21<br>
@@ -4919,7 +4934,7 @@
 								Expand all Indicator 22</div>
 						</div>
 
-						<div class="headerSection" ; onclick="myFunction('indicator22MAIN', 'ind22MAIN')"
+						<div class="headerSection" ; onclick="onHeaderSelected('indicator22MAIN', 'ind22MAIN')"
 						 ; style="margin: 1em 0">
 							<h3 class="inline-child1" style="font-size: 14px;">
 								Indicator 22<br>
@@ -4955,7 +4970,7 @@
 							</div>
 						</div>
 
-						<div class="headerSection" ; onclick="myFunction('indicator22-1', 'ind22-1')"
+						<div class="headerSection" ; onclick="onHeaderSelected('indicator22-1', 'ind22-1')"
 						 ; style="margin:1em 0">
 							<h3 class="inline-child1" style="font-size: 14px; font-weight: normal">
 								<i>22.1 Teachers personalize learning experiences and foster engagement by promoting autonomy, competence, relatedness, and relevance in their instructional planning.</i><br>
@@ -4992,7 +5007,7 @@
 							</div>
 						</div>
 
-						<div class="headerSection" ; onclick="myFunction('indicator22-2', 'ind22-2')"
+						<div class="headerSection" ; onclick="onHeaderSelected('indicator22-2', 'ind22-2')"
 						 ; style="margin:1em 0">
 							<h3 class="inline-child1" style="font-size: 14px; font-weight: normal">
 								<i>22.2 In order to ensure that learning opportunities are accessible to all students, teachers:
@@ -5053,7 +5068,7 @@
 							</div>
 						</div>
 
-						<div class="headerSection" ; onclick="myFunction('indicator22-3', 'ind22-3')"
+						<div class="headerSection" ; onclick="onHeaderSelected('indicator22-3', 'ind22-3')"
 						 ; style="margin:1em 0">
 							<h3 class="inline-child1" style="font-size: 14px; font-weight: normal">
 								<i>22.3 Teachers design lessons and use instructional time to maximize learning and intervention opportunities.</i><br>
@@ -5089,7 +5104,7 @@
 							</div>
 						</div>
 
-						<div class="headerSection" ; onclick="myFunction('indicator22-4', 'ind22-4')"
+						<div class="headerSection" ; onclick="onHeaderSelected('indicator22-4', 'ind22-4')"
 						 ; style="margin:1em 0">
 							<h3 class="inline-child1" style="font-size: 14px; font-weight: normal">
 								<i>22.4 Instruction of curricular outcomes is differentiated to meet learners’ needs. Opportunities for enrichment and stretch learning are provided for students of all abilities.
@@ -5146,7 +5161,7 @@
 							</div>
 						</div>
 
-						<div class="headerSection" ; onclick="myFunction('indicator22-5', 'ind22-5')"
+						<div class="headerSection" ; onclick="onHeaderSelected('indicator22-5', 'ind22-5')"
 						 ; style="margin:1em 0">
 							<h3 class="inline-child1" style="font-size: 14px; font-weight: normal">
 								<i>22.5 Personalized Learning Plans are collaboratively developed with the Education Support Services team, families, students, and partners, and used by classroom teachers for (daily) lesson planning.
@@ -5217,7 +5232,7 @@
 							</div>
 						</div>
 
-						<div class="headerSection" ; onclick="myFunction('indicator22-6', 'ind22-6')"
+						<div class="headerSection" ; onclick="onHeaderSelected('indicator22-6', 'ind22-6')"
 						 ; style="margin:1em 0">
 							<h3 class="inline-child1" style="font-size: 14px; font-weight: normal">
 								<i>22.6 Learning opportunities are designed to maximize relevance, make real-world connections, recognize and encourage learning beyond the school.</i><br>
@@ -5244,7 +5259,7 @@
 							</div>
 						</div>
 
-						<div class="headerSection" ; onclick="myFunction('indicator22-7', 'ind22-7')"
+						<div class="headerSection" ; onclick="onHeaderSelected('indicator22-7', 'ind22-7')"
 						 ; style="margin:1em 0">
 							<h3 class="inline-child1" style="font-size: 14px; font-weight: normal">
 								<i>22.7 Teachers design lessons and use instructional time to provide cross-curricular opportunities for students.</i><br>
@@ -5289,25 +5304,25 @@
 			<div class="tabbedSection">
 				<div class="container">
 					<div class="inner">
-						<div class="myTabHeader" onclick="expandTab('tab9-1', 'indicator9', '9-1', '#1e79e4')"
-						 id="Domain9-1" style="border-bottom: 1px solid #ffffff; border-top: 2px solid #1e79e4">
+						<div class="myTabHeader tab-selected" onclick="expandTab('tab9-1', 'indicator9', '9-1')"
+						 id="Domain9-1">
 							Indicator 23
 						</div>
 					</div>
 					<div class="inner">
-						<div class="myTabHeader" onclick="expandTab('tab9-2', 'indicator9', '9-2', '#1e79e4')"
+						<div class="myTabHeader" onclick="expandTab('tab9-2', 'indicator9', '9-2')"
 						 id="Domain9-2">
 							Indicator 24
 						</div>
 					</div>
 					<div class="inner">
-						<div class="myTabHeader" onclick="expandTab('tab9-3', 'indicator9', '9-3', '#1e79e4')"
+						<div class="myTabHeader" onclick="expandTab('tab9-3', 'indicator9', '9-3')"
 						 id="Domain9-3">
 							Indicator 25
 						</div>
 					</div>
 					<div class="inner">
-						<div class="myTabHeader" onclick="expandTab('tab9-4', 'indicator9', '9-4', '#1e79e4')"
+						<div class="myTabHeader" onclick="expandTab('tab9-4', 'indicator9', '9-4')"
 						 id="Domain9-4">
 							Indicator 26
 						</div>
@@ -5321,7 +5336,7 @@
 								Expand all Indicator 23</div>
 						</div>
 
-						<div class="headerSection" ; onclick="myFunction('indicator23MAIN', 'ind23MAIN')"
+						<div class="headerSection" ; onclick="onHeaderSelected('indicator23MAIN', 'ind23MAIN')"
 						 ; style="margin: 1em 0;">
 							<h3 class="inline-child1" style="font-size: 14px;">
 								Indicator 23<br>
@@ -5349,7 +5364,7 @@
 							</div>
 						</div>
 
-						<div class="headerSection" ; onclick="myFunction('indicator23-1', 'ind23-1')"
+						<div class="headerSection" ; onclick="onHeaderSelected('indicator23-1', 'ind23-1')"
 						 ; style="margin:1em 0">
 							<h3 class="inline-child1" style="font-size: 14px; font-weight: normal">
 								<i>23.1 Teachers model expectations for, and provide examples of, quality work reflecting provincial standards (where available).</i><br>
@@ -5365,7 +5380,7 @@
 							</div>
 						</div>
 
-						<div class="headerSection" ; onclick="myFunction('indicator23-2', 'ind23-2')"
+						<div class="headerSection" ; onclick="onHeaderSelected('indicator23-2', 'ind23-2')"
 						 ; style="margin:1em 0">
 							<h3 class="inline-child1" style="font-size: 14px; font-weight: normal">
 								<i>23.2 Teachers create a common understanding of quality work with students through the use of rubrics, indicators, exemplars and performance levels (co-constructed or student-friendly).</i><br>
@@ -5411,7 +5426,7 @@
 								Expand all Indicator 24</div>
 						</div>
 
-						<div class="headerSection" ; onclick="myFunction('indicator24MAIN', 'ind24MAIN')"
+						<div class="headerSection" ; onclick="onHeaderSelected('indicator24MAIN', 'ind24MAIN')"
 						 ; style="margin: 1em 0;">
 							<h3 class="inline-child1" style="font-size: 14px;">
 								Indicator 24<br>
@@ -5490,7 +5505,7 @@
 							</div>
 						</div>
 
-						<div class="headerSection" ; onclick="myFunction('indicator24-1', 'ind24-1')"
+						<div class="headerSection" ; onclick="onHeaderSelected('indicator24-1', 'ind24-1')"
 						 ; style="margin:1em 0">
 							<h3 class="inline-child1" style="font-size: 14px; font-weight: normal">
 								<i>24.1 Teachers focus on learner-centred strategies that promote engagement, active processing, the construction of subject-specific knowledge, and the development of the global competencies.</i><br>
@@ -5520,7 +5535,7 @@
 							</div>
 						</div>
 
-						<div class="headerSection" ; onclick="myFunction('indicator24-2', 'ind24-2')"
+						<div class="headerSection" ; onclick="onHeaderSelected('indicator24-2', 'ind24-2')"
 						 ; style="margin:1em 0">
 							<h3 class="inline-child1" style="font-size: 14px; font-weight: normal">
 								<i>24.2 Teachers personalize learning experiences and foster engagement by promoting autonomy, competence, relatedness, and relevance throughout their instruction.</i><br>
@@ -5557,7 +5572,7 @@
 							</div>
 						</div>
 
-						<div class="headerSection" ; onclick="myFunction('indicator24-3', 'ind24-3')"
+						<div class="headerSection" ; onclick="onHeaderSelected('indicator24-3', 'ind24-3')"
 						 ; style="margin:1em 0">
 							<h3 class="inline-child1" style="font-size: 14px; font-weight: normal">
 								<i>24.3 Teachers use a variety of questioning techniques (e.g., use of open-ended and probing questions) to engage student thinking.
@@ -5583,7 +5598,7 @@
 							</div>
 						</div>
 
-						<div class="headerSection" ; onclick="myFunction('indicator24-4', 'ind24-4')"
+						<div class="headerSection" ; onclick="onHeaderSelected('indicator24-4', 'ind24-4')"
 						 ; style="margin:1em 0">
 							<h3 class="inline-child1" style="font-size: 14px; font-weight: normal">
 								<i>24.4 Students use metacognitive strategies to self-regulate their learning, emotions, and behaviours.</i><br>
@@ -5620,7 +5635,7 @@
 							</div>
 						</div>
 
-						<div class="headerSection" ; onclick="myFunction('indicator24-5', 'ind24-5')"
+						<div class="headerSection" ; onclick="onHeaderSelected('indicator24-5', 'ind24-5')"
 						 ; style="margin:1em 0">
 							<h3 class="inline-child1" style="font-size: 14px; font-weight: normal">
 								<i>24.5 Students use non-linguistic representations in their learning.</i><br>
@@ -5645,7 +5660,7 @@
 							</div>
 						</div>
 
-						<div class="headerSection" ; onclick="myFunction('indicator24-6', 'ind24-6')"
+						<div class="headerSection" ; onclick="onHeaderSelected('indicator24-6', 'ind24-6')"
 						 ; style="margin:1em 0">
 							<h3 class="inline-child1" style="font-size: 14px; font-weight: normal">
 								<i>24.6 Learning experiences promote inquiry and include problem- and project-based opportunities.</i><br>
@@ -5684,7 +5699,7 @@
 							</div>
 						</div>
 
-						<div class="headerSection" ; onclick="myFunction('indicator24-7', 'ind24-7')"
+						<div class="headerSection" ; onclick="onHeaderSelected('indicator24-7', 'ind24-7')"
 						 ; style="margin:1em 0">
 							<h3 class="inline-child1" style="font-size: 14px; font-weight: normal">
 								<i>24.7 Teachers provide opportunities for students to work collaboratively and co-operatively. </i><br>
@@ -5714,7 +5729,7 @@
 							</div>
 						</div>
 
-						<div class="headerSection" ; onclick="myFunction('indicator24-8', 'ind24-8')"
+						<div class="headerSection" ; onclick="onHeaderSelected('indicator24-8', 'ind24-8')"
 						 ; style="margin:1em 0">
 							<h3 class="inline-child1" style="font-size: 14px; font-weight: normal">
 								<i>24.8 Students have opportunities to engage in purposeful discussion to gain a deeper understanding of their learning and themselves.</i><br>
@@ -5753,7 +5768,7 @@
 								Expand all Indicator 25</div>
 						</div>
 
-						<div class="headerSection" ; onclick="myFunction('indicator25MAIN', 'ind25MAIN')"
+						<div class="headerSection" ; onclick="onHeaderSelected('indicator25MAIN', 'ind25MAIN')"
 						 ; style="margin: 1em 0;">
 							<h3 class="inline-child1" style="font-size: 14px;">
 								Indicator 25<br>
@@ -5776,7 +5791,7 @@
 							</div>
 						</div>
 
-						<div class="headerSection" ; onclick="myFunction('indicator25-1', 'ind25-1')"
+						<div class="headerSection" ; onclick="onHeaderSelected('indicator25-1', 'ind25-1')"
 						 ; style="margin:1em 0">
 							<h3 class="inline-child1" style="font-size: 14px; font-weight: normal">
 								<i>25.1 Online learning opportunities are in place to help address the needs of students.</i><br>
@@ -5801,7 +5816,7 @@
 								Expand all Indicator 26</div>
 						</div>
 
-						<div class="headerSection" ; onclick="myFunction('indicator26MAIN', 'ind26MAIN')"
+						<div class="headerSection" ; onclick="onHeaderSelected('indicator26MAIN', 'ind26MAIN')"
 						 ; style="margin: 1em 0;">
 							<h3 class="inline-child1" style="font-size: 14px;">
 								Indicator 26<br>
@@ -5853,19 +5868,19 @@
 			<div class="tabbedSection">
 				<div class="container">
 					<div class="inner">
-						<div class="myTabHeader" onclick="expandTab('tab10-1', 'indicator10', '10-1', '#1e79e4')"
-						 id="Domain10-1" style="border-bottom: 1px solid #ffffff; border-top: 2px solid #1e79e4">
+						<div class="myTabHeader tab-selected" onclick="expandTab('tab10-1', 'indicator10', '10-1')"
+						 id="Domain10-1">
 							Indicator 27
 						</div>
 					</div>
 					<div class="inner">
-						<div class="myTabHeader" onclick="expandTab('tab10-2', 'indicator10', '10-2', '#1e79e4')"
+						<div class="myTabHeader" onclick="expandTab('tab10-2', 'indicator10', '10-2')"
 						 id="Domain10-2">
 							Indicator 28
 						</div>
 					</div>
 					<div class="inner">
-						<div class="myTabHeader" onclick="expandTab('tab10-3', 'indicator10', '10-3', '#1e79e4')"
+						<div class="myTabHeader" onclick="expandTab('tab10-3', 'indicator10', '10-3')"
 						 id="Domain10-3">
 							Indicator 29
 						</div>
@@ -5879,7 +5894,7 @@
 								Expand all Indicator 27</div>
 						</div>
 
-						<div class="headerSection" ; onclick="myFunction('indicator27MAIN', 'ind27MAIN')"
+						<div class="headerSection" ; onclick="onHeaderSelected('indicator27MAIN', 'ind27MAIN')"
 						 ; style="margin: 1em 0;">
 							<h3 class="inline-child1" style="font-size: 14px;">
 								Indicator 27<br>
@@ -5952,7 +5967,7 @@
 								Expand all Indicator 28</div>
 						</div>
 
-						<div class="headerSection" ; onclick="myFunction('indicator28MAIN', 'ind28MAIN')"
+						<div class="headerSection" ; onclick="onHeaderSelected('indicator28MAIN', 'ind28MAIN')"
 						 ; style="margin: 1em 0;">
 							<h3 class="inline-child1" style="font-size: 14px;">
 								Indicator 28<br>
@@ -5977,7 +5992,7 @@
 							</div>
 						</div>
 
-						<div class="headerSection" ; onclick="myFunction('indicator28-1', 'ind28-1')"
+						<div class="headerSection" ; onclick="onHeaderSelected('indicator28-1', 'ind28-1')"
 						 ; style="margin:1em 0">
 							<h3 class="inline-child1" style="font-size: 14px; font-weight: normal">
 								<i>28.1 Communication in additional language classes are in the target language.
@@ -6000,7 +6015,7 @@
 							</div>
 						</div>
 
-						<div class="headerSection" ; onclick="myFunction('indicator28-2', 'ind28-2')"
+						<div class="headerSection" ; onclick="onHeaderSelected('indicator28-2', 'ind28-2')"
 						 ; style="margin:1em 0">
 							<h3 class="inline-child1" style="font-size: 14px; font-weight: normal">
 								<i>28.2 Learners of additional languages are encouraged to apply language skills in authentic contexts in and out of the classroom.</i><br>
@@ -6044,7 +6059,7 @@
 								Expand all Indicator 29</div>
 						</div>
 
-						<div class="headerSection" ; onclick="myFunction('indicator29MAIN', 'ind29MAIN')"
+						<div class="headerSection" ; onclick="onHeaderSelected('indicator29MAIN', 'ind29MAIN')"
 						 ; style="margin: 1em 0;">
 							<h3 class="inline-child1" style="font-size: 14px;">
 								Indicator 29<br>
@@ -6121,7 +6136,7 @@
 							</div>
 						</div>
 
-						<div class="headerSection" ; onclick="myFunction('indicator29-1', 'ind29-1')"
+						<div class="headerSection" ; onclick="onHeaderSelected('indicator29-1', 'ind29-1')"
 						 ; style="margin:1em 0">
 							<h3 class="inline-child1" style="font-size: 14px; font-weight: normal">
 								<i>29.1 Numeracy and science concepts are taught using a variety of appropriate representations and models to deepen understanding.</i><br>
@@ -6159,8 +6174,8 @@
 			<div class="tabbedSection">
 				<div class="container">
 					<div class="inner">
-						<div class="myTabHeader" onclick="expandTab('tab11-1', 'indicator11', '11-1', '#1e79e4')"
-						 id="Domain11-1" style="border-bottom: 1px solid #ffffff; border-top: 2px solid #1e79e4">
+						<div class="myTabHeader tab-selected" onclick="expandTab('tab11-1', 'indicator11', '11-1')"
+						 id="Domain11-1">
 							Indicator 30
 						</div>
 					</div>
@@ -6173,7 +6188,7 @@
 								Expand all Indicator 30</div>
 						</div>
 
-						<div class="headerSection" ; onclick="myFunction('indicator30MAIN', 'ind30MAIN')"
+						<div class="headerSection" ; onclick="onHeaderSelected('indicator30MAIN', 'ind30MAIN')"
 						 ; style="margin: 1em 0;">
 							<h3 class="inline-child1" style="font-size: 14px;">
 								Indicator 30<br>
@@ -6202,7 +6217,7 @@
 							</div>
 						</div>
 
-						<div class="headerSection" ; onclick="myFunction('indicator30-1', 'ind30-1')"
+						<div class="headerSection" ; onclick="onHeaderSelected('indicator30-1', 'ind30-1')"
 						 ; style="margin:1em 0">
 							<h3 class="inline-child1" style="font-size: 14px; font-weight: normal">
 								<i>30.1 Teacher practices promote the development of assessment capable learners.</i><br>
@@ -6231,7 +6246,7 @@
 							</div>
 						</div>
 
-						<div class="headerSection" ; onclick="myFunction('indicator30-2', 'ind30-2')"
+						<div class="headerSection" ; onclick="onHeaderSelected('indicator30-2', 'ind30-2')"
 						 ; style="margin:1em 0">
 							<h3 class="inline-child1" style="font-size: 14px; font-weight: normal">
 								<i>30.2 Short-term planning and instruction are based on ongoing, formative assessment.</i><br>
@@ -6248,7 +6263,7 @@
 							</div>
 						</div>
 
-						<div class="headerSection" ; onclick="myFunction('indicator30-3', 'ind30-3')"
+						<div class="headerSection" ; onclick="onHeaderSelected('indicator30-3', 'ind30-3')"
 						 ; style="margin:1em 0">
 							<h3 class="inline-child1" style="font-size: 14px; font-weight: normal">
 								<i>30.3 Students are given descriptive feedback that is ongoing, timely, explicit, meaningful, constructive, and empowering.</i><br>
@@ -6277,7 +6292,7 @@
 							</div>
 						</div>
 
-						<div class="headerSection" ; onclick="myFunction('indicator30-4', 'ind30-4')"
+						<div class="headerSection" ; onclick="onHeaderSelected('indicator30-4', 'ind30-4')"
 						 ; style="margin:1em 0">
 							<h3 class="inline-child1" style="font-size: 14px; font-weight: normal">
 								<i>30.4 Students are taught to consolidate their learning through self-and peer-assessment.</i><br>
@@ -6314,7 +6329,7 @@
 							</div>
 						</div>
 
-						<div class="headerSection" ; onclick="myFunction('indicator30-5', 'ind30-5')"
+						<div class="headerSection" ; onclick="onHeaderSelected('indicator30-5', 'ind30-5')"
 						 ; style="margin:1em 0">
 							<h3 class="inline-child1" style="font-size: 14px; font-weight: normal">
 								<i>30.5 Learning outcomes of students with Personalized Learning Plans (PLPs) are assessed appropriately.</i><br>
@@ -6368,13 +6383,13 @@
 			<div class="tabbedSection">
 				<div class="container">
 					<div class="inner">
-						<div class="myTabHeader" onclick="expandTab('tab12-1', 'indicator12', '12-1', '#1e79e4')"
-						 id="Domain12-1" style="border-bottom: 1px solid #ffffff; border-top: 2px solid #1e79e4">
+						<div class="myTabHeader tab-selected" onclick="expandTab('tab12-1', 'indicator12', '12-1')"
+						 id="Domain12-1">
 							Indicator 31
 						</div>
 					</div>
 					<div class="inner">
-						<div class="myTabHeader" onclick="expandTab('tab12-2', 'indicator12', '12-2', '#1e79e4')"
+						<div class="myTabHeader" onclick="expandTab('tab12-2', 'indicator12', '12-2')"
 						 id="Domain12-2">
 							Indicator 32
 						</div>
@@ -6388,7 +6403,7 @@
 								Expand all Indicator 31</div>
 						</div>
 
-						<div class="headerSection" ; onclick="myFunction('indicator31MAIN', 'ind31MAIN')"
+						<div class="headerSection" ; onclick="onHeaderSelected('indicator31MAIN', 'ind31MAIN')"
 						 ; style="margin: 1em 0;">
 							<h3 class="inline-child1" style="font-size: 14px;">
 								Indicator 31<br>
@@ -6451,7 +6466,7 @@
 							</div>
 						</div>
 
-						<div class="headerSection" ; onclick="myFunction('indicator31-1', 'ind31-1')"
+						<div class="headerSection" ; onclick="onHeaderSelected('indicator31-1', 'ind31-1')"
 						 ; style="margin:1em 0">
 							<h3 class="inline-child1" style="font-size: 14px; font-weight: normal">
 								<i>31.1 Flexible groupings are routinely used for intervention and classroom instruction. They are short-term, varied, inclusive, data-informed and appropriate for learning.</i><br>
@@ -6474,7 +6489,7 @@
 								Expand all Indicator 32</div>
 						</div>
 
-						<div class="headerSection" ; onclick="myFunction('indicator32MAIN', 'ind32MAIN')"
+						<div class="headerSection" ; onclick="onHeaderSelected('indicator32MAIN', 'ind32MAIN')"
 						 ; style="margin: 1em 0;">
 							<h3 class="inline-child1" style="font-size: 14px;">
 								Indicator 32<br>
@@ -6503,7 +6518,7 @@
 							</div>
 						</div>
 
-						<div class="headerSection" ; onclick="myFunction('indicator32-1', 'ind32-1')"
+						<div class="headerSection" ; onclick="onHeaderSelected('indicator32-1', 'ind32-1')"
 						 ; style="margin:1em 0">
 							<h3 class="inline-child1" style="font-size: 14px; font-weight: normal">
 								<i>32.1 Personalized Learning Plans for academic and behavioural needs are reviewed and updated by teachers on an ongoing basis to ensure progress in meeting identified goals and outcomes.</i><br>
@@ -6543,7 +6558,7 @@
 							</div>
 						</div>
 
-						<div class="headerSection" ; onclick="myFunction('indicator32-2', 'ind32-2')"
+						<div class="headerSection" ; onclick="onHeaderSelected('indicator32-2', 'ind32-2')"
 						 ; style="margin:1em 0">
 							<h3 class="inline-child1" style="font-size: 14px; font-weight: normal">
 								<i>32.2 Educational Support Services team members collaborate with classroom teachers and other professionals to determine methodologies that meet the needs of all students.</i><br>
@@ -6578,7 +6593,7 @@
 							</div>
 						</div>
 
-						<div class="headerSection" ; onclick="myFunction('indicator32-3', 'ind32-3')"
+						<div class="headerSection" ; onclick="onHeaderSelected('indicator32-3', 'ind32-3')"
 						 ; style="margin:1em 0">
 							<h3 class="inline-child1" style="font-size: 14px; font-weight: normal">
 								<i>32.3 Teachers consult with experts such as subject area coordinators and ESTs to help determine methodologies that best suit student skills and needs.</i><br>
@@ -6611,6 +6626,13 @@
 
 		</div>
 	</div>
+
+	<!-- metadata -->
+	<div id="metadata">
+		NB School Improvement Indicators with Explanatory Notes – Updated September
+		28, 2018
+	</div>
+
 </body>
 
 </html>

@@ -16,20 +16,29 @@
 		}
 
 		:root {
-			--d1-color-secondary: #f79646;
-			--d2-color-secondary: #9e2cf5;
-			--d3-color-secondary: #3f902f;
-			--d4-color-secondary: #1e79e4;
-		}
+			--color-blue: rgb(0, 112, 192);
 
-		body {
-			background-color: #eee;
-			color: #333;
+			/* domain specific */
+			--d1-color-secondary: #f79646;
+			--d1-color-secondary-rgb: 247,150,70;
+			--d2-color-secondary: #9e2cf5;
+			--d2-color-secondary-rgb: 158,44,245;
+			--d3-color-secondary: #3f902f;
+			--d3-color-secondary-rgb: 63,144,47;
+			--d4-color-secondary: #1e79e4;
+			--d4-color-secondary-rgb: 30,121,228;
+
+			/* menu */
+			--menu-color-selected: #eee;
+			--menu-bg: #eee;
+			--menu-bg-selected: rgba(0, 112, 192, 0.8);
+			--menu-color-text: #333;
+			--menu-header: rgba(255, 255, 255, 0.5);
 		}
 
 		.rcorners {
 			border-radius: 25px;
-			border: 1px solid #73AD21;
+			border: 1px solid grey;
 			padding-left: 25pt;
 			padding-top: 10pt;
 			padding-right: 25pt;
@@ -40,7 +49,6 @@
 			background: #eee;
 			padding: 1em;
 			display: flex;
-			color: #000;
 			font: 14px/1 'Open Sans', sans-serif;
 			height: auto;
 			position: relative;
@@ -74,7 +82,6 @@
 		.button-section {
 			width: 100%;
 			padding: 0 0 2em 0;
-			color: black;
 			font: 14px/1 'Open Sans', sans-serif;
 			height: auto;
 			position: relative;
@@ -168,7 +175,7 @@
 		}
 
 		.blue-text {
-			color: rgb(0, 112, 192);
+			color: var(--color-blue);
 			font-weight: normal;
 		}
 
@@ -296,13 +303,13 @@
 			margin: 0;
 			font-weight: 700;
 			text-align: left;
-			color: rgb(0, 153, 204);
+			color: var(--color-blue);
 			font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
 			font-size: 75pt;
 		}
 
 		h2 {
-			color: rgb(0, 0, 0);
+			color: black;
 			display: block;
 			font-family: Arial;
 			font-weight: 700;
@@ -364,13 +371,6 @@
 		}
 
 		/* menu */
-		:root {
-			--menu-color-selected: #eee;
-			--menu-bg: #eee;
-			--menu-bg-selected: rgb(0, 153, 204);
-			--menu-color-text: #333;
-			--menu-header: rgba(255, 255, 255, 0.5);
-		}
 		#menu {
 			position: fixed;
 			top: 0px;
@@ -460,9 +460,7 @@
 		#metadata {
 			float: right;
 			padding: 16px 10%;
-			background-color: white;
 			opacity: 0.3;
-			color: black;
 		}
 
 		@media (max-width: 900px) {
@@ -1027,7 +1025,7 @@
 
 	<a name="dom1"></a>
 	<div class="domain-section">
-		<div class="domain-section-header" style="background-color: rgba(247, 150, 70, 0.6); text-align: center; border-top-left-radius: 17px; border-top-right-radius: 17px;">
+		<div class="domain-section-header" style="background-color: rgba(var(--d1-color-secondary-rgb), 0.45); text-align: center; border-top-left-radius: 17px; border-top-right-radius: 17px;">
 			<h3>Domain I: Systemic School Planning</h3>
 		</div>
 		<div id="dom-1">
@@ -1210,23 +1208,23 @@
 						<div class="header-subsection" ; id="indicator1-2" ; style="display:none; margin:0">
 							<div class="header-subsection-text">
 								<b><u>EXPLANATION:</u></b>
-								<p><span style="color: rgb(0, 0, 255); font-weight: bold">Vision
-										statements</span> outline the preferred future of a school and are an
+								<p><em>Vision
+										statements</em> outline the preferred future of a school and are an
 									inspirational call to action.
 									<br>Example: The vision of New Brunswick Middle School is to become a
 									community of diverse learners who are critical thinkers, creative
 									problem solvers, effective communicators and global citizens.</p>
 
-								<p><span style="color: rgb(0, 0, 255); font-weight: bold">Mission
-										statements</span> express the school’s purpose, why it exists, and
+								<p><em>Mission
+										statements</em> express the school’s purpose, why it exists, and
 									what it hopes to achieve.
 									<br>Example: New Brunswick Elementary School is a family of 21st
 									century learners, committed to excellence, nurturing maximum
 									individual growth in an atmosphere of fun and respect in an
 									ever-changing world.</p>
 
-								<p>The <span style="color: rgb(0, 0, 255); font-weight: bold">NB Global
-										Competencies</span> listed below should be considered when
+								<p>The <em>NB Global
+										Competencies</em> listed below should be considered when
 									identifying school goals:</p>
 								<ul class="indented-list">
 									<li>Critical Thinking and Problem Solving</li>
@@ -3046,7 +3044,7 @@
 
 	<a name="dom2"></a>
 	<div class="domain-section">
-		<div class="domain-section-header" style="background-color: rgba(158, 44, 245, 0.47); text-align: center; border-top-left-radius: 17px; border-top-right-radius: 17px;">
+		<div class="domain-section-header" style="background-color: rgba(var(--d2-color-secondary-rgb), 0.45); text-align: center; border-top-left-radius: 17px; border-top-right-radius: 17px;">
 			<h3>Domain II: Leadership & Teaming</h3>
 		</div>
 		<div id="dom-2">
@@ -4278,7 +4276,7 @@
 
 	<a name="dom3"></a>
 	<div class="domain-section">
-		<div class="domain-section-header" style="background-color: rgba(63, 144, 47, 0.55); text-align: center; border-top-left-radius: 17px; border-top-right-radius: 17px;">
+		<div class="domain-section-header" style="background-color: rgba(var(--d3-color-secondary-rgb), 0.45); text-align: center; border-top-left-radius: 17px; border-top-right-radius: 17px;">
 			<h3>Domain III: Learning Environments</h3>
 		</div>
 		<div id="dom-3">
@@ -4876,7 +4874,7 @@
 
 	<a name="dom4"></a>
 	<div class="domain-section">
-		<div class="domain-section-header" style="background-color: rgba(30, 121, 228, 0.45); text-align: center; border-top-left-radius: 17px; border-top-right-radius: 17px;">
+		<div class="domain-section-header" style="background-color: rgba(var(--d4-color-secondary-rgb), 0.45); text-align: center; border-top-left-radius: 17px; border-top-right-radius: 17px;">
 			<h3>Domain IV: Classroom Practice</h3>
 		</div>
 		<div id="dom-4">

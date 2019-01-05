@@ -65,6 +65,7 @@ select:-webkit-autofill {
 }
 .tab-selected {
 	background-color: rgb(23, 24, 28);
+	border-bottom: 1px solid rgb(23, 24, 28);
 }
 .link-list {
 	list-style-image: url("link-white.svg");

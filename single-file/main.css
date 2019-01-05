@@ -370,6 +370,14 @@ ul ol {
 	top: 0px;
 	z-index: 10;
 }
+#browserNav {
+	display: none;
+	width: 32px;
+	position: fixed;
+	top: 16px;
+	right: 16px;
+	z-index: 10;
+}
 #menuSpacer {
 	height: 60px;
 }
@@ -457,7 +465,7 @@ ul ol {
 	opacity: 0.3;
 }
 
-@media (max-width: 900px) {
+@media screen and (max-width: 900px) {
 	.menu {
 		width: 100%;
 		font-size: 16px;
@@ -483,7 +491,7 @@ ul ol {
 	}
 
 	#menuSpacer {
-		height: 150px;
+		height: 120px;
 	}
 
 	h1 {
@@ -523,9 +531,7 @@ ul ol {
 	.container {
 		flex-direction: column;
 	}
-	.tabbed-section > .container {
-		flex-direction: row;
-	}
+
 	.tabbed-section {
 		padding: 8px 0px;
 	}
@@ -547,8 +553,25 @@ ul ol {
 		padding: 0px;
 	}
 }
-@media (max-width: 480px) {
+@media screen and (max-width: 480px) {
+	#menu {
+		display: none;
+		top: 48px;
+	}
+	#menuSpacer {
+		height: 24px;
+	}
+	#browserNav {
+		display: block;
+	}
 	.menu {
 		font-size: 12px;
+	}
+	.menu li {
+		width: 100%;
+	}
+	.menu-item {
+		width: 100%;
+		flex: 1;
 	}
 }

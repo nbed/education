@@ -2,7 +2,7 @@
 
 <head>
 	<title>NB School Improvement Indicators</title>
-	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<meta name="viewport" http-equiv="Content-Type" content="text/html; charset=UTF-8 width=device-width,initial-scale=1.0"/>
 	<link rel="shortcut icon" type="image/x-icon" href="favicon.png">
 	<link rel="stylesheet" href="main.css">
 	<link rel="stylesheet" href="dark.css" media="none" id="dark">
@@ -97,6 +97,15 @@
 			var x = document.getElementById("Domain" + headerID);
 			x.classList.add("tab-selected");
 		}
+
+		function toggleMenu() {
+			const menu = document.getElementById("menu");
+			if(menu.style.display === "block") {
+				menu.style.display = "none";
+			} else {
+				menu.style.display = "block";
+			}
+		}
 	</script>
 </head>
 
@@ -142,6 +151,9 @@
 				</ol>
 			</li>
 		</ol>
+	</nav>
+	<nav id="browserNav" onclick="toggleMenu()">
+		<img src="bars-solid.svg"/>
 	</nav>
 
 	<!-- content -->

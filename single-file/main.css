@@ -52,7 +52,8 @@
 }
 
 .header-section:hover {
-	color: #444;
+	color: #222;
+	background-color: #eeea; 
 	cursor: pointer;
 }
 
@@ -224,6 +225,30 @@ td {
 .tabbed-section {
 	position: relative;
 	padding: 10px;
+}
+
+.d1-sub-header,
+.d2-sub-header,
+.d3-sub-header,
+.d4-sub-header {
+	padding: 0 0 0 10px;
+	line-height: 18px;
+}
+
+.d1-sub-header {
+	background-color: rgba(var(--d1-color-secondary-rgb), 0.45);
+}
+
+.d2-sub-header {
+	background-color: rgba(var(--d2-color-secondary-rgb), 0.45);
+}
+
+.d3-sub-header {
+	background-color: rgba(var(--d3-color-secondary-rgb), 0.45);
+}
+
+.d4-sub-header {
+	background-color: rgba(var(--d4-color-secondary-rgb), 0.45);
 }
 
 .tab-header {

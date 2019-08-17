@@ -1,22 +1,56 @@
 <!DOCTYPE html>
+
 <html lang="en">
 
 <head>
-	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700">
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-	<link rel="stylesheet" href="css/default.css">
-	<script src="scripts/default.js"></script>
+	<!-- Register service worker if supported. -->
 
-	<link rel="import" href="menu.html">
-	<link rel="import" href="systemic-school-planning.html">
-	<link rel="import" href="leadership-and-teaming.html">
-	<link rel="import" href="learning-environments.html">
-	<link rel="import" href="classroom-practice.html">
+	<!-- <script>
+if ('serviceWorker' in navigator) {
+	navigator.serviceWorker.register('/service-worker.js');
+}
+</script> -->
+
+
+	<!-- Load polyfills -->
+	<script
+		src="./node_modules/@webcomponents/webcomponentsjs/webcomponents-loader.js">
+		</script>
+
+	<script type="module" src="./dist/app.js"></script>
+
+	<!-- Load components via WebComponents.waitFor -->
+	<script type="module">
+		window.WebComponents = window.WebComponents || {
+			waitFor(cb) { addEventListener('WebComponentsReady', cb) }
+		}
+	</script>
+
+	<!-- Change stuff here for your app -->
+	<meta name="description" content="Framework Document">
+	<meta name="theme-color" content="#ffffff">
+	<title>Framework Document</title>
+
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="manifest" href="./manifest.json">
+	<link rel="shortcut icon" href="./manifest/favicon.png">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<meta charset="UTF-8">
 </head>
 
 <body>
+	<main-element>
+		<!-- Placeholders to improve time to first paint -->
 
+		<!-- Check for JavaScript -->
+		<p id="jsyes"></p>
+		<script type="text/javascript">
+			document.getElementById('jsyes').innerHTML = '';
+		</script>
+		<noscript>
+			Could not render the custom element. Check that JavaScript is
+			enabled.
+		</noscript>
+
+	</main-element>
 </body>
-
-</html>

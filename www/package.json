@@ -6,7 +6,7 @@
   "scripts": {
     "build": "npx tsc && npx webpack",
     "serve": "npx webpack-dev-server --open",
-    "watch": "npx tsc -w & npx webpack --watch",
+    "watch": "bash serve.sh",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Loft1 Dev Team",

@@ -21,24 +21,6 @@ Hot reload:
 `npx webpack-dev-server --open`
 ```
 
-## Fun to haves
-- Add Key/Value pairs option for `Body` section
-- Different call envs (like Postman)
-- Chaining calls - if the first call succeeds, make the second call. Output the first call under the first call and second call under the second call.
-- Nicely format output (and input)
-
-## Detailed setup info
-
-* [Clone](#clone-this-repo)
-* [Serve](#start-a-dev-server)
-* [Setup](#set-up-new-app)
-* [Build](#build-for-production-and-serve-locally)
-* [Deploy](#deploy)
-
-```
-git clone https://github.com/PolymerLabs/start-lit-element
-```
-
 ### Start a dev server
 
 ```

@@ -11,6 +11,7 @@
 		"sourceMap": true,
 		"strict": true,
 		"noUnusedLocals": true,
+		"outDir": "out",
 		"lib": [
 			"es7",
 			"dom"

@@ -46,6 +46,17 @@ if ('serviceWorker' in navigator) {
 		<p id="jsyes"></p>
 		<script type="text/javascript">
 			document.getElementById('jsyes').innerHTML = '';
+
+			window.addEventListener('hashchange', function() {
+				if (!document) {
+					throw new Error("Document is null");
+				}
+				// @ts-ignore
+				let mainEl = document
+					.querySelector('main-element');
+				mainEl.scrollToMe(location.hash);
+				
+			}, false);
 		</script>
 		<noscript>
 			Could not render the custom element. Check that JavaScript is

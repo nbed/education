@@ -6,15 +6,41 @@ import { Item } from "./types";
 
 export class MenuSection extends LitElement {
 
-	private list: Item[] = [];
-	private currentTab: Item = { id: "", name: "", content: html``, selected: false, };
-	private color: string = "";
+	private list: Item[] = [
+		{
+			id: "anchor_section1",
+			name: "Section I",
+			selected: true,
+			// not using
+			content: html``,
+		},
+		{
+			id: "anchor_section2",
+			name: "Section II",
+			selected: false,
+			// not using
+			content: html``,
+		},
+		{
+			id: "anchor_section3",
+			name: "Section III",
+			selected: false,
+			// not using
+			content: html``,
+		},
+		{
+			id: "anchor_section4",
+			name: "Section IV",
+			selected: false,
+			// not using
+			content: html``,
+		},
+	];
 
 	// properties getter
 	static get properties() {
 		return { 
 			list: { type: Array },
-			color: { type: String },
 		};
 	  }
 	  
@@ -35,102 +61,71 @@ export class MenuSection extends LitElement {
 			:host([hidden]) { display: none; }
 
 			.container {
+				position: fixed;
+
+				top: 0;
+
+				z-index: 10;
+
 				display: flex;
-				flex-direction: column;
+				flex-direction: row;
+
+				width: 100%;
+    			justify-content: center;
+			    align-items: center;
 			}
 
 			.nav-section {
-				padding: 1em 0 0 0;
+				padding: 0.5em 0 0 0;
 				display: flex;
 				flex-direction: row;
 			}
 
-			.tab {
-				position: relative;
-				z-index: 5;
-
-				border-top-left-radius: 10px;
-				border-top-right-radius: 10px;
-				border: 1px solid #ddd;
-
-				margin: 0 5px 0 0;
-				padding: 10pt 25pt;
-
-				background-color: #fff;
-			}
-
-			.tab:hover {
+			.nav-item {
 				cursor: pointer;
-				padding: 9pt 25pt;
-				border-top: 2px solid;
-				border-bottom: none;
+				padding: 12px;
+				color: var(--menu-color-text);
+				background-color: var(--menu-bg);
 			}
 
-			.tab-selected {
-				border-bottom: 1px solid #fff;
-				border-top-width: 2px;
-				border-top-style: solid;
-				padding: 9pt 25pt;
+			.nav-item-selected, .nav-item:hover {
+				background-color: var(--menu-bg-selected);
+				color: var(--menu-color-selected);
 			}
 
-			.tab-selected, .tab:hover {
-				border-top-color: ${this.color};
-			}
-
-			.tab-content {
-				position: relative;
-				padding: 10px;
-
-				/* hide top of border under tabs */
-				margin-top: -1px;
-
-				border: 1px solid #ddd;
-				border-top-right-radius: 10px;
-				border-bottom-left-radius: 10px;
-				border-bottom-right-radius: 10px;
-			}
 		</style>
 
 		<div class="container">
 			<div class="nav-section">
 				${this.list.map((tab) => {
-					if (tab.selected) {
-						this.currentTab = tab;
-					}
-					return html`<div class="tab ${ tab.selected ? "tab-selected" : ""}"
-							data-tab=${tab.id} @click=${(e: Event) => this.showTab(tab.id) }>
+					return html`<div class="nav-item ${ tab.selected ? "nav-item-selected" : ""}"
+							@click=${(e: Event) => this.selectItem(tab.id) }>
 						${tab.name}
 					</div>`})}
-			</div>
-			<div class="tab-content">
-				<div class="content">${this.currentTab.content}</div>
-				${ this.currentTab.children ? html`
-					<accordian-section color="#dddddd" .list="${this.currentTab.children}"></accordian-section>
-				` : html``}
 			</div>
 		</div>
 		`;
 	}
 
-	private selectTab(id: string) {
-		// find selected tab
-		const selectedTab = this.list.find((t) => {
-			return t.id === id;
-		});
-		if (!selectedTab) {
-			throw new Error("No match tab id found in tab items");
-		}
-		selectedTab.selected = true;
-		this.currentTab = selectedTab;
-	}
+	private selectItem(hash: string) {
+		// 1. move to location
+		window.location.hash = hash;
 
-	private showTab(id: string) {
+		// 2. update the menu item selected
 		// unselect all
 		this.list = this.list.map((t) => {
 			t.selected = false;
 			return t;
 		});
-		this.selectTab(id);
+
+		// find selected tab
+		const selectedTab = this.list.find((t) => {
+			return t.id === hash;
+		});
+		if (!selectedTab) {
+			throw new Error("No match tab id found in tab items");
+		}
+		selectedTab.selected = true;
 	}
 }
 // Register the element with the browser

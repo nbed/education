@@ -4,6 +4,7 @@ import { html, LitElement } from "lit-element";
 
 import "./accordian-section";
 import "./domain-section";
+import "./menu-section";
 
 import { overviewList } from "./docs/overview";
 import { section1 } from "./docs/section1";
@@ -50,11 +51,9 @@ export class MainElement extends LitElement {
 			}
 		</style>
 
-		<a href="#anchortest">Anchor test text</a>
-
-		<a href="#anchortest2">II test text</a>
-
 		<body>
+
+			<menu-section></menu-section>
 
 			<domain-section color="var(--s1-color)" colorFaded="var(--s1-color-faded)" .tabList="${section1}">
 				<a id="anchor_section1" slot="ref"></a>
@@ -71,7 +70,7 @@ export class MainElement extends LitElement {
 				</div>
 			</domain-section>
 
-			<domain-section color="var(--s2-color)" colorFaded="var(--s2-color-faded)"  .tabList="${section2}">
+			<domain-section color="var(--s2-color)" colorFaded="var(--s2-color-faded)" .tabList="${section2}">
 				<a id="anchor_section2" slot="ref"></a>
 				<span slot="header">Section II: Cycles</span>
 
@@ -81,7 +80,7 @@ export class MainElement extends LitElement {
 				</div>
 			</domain-section>
 
-			<domain-section color="var(--s3-color)" colorFaded="var(--s3-color-faded)"  .tabList="${section3}">
+			<domain-section color="var(--s3-color)" colorFaded="var(--s3-color-faded)" .tabList="${section3}">
 				<a id="anchor_section3" slot="ref"></a>
 				<span slot="header">Section III: Self-Assessment Instrument</span>
 
@@ -93,7 +92,7 @@ export class MainElement extends LitElement {
 				</div>
 			</domain-section>
 
-			<domain-section color="var(--s4-color)" colorFaded="var(--s4-color-faded)"  .tabList="${section4}">
+			<domain-section color="var(--s4-color)" colorFaded="var(--s4-color-faded)" .tabList="${section4}">
 				<a id="anchor_section4" slot="ref"></a>
 				<span slot="header">Section IV: Appendices and Templates</span>
 

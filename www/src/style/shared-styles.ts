@@ -25,11 +25,10 @@ export const sharedStyles = css`
     // --s4-color-faded: #FF0099cc;
 
     /* menu */
-    --menu-color-selected: #eee;
     --menu-bg: #eee;
-    --menu-bg-selected: rgba(0, 112, 192, 0.8);
+    --menu-bg-selected: #626f78;
+    --menu-color-selected: #ddd;
     --menu-color-text: #333;
-    --menu-header: rgba(255, 255, 255, 0.5);
 }
 
 body {

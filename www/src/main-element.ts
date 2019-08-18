@@ -54,6 +54,8 @@ export class MainElement extends LitElement {
 		<body>
 
 			<menu-section></menu-section>
+			<br>
+			<br>
 
 			<domain-section color="var(--s1-color)" colorFaded="var(--s1-color-faded)" .tabList="${section1}">
 				<a id="anchor_section1" slot="ref"></a>

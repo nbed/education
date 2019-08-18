@@ -8,6 +8,8 @@ import "./domain-section";
 import { overviewList } from "./docs/overview";
 import { section1 } from "./docs/section1";
 import { section2 } from "./docs/section2";
+import { section3 } from "./docs/section3";
+import { section4 } from "./docs/section4";
 
 import { sharedStyles } from "./style/shared-styles";
 
@@ -54,8 +56,8 @@ export class MainElement extends LitElement {
 
 		<body>
 
-			<domain-section color="#f79646" .tabList="${section1}">
-				<a id="anchortest" slot="ref"></a>
+			<domain-section color="var(--s1-color)" colorFaded="var(--s1-color-faded)" .tabList="${section1}">
+				<a id="anchor_section1" slot="ref"></a>
 				<span slot="header">Section I: Framework Overview</span>
 
 				<div slot="overview">
@@ -69,13 +71,35 @@ export class MainElement extends LitElement {
 				</div>
 			</domain-section>
 
-			<domain-section color="#800080" .tabList="${section2}">
-				<a id="anchortest2" slot="ref"></a>
+			<domain-section color="var(--s2-color)" colorFaded="var(--s2-color-faded)"  .tabList="${section2}">
+				<a id="anchor_section2" slot="ref"></a>
 				<span slot="header">Section II: Cycles</span>
 
 				<div slot="overview">
 					<h4>Cycles</h4>
-					<p>Section II identifies the short- and long-term planning and monitoring cycles, including some content and diagrams suggesting content and processes to support effective planning, implementation, and monitoring (PDCA).  </p>
+					<p>Section II identifies the short- and long-term planning and monitoring cycles, including some content and diagrams suggesting content and processes to support effective planning, implementation, and monitoring (PDCA).</p>
+				</div>
+			</domain-section>
+
+			<domain-section color="var(--s3-color)" colorFaded="var(--s3-color-faded)"  .tabList="${section3}">
+				<a id="anchor_section3" slot="ref"></a>
+				<span slot="header">Section III: Self-Assessment Instrument</span>
+
+				<div slot="overview">
+					<h4>Self-Assessment Instrument</h4>
+					<p>Section III identifies the process for self-assessment, including the overview and purpose, and the self-evaluation process in brief, including a discussion around the self-assessment instruments and associated documents (Indicator Document, Explanatory Notes Document, Inclusion Look-fors).  This section also provides a link to the online tiered document which combines all self-assessment documents into a user-friendly drop-down document.  
+					This section also includes suggestions for the effective use of data/evidence, including information on the triangulation of data (conversations, observations and products).  An explanation of the intent and utility of the Annual School Progress Report is provided at the end of this section. 
+					</p>
+				</div>
+			</domain-section>
+
+			<domain-section color="var(--s4-color)" colorFaded="var(--s4-color-faded)"  .tabList="${section4}">
+				<a id="anchor_section4" slot="ref"></a>
+				<span slot="header">Section IV: Appendices and Templates</span>
+
+				<div slot="overview">
+					<h4>Appendices and Templates</h4>
+					<p>Section IV provides a list of appendices and templates, which can be used in whole or in part to support schools to self-assess, plan, and monitor.  This section also includes an outline of the policies associated with improvement planning and a list of acronyms for user reference.</p>
 				</div>
 			</domain-section>
 		</body>

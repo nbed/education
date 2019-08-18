@@ -57,7 +57,7 @@ export class AccordianSection extends LitElement {
 				background-color: ${this.color}55;
 				border-top: 2px solid ${this.color};
 
-				padding: 9px 10px;
+				padding-top: 9px;
 
 				border-top-right-radius: 5px;
 				border-top-left-radius: 5px;

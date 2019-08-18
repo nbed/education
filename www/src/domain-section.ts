@@ -8,12 +8,14 @@ import { Item } from "./types";
 export class DomainSection extends LitElement {
 
 	private color: string = "";
+	private colorFaded: string = "";
 	private tabList: Item[] = [];
 
 	// properties getter
 	static get properties() {
 		return { 
 			color: { type: String },
+			colorFaded: { type: String },
 			tabList: { type: Array },
 		};
 	}
@@ -42,10 +44,10 @@ export class DomainSection extends LitElement {
 				margin: 1em 0 0 0;
 				padding: 0 0;
 
-				background-color: ${this.color}55; 
+				background-color: ${this.colorFaded}; 
 
 				text-align: center;
-				border: 1px solid ${this.color}55;
+				border: 1px solid ${this.colorFaded};
 				border-top-left-radius: 17px; 
 				border-top-right-radius: 17px;
 
@@ -59,7 +61,7 @@ export class DomainSection extends LitElement {
 			.container {
 				padding: 1em 2em;
 
-				border: 1px solid ${this.color}55;
+				border: 1px solid ${this.colorFaded};
 				border-bottom-left-radius: 17px;
 				border-bottom-right-radius: 17px;
 				border-top-width: 0;

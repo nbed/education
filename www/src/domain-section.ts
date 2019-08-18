@@ -3,12 +3,12 @@
 import { html, LitElement } from "lit-element";
 import "./tabs-section";
 import { sharedStyles } from "./style/shared-styles";
-import { TabItem } from "./types";
+import { Item } from "./types";
 
 export class DomainSection extends LitElement {
 
 	private color: string = "";
-	private tabList: TabItem[] = [];
+	private tabList: Item[] = [];
 
 	// properties getter
 	static get properties() {

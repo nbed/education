@@ -7,17 +7,11 @@ import "./domain-section";
 
 import { overviewList } from "./docs/overview";
 import { section1 } from "./docs/section1";
+import { section2 } from "./docs/section2";
 
 import { sharedStyles } from "./style/shared-styles";
-import { TabItem } from "./types";
 
 export class MainElement extends LitElement {
-
-	private tabList: TabItem[] = [
-		{ id: "id-1", selected: true, name: "tab-1", content: html`tab 111 content goes here` },
-		{ id: "id-2", selected: false, name: "tab-2", content: html`tab 222 content goes here` },
-		{ id: "id-3", selected: false,  name: "tab-3", content: html`tab 333 content goes here` },
-	];
 
 	/**
 	 * In the element constructor, assign default property values.
@@ -75,13 +69,13 @@ export class MainElement extends LitElement {
 				</div>
 			</domain-section>
 
-			<domain-section color="#800080" .tabList="${this.tabList}">
+			<domain-section color="#800080" .tabList="${section2}">
 				<a id="anchortest2" slot="ref"></a>
-				<span slot="header">Section II: Another Overview</span>
+				<span slot="header">Section II: Cycles</span>
 
 				<div slot="overview">
-					<h4>Another Overview</h4>
-					<p>blah blah blah</p>
+					<h4>Cycles</h4>
+					<p>Section II identifies the short- and long-term planning and monitoring cycles, including some content and diagrams suggesting content and processes to support effective planning, implementation, and monitoring (PDCA).  </p>
 				</div>
 			</domain-section>
 		</body>

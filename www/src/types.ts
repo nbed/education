@@ -1,9 +1,10 @@
 
 import { TemplateResult } from "lit-html";
 
-export interface TabItem {
+export interface Item {
 	id: string;
 	name: string;
 	selected: boolean;
 	content: TemplateResult;
+	children?: Item[];
 }

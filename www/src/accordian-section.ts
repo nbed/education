@@ -2,12 +2,12 @@
 // Import LitElement base class and html helper function
 import { html, LitElement } from "lit-element";
 import { sharedStyles } from "./style/shared-styles";
-import { TabItem } from "./types";
+import { Item } from "./types";
 
 export class AccordianSection extends LitElement {
 
 	private color: string = "";
-	private list: TabItem[] = [];
+	private list: Item[] = [];
 
 	private lastSelectedId = "";
 
@@ -47,6 +47,10 @@ export class AccordianSection extends LitElement {
 				cursor: pointer;
 				position: relative;
 				padding: 10px;
+
+				display: flex;
+
+				border-top: 1px solid ${this.color}55;
 			}
 
 			.tab-selected, .tab:hover {
@@ -79,8 +83,9 @@ export class AccordianSection extends LitElement {
 				}
 				return html`
 					<div class="tab ${ tab.selected ? "tab-selected" : ""}"
-							data-tab=${tab.id} @click=${(e: Event) => this.show(tab.id) }>
-						${tab.name}
+							data-tab=${tab.id} @click=${(e: Event) => this.toggle(tab.id) }>
+						<div style="flex: 1;">${tab.name}</div>
+						<div style="flex: 0;">${ tab.selected ? html`-`: html`+`}</div>
 					</div>
 					${ tab.selected ? html`<div class="tab-content fadeIn">${tab.content}</div>`: ""}
 				`})}
@@ -88,7 +93,7 @@ export class AccordianSection extends LitElement {
 		`;
 	}
 
-	private show(id: string) {
+	private toggle(id: string) {
 		// unselect all
 		this.list = this.list.map((t) => {
 			t.selected = false;

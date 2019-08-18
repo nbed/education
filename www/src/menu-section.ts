@@ -4,7 +4,7 @@ import { html, LitElement } from "lit-element";
 import { sharedStyles } from "./style/shared-styles";
 import { Item } from "./types";
 
-export class TabsSection extends LitElement {
+export class MenuSection extends LitElement {
 
 	private list: Item[] = [];
 	private currentTab: Item = { id: "", name: "", content: html``, selected: false, };
@@ -134,4 +134,4 @@ export class TabsSection extends LitElement {
 	}
 }
 // Register the element with the browser
-customElements.define("tabs-section", TabsSection);
+customElements.define("menu-section", MenuSection);

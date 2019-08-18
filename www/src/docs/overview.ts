@@ -1,8 +1,8 @@
 
-import { TabItem } from "../types";
+import { Item } from "../types";
 import { html } from "lit-html";
 
-export const overviewList: TabItem[] = [
+export const overviewList: Item[] = [
     {
         id: "item1",
         name: "Rationale and Consultation",

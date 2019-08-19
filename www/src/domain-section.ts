@@ -79,10 +79,10 @@ export class DomainSection extends LitElement {
 			.tab-container {
 				display: flex;
 			}
+
 		</style>
 
 		<div class="domain">
-			<slot name="ref"></slot>
 			<div class="domain-header">
 				<slot name="header"></slot>
 			</div>

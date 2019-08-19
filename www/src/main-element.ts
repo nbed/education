@@ -49,6 +49,12 @@ export class MainElement extends LitElement {
 			.overview {
 				padding: 8px;
 			}
+
+			/* move up so the anchor + menu is above the content */
+			.anchor-ref {
+				position: relative; 
+				top: -50px;
+			}
 		</style>
 
 		<body>
@@ -57,8 +63,8 @@ export class MainElement extends LitElement {
 			<br>
 			<br>
 
+			<a id="anchor_section1" class="anchor-ref"></a>
 			<domain-section color="var(--s1-color)" colorFaded="var(--s1-color-faded)" .tabList="${section1}">
-				<a id="anchor_section1" slot="ref"></a>
 				<span slot="header">Section I: Framework Overview</span>
 
 				<div slot="overview">
@@ -72,8 +78,8 @@ export class MainElement extends LitElement {
 				</div>
 			</domain-section>
 
+			<a id="anchor_section2" class="anchor-ref"></a>
 			<domain-section color="var(--s2-color)" colorFaded="var(--s2-color-faded)" .tabList="${section2}">
-				<a id="anchor_section2" slot="ref"></a>
 				<span slot="header">Section II: Cycles</span>
 
 				<div slot="overview">
@@ -82,8 +88,8 @@ export class MainElement extends LitElement {
 				</div>
 			</domain-section>
 
+			<a id="anchor_section3" class="anchor-ref"></a>
 			<domain-section color="var(--s3-color)" colorFaded="var(--s3-color-faded)" .tabList="${section3}">
-				<a id="anchor_section3" slot="ref"></a>
 				<span slot="header">Section III: Self-Assessment Instrument</span>
 
 				<div slot="overview">
@@ -94,8 +100,8 @@ export class MainElement extends LitElement {
 				</div>
 			</domain-section>
 
+			<a id="anchor_section4" class="anchor-ref"></a>
 			<domain-section color="var(--s4-color)" colorFaded="var(--s4-color-faded)" .tabList="${section4}">
-				<a id="anchor_section4" slot="ref"></a>
 				<span slot="header">Section IV: Appendices and Templates</span>
 
 				<div slot="overview">

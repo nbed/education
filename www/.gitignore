@@ -1,7 +1,6 @@
 node_modules
-build
-/dist
+/build
 *.js.map
 *.js
+!serve.js
 !webpack.config.js
-prod

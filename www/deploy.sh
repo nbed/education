@@ -1,18 +1,25 @@
 #!/bin/bash
 set -e
 
-rm -rf prod
-mkdir prod
+output="dist"
+build="build"
 
-cp -r dist prod
-cp -r manifest prod
-cp index.html prod
-cp manifest.json prod
-cp package.json prod
+# clean output
+rm -rf $output
+mkdir $output
 
-cd prod
-npm i --only=production --silent
-rm package.json
-aws s3 sync ./ s3://brent2.monocl.mobi/ --acl public-read
+rm -rf $build
 
-echo "Deploy complete."
+# build
+npx tsc
+npx webpack --config webpack.prod.js
+
+# copy files to output
+# files
+cp ./index.html ./$output/index.html
+cp ./manifest.json ./$output/manifest.json
+# directories
+cp ./$build ./$output/$build -r
+mkdir $output/node_modules
+cp ./node_modules/@webcomponents ./$output/node_modules/@webcomponents -r
+cp ./manifest ./$output/manifest -r

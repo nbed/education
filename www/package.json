@@ -4,9 +4,10 @@
   "description": "Visualization of Monocl",
   "main": "main-element.js",
   "scripts": {
-    "build": "npx tsc && npx webpack",
-    "serve": "npx webpack-dev-server --open",
+    "build": "npx tsc && npx webpack --config webpack.dev.js",
+    "serve": "npx webpack-dev-server --open --config webpack.dev.js",
     "watch": "bash serve.sh",
+    "deploy": "bash deploy.sh",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Loft1 Dev Team",
@@ -24,6 +25,7 @@
     "html-webpack-plugin": "^3.2.0",
     "typescript": "^3.5.3",
     "webpack-cli": "^3.3.4",
-    "webpack-dev-server": "^3.8.0"
+    "webpack-dev-server": "^3.8.0",
+    "webpack-merge": "^4.2.1"
   }
 }

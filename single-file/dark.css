@@ -60,11 +60,16 @@ select:-webkit-autofill {
 .header-section {
 	background-color: #333;
 }
+.header-section:hover {
+	color: white;
+	background-color: #222;
+}
 .tab-header {
 	background-color: rgb(23, 24, 28);
 }
 .tab-selected {
 	background-color: rgb(23, 24, 28);
+	border-bottom: 1px solid rgb(23, 24, 28);
 }
 .link-list {
 	list-style-image: url("link-white.svg");

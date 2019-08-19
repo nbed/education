@@ -1,7 +1,8 @@
 <html>
 
 <head>
-	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<title>NB School Improvement Indicators</title>
+	<meta name="viewport" http-equiv="Content-Type" content="text/html; charset=UTF-8 width=device-width,initial-scale=1.0"/>
 	<link rel="shortcut icon" type="image/x-icon" href="favicon.png">
 	<link rel="stylesheet" href="main.css">
 	<link rel="stylesheet" href="dark.css" media="none" id="dark">
@@ -25,12 +26,13 @@
 			var divIter;
 
 			var x = document.getElementById("expInd" + number);
-			if (x.innerText === "Expand all Indicator " + number) {
-				x.innerText = "Collapse all Indicator " + number;
+			const expandText = "Expand Indicator " + number + " + subindicators";
+			if (x.innerText === expandText) {
+				x.innerText = "Collapse Indicator " + number + " + subindicators";
 				expOrCol = "exp"
 				x.classList.add("button-selected");
 			} else {
-				x.innerText = "Expand all Indicator " + number;
+				x.innerText = expandText;
 				expOrCol = "col"
 				x.classList.remove("button-selected");
 			}
@@ -96,6 +98,15 @@
 			var x = document.getElementById("Domain" + headerID);
 			x.classList.add("tab-selected");
 		}
+
+		function toggleMenu() {
+			const menu = document.getElementById("menu");
+			if(menu.style.display === "block") {
+				menu.style.display = "none";
+			} else {
+				menu.style.display = "block";
+			}
+		}
 	</script>
 </head>
 
@@ -141,6 +152,9 @@
 				</ol>
 			</li>
 		</ol>
+	</nav>
+	<nav id="browserNav" onclick="toggleMenu()">
+		<img src="bars-solid.svg"/>
 	</nav>
 
 	<!-- content -->
@@ -527,7 +541,7 @@
 			<br>
 
 			<a name="dom1-1"></a>
-			<h4 class="tabbed-section">School Improvement Planning</h4>
+			<h4 class="tabbed-section d1-sub-header">School Improvement Planning - Subdomain</h4>
 			<div class="tabbed-section">
 				<div class="container">
 					<div class="inner">
@@ -548,7 +562,7 @@
 					<div class="tab-content">
 						<div class="button-section">
 							<div id="expInd1" class="exp-button" onclick="expandAll('1')">
-								Expand all Indicator 1</div>
+								Expand Indicator 1 + subindicators</div>
 						</div>
 
 						<div class="header-section" ; onclick="onHeaderSelected('indicator1MAIN', 'ind1MAIN')"
@@ -621,7 +635,7 @@
 								<ul class="link-list">
 									<li><a href="https://collabe.nbed.nb.ca/admin/_layouts/15/WopiFrame2.aspx?sourcedoc=/admin/SIPDocs/School%20Improvement%20FINAL%20with%20Template%20Jan%203%202014.pptx&action=default"
 										 target="_blank">School Improvement Planning Process Guide</a></li>
-									<li><mark>See the PDCA Template (Appendix D in the Framework document)</mark></li>
+									<li><a href="./pdca-template-appendix-d.htm" target="_blank">PDCA Template (Appendix D in the Framework document)</a></li>
 								</ul>
 
 								<b><u>REFERENCES:</u></b>
@@ -790,7 +804,7 @@
 					<div class="tab-content">
 						<div class="button-section">
 							<div id="expInd2" class="exp-button" onclick="expandAll('2')">
-								Expand all Indicator 2</div>
+								Expand Indicator 2 + subindicators</div>
 						</div>
 
 						<div class="header-section" ; onclick="onHeaderSelected('indicator2MAIN', 'ind2MAIN')"
@@ -926,7 +940,7 @@
 			<br>
 
 			<a name="dom1-2"></a>
-			<h4 class="tabbed-section">Evidence-Informed Decision-Making</h4>
+			<h4 class="tabbed-section d1-sub-header">Evidence-Informed Decision-Making - Subdomain</h4>
 			<div class="tabbed-section">
 				<div class="container">
 					<div class="inner">
@@ -953,7 +967,7 @@
 					<div class="tab-content">
 						<div class="button-section">
 							<div id="expInd3" class="exp-button" onclick="expandAll('3')">
-								Expand all Indicator 3</div>
+								Expand Indicator 3 + subindicators</div>
 						</div>
 
 						<div class="header-section" ; onclick="onHeaderSelected('indicator3MAIN', 'ind3MAIN')"
@@ -997,7 +1011,7 @@
 									school-wide interventions.</p>
 
 								<ul class="link-list">
-									<li><mark>See the PDCA Template (Appendix D in the Framework document)</mark></li>
+									<li><a href="./pdca-template-appendix-d.htm" target="_blank">PDCA Template (Appendix D in the Framework document)</a></li>
 								</ul>
 							</div>
 						</div>
@@ -1186,7 +1200,7 @@
 					<div class="tab-content">
 						<div class="button-section">
 							<div id="expInd4" class="exp-button" onclick="expandAll('4')">
-								Expand all Indicator 4</div>
+								Expand Indicator 4 + subindicators</div>
 						</div>
 
 						<div class="header-section" ; onclick="onHeaderSelected('indicator4MAIN', 'ind4MAIN')"
@@ -1403,7 +1417,7 @@
 					<div class="tab-content">
 						<div class="button-section">
 							<div id="expInd5" class="exp-button" onclick="expandAll('5')">
-								Expand all Indicator 5</div>
+								Expand Indicator 5 + subindicators</div>
 						</div>
 
 						<div class="header-section" ; onclick="onHeaderSelected('indicator5MAIN', 'ind5MAIN')"
@@ -1627,7 +1641,7 @@
 			<br>
 
 			<a name="dom1-3"></a>
-			<h4 class="tabbed-section">Inclusion</h4>
+			<h4 class="tabbed-section d1-sub-header">Inclusion - Subdomain</h4>
 			<div class="tabbed-section">
 				<div class="container">
 					<div class="inner">
@@ -1660,7 +1674,7 @@
 					<div class="tab-content">
 						<div class="button-section">
 							<div id="expInd6" class="exp-button" onclick="expandAll('6')">
-								Expand all Indicator 6</div>
+								Expand Indicator 6 + subindicators</div>
 						</div>
 
 						<div class="header-section" ; onclick="onHeaderSelected('indicator6MAIN', 'ind6MAIN')"
@@ -1995,7 +2009,7 @@
 					<div class="tab-content">
 						<div class="button-section">
 							<div id="expInd7" class="exp-button" onclick="expandAll('7')">
-								Expand all Indicator 7</div>
+								Expand Indicator 7 + subindicators</div>
 						</div>
 
 						<div class="header-section" ; onclick="onHeaderSelected('indicator7MAIN', 'ind7MAIN')"
@@ -2365,7 +2379,7 @@
 					<div class="tab-content">
 						<div class="button-section">
 							<div id="expInd8" class="exp-button" onclick="expandAll('8')">
-								Expand all Indicator 8</div>
+								Expand Indicator 8 + subindicators</div>
 						</div>
 
 						<div class="header-section" ; onclick="onHeaderSelected('indicator8MAIN', 'ind8MAIN')"
@@ -2419,7 +2433,7 @@
 					<div class="tab-content">
 						<div class="button-section">
 							<div id="expInd9" class="exp-button" onclick="expandAll('9')">
-								Expand all Indicator 9</div>
+								Expand Indicator 9 + subindicators</div>
 						</div>
 
 						<div class="header-section" ; onclick="onHeaderSelected('indicator9MAIN', 'ind9MAIN')"
@@ -2537,7 +2551,7 @@
 			<br>
 
 			<a name="dom2-1"></a>
-			<h4 class="tabbed-section">Leadership</h4>
+			<h4 class="tabbed-section  d2-sub-header">Leadership - Subdomain</h4>
 			<div class="tabbed-section">
 				<div class="container">
 					<div class="inner">
@@ -2570,15 +2584,14 @@
 					<div class="tab-content">
 						<div class="button-section">
 							<div id="expInd10" class="exp-button" onclick="expandAll('10')">
-								Expand all Indicator 10</div>
+								Expand Indicator 10 + subindicators</div>
 						</div>
 
 						<div class="header-section" ; onclick="onHeaderSelected('indicator10MAIN', 'ind10MAIN')"
 						 ; style="margin: 1em 0">
 							<h3 class="inline-child1" style="font-size: 14px;">
 								Indicator 10<br>
-								The school has effective distributive leadership structures in place to
-								facilitate continuous improvement.<br>
+								Since the key objective of the CLT is to help facilitate continuous improvement, change and growth, ensuring effective reciprocal communication, reporting to the entire staff, soliciting feedback, monitoring school-based teams and monitoring the Improvement Plan on a routine basis are critical responsibilities of this team.<br>
 								<span class="blue-text">Objectives 1,
 									7 and 9</span>
 							</h3>
@@ -2618,8 +2631,7 @@
 											Leadership PowerPoint</a>
 									</li>
 									<li>
-										<mark>Link to the Framework Document -Five Options for Improvement
-											Planning Teams P.1</mark>
+										<a href="./school-team-options.htm" target="_blank">Five Options for Improvement Planning Teams</a>
 									</li>
 								</ul>
 							</div>
@@ -2712,7 +2724,7 @@
 					<div class="tab-content">
 						<div class="button-section">
 							<div id="expInd11" class="exp-button" onclick="expandAll('11')">
-								Expand all Indicator 11</div>
+								Expand Indicator 11 + subindicators</div>
 						</div>
 
 						<div class="header-section" ; onclick="onHeaderSelected('indicator11MAIN', 'ind11MAIN')"
@@ -2968,7 +2980,7 @@
 					<div class="tab-content">
 						<div class="button-section">
 							<div id="expInd12" class="exp-button" onclick="expandAll('12')">
-								Expand all Indicator 12</div>
+								Expand Indicator 12 + subindicators</div>
 						</div>
 
 						<div class="header-section" ; onclick="onHeaderSelected('indicator12MAIN', 'ind12MAIN')"
@@ -3050,7 +3062,7 @@
 					<div class="tab-content">
 						<div class="button-section">
 							<div id="expInd13" class="exp-button" onclick="expandAll('13')">
-								Expand all Indicator 13</div>
+								Expand Indicator 13 + subindicators</div>
 						</div>
 
 						<div class="header-section" ; onclick="onHeaderSelected('indicator13MAIN', 'ind13MAIN')"
@@ -3101,7 +3113,7 @@
 			<br>
 
 			<a name="dom2-2"></a>
-			<h4 class="tabbed-section">Teaming</h4>
+			<h4 class="tabbed-section  d2-sub-header">Teaming - Subdomain</h4>
 			<div class="tabbed-section">
 				<div class="container">
 					<div class="inner">
@@ -3128,7 +3140,7 @@
 					<div class="tab-content">
 						<div class="button-section">
 							<div id="expInd14" class="exp-button" onclick="expandAll('14')">
-								Expand all Indicator 14</div>
+								Expand Indicator 14 + subindicators</div>
 						</div>
 
 						<div class="header-section" ; onclick="onHeaderSelected('indicator14MAIN', 'ind14MAIN')"
@@ -3273,7 +3285,7 @@
 					<div class="tab-content">
 						<div class="button-section">
 							<div id="expInd15" class="exp-button" onclick="expandAll('15')">
-								Expand all Indicator 15</div>
+								Expand Indicator 15 + subindicators</div>
 						</div>
 
 						<div class="header-section" ; onclick="onHeaderSelected('indicator15MAIN', 'ind15MAIN')"
@@ -3416,8 +3428,7 @@
 									and support effective school-wide interventions.
 									<br>
 									<ul class="link-list">
-										<li><mark>See the PDCA Template (Appendix D in the Framework
-												document)</mark>
+										<li><a href="./pdca-template-appendix-d.htm" target="_blank">PDCA Template (Appendix D in the Framework document)</a></li>
 									</ul>
 								</p>
 							</div>
@@ -3553,7 +3564,7 @@
 					<div class="tab-content">
 						<div class="button-section">
 							<div id="expInd16" class="exp-button" onclick="expandAll('16')">
-								Expand all Indicator 16</div>
+								Expand Indicator 16 + subindicators</div>
 						</div>
 
 						<div class="header-section" ; onclick="onHeaderSelected('indicator16MAIN', 'ind16MAIN')"
@@ -3765,7 +3776,7 @@
 			<br>
 
 			<a name="dom3-1"></a>
-			<h4 class="tabbed-section">High Expectations</h4>
+			<h4 class="tabbed-section d3-sub-header">High Expectations - Subdomain</h4>
 			<div class="tabbed-section">
 				<div class="container">
 					<div class="inner">
@@ -3792,7 +3803,7 @@
 					<div class="tab-content">
 						<div class="button-section">
 							<div id="expInd17" class="exp-button" onclick="expandAll('17')">
-								Expand all Indicator 17</div>
+								Expand Indicator 17 + subindicators</div>
 						</div>
 
 						<div class="header-section" ; onclick="onHeaderSelected('indicator17MAIN', 'ind17MAIN')"
@@ -3926,7 +3937,7 @@
 					<div class="tab-content">
 						<div class="button-section">
 							<div id="expInd18" class="exp-button" onclick="expandAll('18')">
-								Expand all Indicator 18</div>
+								Expand Indicator 18 + subindicators</div>
 						</div>
 
 						<div class="header-section" ; onclick="onHeaderSelected('indicator18MAIN', 'ind18MAIN')"
@@ -4002,7 +4013,7 @@
 					<div class="tab-content">
 						<div class="button-section">
 							<div id="expInd19" class="exp-button" onclick="expandAll('19')">
-								Expand all Indicator 19</div>
+								Expand Indicator 19 + subindicators</div>
 						</div>
 
 						<div class="header-section" ; onclick="onHeaderSelected('indicator19MAIN', 'ind19MAIN')"
@@ -4117,8 +4128,8 @@
 			<br>
 
 			<a name="dom3-2"></a>
-			<h4 class="tabbed-section">Positive Behavioural Interventions and
-				Supports</h4>
+			<h4 class="tabbed-section  d3-sub-header">Positive Behavioural Interventions and
+				Supports - Subdomain</h4>
 			<div class="tabbed-section">
 				<div class="container">
 					<div class="inner">
@@ -4133,7 +4144,7 @@
 					<div class="tab-content">
 						<div class="button-section">
 							<div id="expInd20" class="exp-button" onclick="expandAll('20')">
-								Expand all Indicator 20</div>
+								Expand Indicator 20 + subindicators</div>
 						</div>
 
 						<div class="header-section" ; onclick="onHeaderSelected('indicator20MAIN', 'ind20MAIN')"
@@ -4370,7 +4381,7 @@
 			<br>
 
 			<a name="dom4-1"></a>
-			<h4 class="tabbed-section">Instructional Planning</h4>
+			<h4 class="tabbed-section  d4-sub-header">Instructional Planning - Subdomain</h4>
 			<div class="tabbed-section">
 				<div class="container">
 					<div class="inner">
@@ -4391,7 +4402,7 @@
 					<div class="tab-content">
 						<div class="button-section">
 							<div id="expInd21" class="exp-button" onclick="expandAll('21')">
-								Expand all Indicator 21</div>
+								Expand Indicator 21 + subindicators</div>
 						</div>
 
 						<div class="header-section" ; onclick="onHeaderSelected('indicator21MAIN', 'ind21MAIN')"
@@ -4434,7 +4445,7 @@
 					<div class="tab-content">
 						<div class="button-section">
 							<div id="expInd22" class="exp-button" onclick="expandAll('22')">
-								Expand all Indicator 22</div>
+								Expand Indicator 22 + subindicators</div>
 						</div>
 
 						<div class="header-section" ; onclick="onHeaderSelected('indicator22MAIN', 'ind22MAIN')"
@@ -4803,7 +4814,7 @@
 			<br>
 
 			<a name="dom4-2"></a>
-			<h4 class="tabbed-section">Instructional Strategies</h4>
+			<h4 class="tabbed-section d4-sub-header">Instructional Strategies - Subdomain</h4>
 			<div class="tabbed-section">
 				<div class="container">
 					<div class="inner">
@@ -4836,7 +4847,7 @@
 					<div class="tab-content">
 						<div class="button-section">
 							<div id="expInd23" class="exp-button" onclick="expandAll('23')">
-								Expand all Indicator 23</div>
+								Expand Indicator 23 + subindicators</div>
 						</div>
 
 						<div class="header-section" ; onclick="onHeaderSelected('indicator23MAIN', 'ind23MAIN')"
@@ -4926,7 +4937,7 @@
 					<div class="tab-content">
 						<div class="button-section">
 							<div id="expInd24" class="exp-button" onclick="expandAll('24')">
-								Expand all Indicator 24</div>
+								Expand Indicator 24 + subindicators</div>
 						</div>
 
 						<div class="header-section" ; onclick="onHeaderSelected('indicator24MAIN', 'ind24MAIN')"
@@ -5268,7 +5279,7 @@
 					<div class="tab-content">
 						<div class="button-section">
 							<div id="expInd25" class="exp-button" onclick="expandAll('25')">
-								Expand all Indicator 25</div>
+								Expand Indicator 25 + subindicators</div>
 						</div>
 
 						<div class="header-section" ; onclick="onHeaderSelected('indicator25MAIN', 'ind25MAIN')"
@@ -5316,7 +5327,7 @@
 					<div class="tab-content">
 						<div class="button-section">
 							<div id="expInd26" class="exp-button" onclick="expandAll('26')">
-								Expand all Indicator 26</div>
+								Expand Indicator 26 + subindicators</div>
 						</div>
 
 						<div class="header-section" ; onclick="onHeaderSelected('indicator26MAIN', 'ind26MAIN')"
@@ -5394,7 +5405,7 @@
 					<div class="tab-content">
 						<div class="button-section">
 							<div id="expInd27" class="exp-button" onclick="expandAll('27')">
-								Expand all Indicator 27</div>
+								Expand Indicator 27 + subindicators</div>
 						</div>
 
 						<div class="header-section" ; onclick="onHeaderSelected('indicator27MAIN', 'ind27MAIN')"
@@ -5467,7 +5478,7 @@
 					<div class="tab-content">
 						<div class="button-section">
 							<div id="expInd28" class="exp-button" onclick="expandAll('28')">
-								Expand all Indicator 28</div>
+								Expand Indicator 28 + subindicators</div>
 						</div>
 
 						<div class="header-section" ; onclick="onHeaderSelected('indicator28MAIN', 'ind28MAIN')"
@@ -5559,7 +5570,7 @@
 					<div class="tab-content">
 						<div class="button-section">
 							<div id="expInd29" class="exp-button" onclick="expandAll('29')">
-								Expand all Indicator 29</div>
+								Expand Indicator 29 + subindicators</div>
 						</div>
 
 						<div class="header-section" ; onclick="onHeaderSelected('indicator29MAIN', 'ind29MAIN')"
@@ -5673,7 +5684,7 @@
 			<br>
 
 			<a name="dom4-3"></a>
-			<h4 class="tabbed-section">Evidence of Learning</h4>
+			<h4 class="tabbed-section  d4-sub-header">Evidence of Learning - Subdomain</h4>
 			<div class="tabbed-section">
 				<div class="container">
 					<div class="inner">
@@ -5688,7 +5699,7 @@
 					<div class="tab-content">
 						<div class="button-section">
 							<div id="expInd30" class="exp-button" onclick="expandAll('30')">
-								Expand all Indicator 30</div>
+								Expand Indicator 30 + subindicators</div>
 						</div>
 
 						<div class="header-section" ; onclick="onHeaderSelected('indicator30MAIN', 'ind30MAIN')"
@@ -5882,7 +5893,7 @@
 			<br>
 
 			<a name="dom4-4"></a>
-			<h4 class="tabbed-section">Classroom Intervention</h4>
+			<h4 class="tabbed-section d4-sub-header">Classroom Intervention - Subdomain</h4>
 			<div class="tabbed-section">
 				<div class="container">
 					<div class="inner">
@@ -5903,7 +5914,7 @@
 					<div class="tab-content">
 						<div class="button-section">
 							<div id="expInd31" class="exp-button" onclick="expandAll('31')">
-								Expand all Indicator 31</div>
+								Expand Indicator 31 + subindicators</div>
 						</div>
 
 						<div class="header-section" ; onclick="onHeaderSelected('indicator31MAIN', 'ind31MAIN')"
@@ -5989,7 +6000,7 @@
 					<div class="tab-content">
 						<div class="button-section">
 							<div id="expInd32" class="exp-button" onclick="expandAll('32')">
-								Expand all Indicator 32</div>
+								Expand Indicator 32 + subindicators</div>
 						</div>
 
 						<div class="header-section" ; onclick="onHeaderSelected('indicator32MAIN', 'ind32MAIN')"

@@ -4,3 +4,5 @@ node_modules
 *.js
 !serve.js
 !webpack.config.js
+
+!dist/*.js

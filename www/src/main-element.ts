@@ -2,6 +2,7 @@
 // Import LitElement base class and html helper function
 import { html, LitElement } from "lit-element";
 
+import "./title-page";
 import "./accordian-section";
 import "./domain-section";
 import "./menu-section";
@@ -63,6 +64,9 @@ export class MainElement extends LitElement {
 			<br>
 			<br>
 
+			<a id="anchor_section0" class="anchor-ref"></a>
+			<title-page></title-page>
+
 			<a id="anchor_section1" class="anchor-ref"></a>
 			<domain-section color="var(--s1-color)" colorFaded="var(--s1-color-faded)" .tabList="${section1}">
 				<span slot="header">Section I: Framework Overview</span>
@@ -94,8 +98,8 @@ export class MainElement extends LitElement {
 
 				<div slot="overview">
 					<h4>Self-Assessment Instrument</h4>
-					<p>Section III identifies the process for self-assessment, including the overview and purpose, and the self-evaluation process in brief, including a discussion around the self-assessment instruments and associated documents (Indicator Document, Explanatory Notes Document, Inclusion Look-fors).  This section also provides a link to the online tiered document which combines all self-assessment documents into a user-friendly drop-down document.  
-					This section also includes suggestions for the effective use of data/evidence, including information on the triangulation of data (conversations, observations and products).  An explanation of the intent and utility of the Annual School Progress Report is provided at the end of this section. 
+					<p>Section III identifies the process for self-assessment, including the overview and purpose, and the Self-Assessment Process in Brief, including a discussion around the self-assessment instruments and associated documents (<a target="_blank" href="https://collabe.nbed.nb.ca/sites/10year/nbsip/Shared%20Documents/2.%20Provincial%20Improvement%20Framework%20and%20Associated%20Documents/School%20Self-assessment%20Documents/School%20Improvement%20Indicators%20only%20document%20August%2027%2C%202019.docx?Web=1">Indicator Document</a>, <a target="_blank" href=" https://collabe.nbed.nb.ca/sites/10year/nbsip/Shared%20Documents/2.%20Provincial%20Improvement%20Framework%20and%20Associated%20Documents/School%20Self-assessment%20Documents/School%20Improvement%20Indicators%20with%20Explanatory%20Notes%20March%2021%2C%202019.docx?Web=1">Explanatory Notes Document</a>, <a target="_blank" href="https://collabe.nbed.nb.ca/sites/10year/nbsip/Shared%20Documents/2.%20Provincial%20Improvement%20Framework%20and%20Associated%20Documents/School%20Self-assessment%20Documents/Inclusion%20Look-fors%20June%2011%2C%202019.docx?Web=1">Inclusion Look-For</a>).  This section also provides a link to the online tiered document which combines all self-assessment documents into a user-friendly drop-down document.  
+					This section also includes suggestions for the effective use of data/evidence, including information on the triangulation of data (conversations, observations and products).  An explanation of the intent and utility of the Annual School Performance Report is provided at the end of this section. 
 					</p>
 				</div>
 			</domain-section>

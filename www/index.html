@@ -13,11 +13,20 @@ if ('serviceWorker' in navigator) {
 
 
 	<!-- Load polyfills -->
-	<script
-		src="./node_modules/@webcomponents/webcomponentsjs/webcomponents-loader.js">
-		</script>
+	<script src="./node_modules/@webcomponents/webcomponentsjs/webcomponents-loader.js">
+	</script>
 
-	<script type="module" src="./build/app.js"></script>
+	<script type="text/javascript">
+		if(/MSIE \d|Trident.*rv:/.test(navigator.userAgent)) {
+		//   document.write('<script crossorigin="anonymous" src="https://polyfill.io/v3/polyfill.min.js"><\/script>');
+		//   document.write('<script src="./node_modules/@webcomponents/webcomponentsjs/webcomponents-bundle.js"><\/script>');
+		//   document.write('<script src="./node_modules/@webcomponents/webcomponentsjs/custom-elements-es5-adapter.js"><\/script>');
+		//   document.write('<script src="./build-ie/app.js"><\/script>');
+			document.write("Could not load in Internet Explorer - Please open in another browser");
+		} else {
+			document.write('<script type="module" src="./build/app.js"><\/script>');
+		}
+	  </script>
 
 	<!-- Load components via WebComponents.waitFor -->
 	<script type="module">
@@ -47,14 +56,14 @@ if ('serviceWorker' in navigator) {
 		<script type="text/javascript">
 			document.getElementById('jsyes').innerHTML = '';
 
-			window.addEventListener('hashchange', function() {
+			window.addEventListener('hashchange', function () {
 				if (!document) {
 					throw new Error("Document is null");
 				}
 				let mainEl = document
 					.querySelector('main-element');
 				mainEl.scrollToMe(location.hash);
-				
+
 			}, false);
 		</script>
 		<noscript>

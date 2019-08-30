@@ -8,29 +8,36 @@ export class MenuSection extends LitElement {
 
 	private list: Item[] = [
 		{
+			id: "anchor_section0",
+			name: "Top",
+			selected: false,
+			// not using
+			content: html``,
+		},
+		{
 			id: "anchor_section1",
-			name: "Section I",
-			selected: true,
+			name: "Framework Overview",
+			selected: false,
 			// not using
 			content: html``,
 		},
 		{
 			id: "anchor_section2",
-			name: "Section II",
+			name: "Cycles",
 			selected: false,
 			// not using
 			content: html``,
 		},
 		{
 			id: "anchor_section3",
-			name: "Section III",
+			name: "Self-Assessment Instrument",
 			selected: false,
 			// not using
 			content: html``,
 		},
 		{
 			id: "anchor_section4",
-			name: "Section IV",
+			name: "Appendices and Templates",
 			selected: false,
 			// not using
 			content: html``,
@@ -72,7 +79,9 @@ export class MenuSection extends LitElement {
 
 				width: 100%;
     			justify-content: center;
-			    align-items: center;
+				align-items: center;
+
+				background-color: #fffb;
 			}
 
 			.nav-section {
@@ -83,9 +92,15 @@ export class MenuSection extends LitElement {
 
 			.nav-item {
 				cursor: pointer;
-				padding: 12px;
+				padding: 8px;
 				color: var(--menu-color-text);
 				background-color: var(--menu-bg);
+
+				border-radius: 3px;
+			}
+
+			.right-area {
+				margin-right: 4px;
 			}
 
 			.nav-item-selected, .nav-item:hover {
@@ -97,8 +112,10 @@ export class MenuSection extends LitElement {
 
 		<div class="container">
 			<div class="nav-section">
-				${this.list.map((tab) => {
-					return html`<div class="nav-item ${ tab.selected ? "nav-item-selected" : ""}"
+				${this.list.map((tab, index) => {
+					return html`<div class="nav-item 
+						${ index !== (this.list.length - 1) ? "right-area" : ""} 
+						${ tab.selected ? "nav-item-selected" : ""}"
 							@click=${(e: Event) => this.selectItem(tab.id) }>
 						${tab.name}
 					</div>`})}

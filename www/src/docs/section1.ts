@@ -25,7 +25,7 @@ export const section1: Item[] = [
                       <p>Composed of the Principal, Vice-Principal and a selection of key teacher leaders. Like all learning teams in the school, this team should be organized in a very structured manner. Team time should be regularly scheduled; norms should be established; agendas should be created; minutes should be kept and goals and follow-up actions should be developed and monitored. Since the key objective of the CLT is to help facilitate continuous improvement, change and growth, ensuring effective reciprocal communication, reporting to the entire staff, soliciting feedback, monitoring school-based teams and monitoring the Improvement Plan on a routine basis are critical responsibilities of this team. (p. 22).</p>
                       <p>It is noted that a fundamental purpose of the CLT is to help facilitate continuous improvement and monitor the improvement plan on a regular basis. If a school has a number of initiatives and feels the CLT is better served focusing solely on advancing leadership capacity and informing decisions which have school-wide implications, they may choose to have a separate, dedicated, School Improvement Planning (SIP) Team.&nbsp;</p>
                       </li>
-                      <li>If a school determines that there should be a dedicated School Improvement Planning Team, separate from the Core Leadership Team, this team should be focused solely on the goals and strategies outlined in the improvement plan. The SIP team would be dedicated to ensuring the consistent implementation of initiatives designed to support the goals established in the improvement plan, monitoring progress, identifying necessary resources and professional learning needs associated with the plan, communicating with stakeholders, and providing an Annual School Progress Report on progress each January. Please see pg. 28 for further information on the Annual School Progress Report.
+                      <li>If a school determines that there should be a dedicated School Improvement Planning Team, separate from the Core Leadership Team, this team should be focused solely on the goals and strategies outlined in the improvement plan. The SIP team would be dedicated to ensuring the consistent implementation of initiatives designed to support the goals established in the improvement plan, monitoring progress, identifying necessary resources and professional learning needs associated with the plan, communicating with stakeholders, and providing an Annual School Performance Report on progress each January. Please see pg. 28 for further information on the Annual School Performance Report.
                       <p>It is important to note that the SIP Team could include membership from the CLT and representation from other groups as appropriate.</p>
                       </li>
                       <li>
@@ -33,7 +33,7 @@ export const section1: Item[] = [
                       </li>
                       <li>Recognizing that each school is different, the decision to adopt a combined SIP/PLWEP team is entirely the choice of the school in consultation with the district. Recognizing this, when a school chooses to combine the SIP and PLWEP plans, there are key variables to consider:
                       <ul>
-                      <li>The plan must align with policy requirements including ensuring adherence to the language established within the <em>Education Act</em> as well as policies 322 and 703 (see <a href="#_Appendix_B:_Combined">Appendix B</a> for an elaboration).</li>
+                      <li>The plan must align with policy requirements including ensuring adherence to the language established within the <em>Education Act</em> as well as policies 322 and 703 (see <a target="_blank" href="./manifest/Appendix-B.pdf">Appendix B</a> for an elaboration).</li>
                       <li>All combined plans will have a dedicated PLWEP component which is identified specifically by that PLWEP designation.</li>
                       <li>The dedicated PLWEP component of the plan must be able to stand alone in a fully comprehensible manner if removed from the remainder of the combined document.</li>
                       <li>The PLWEP component must be removable in order to comply with Policy 703 and allow for timely replies to Right to Information and Protection of Privacy Act (RTIPPA) requests.</li>
@@ -60,7 +60,7 @@ export const section1: Item[] = [
                       <p>Note: Student feedback could include ongoing consultation depending on the age and maturity of the student population. In the absence of direct attendance at committee meetings, schools could decide to use any of the following feedback mechanisms: through class and/or Student Representative Council (SRC) representatives, assemblies, Principal forums, focus groups, surveys, or any other viable means deemed appropriate and effective by the improvement team.</p>
                       </li>
                       <li>
-                      <p>The <strong>guidelines for improvement team members</strong> should include the length of appointment, and an elaboration of the roles and responsibilities associated with membership. For example, the consultative nature of the parent role should be delineated. Meeting norms should be established. Robert&rsquo;s Rules of Order could be applied for this purpose. Norms should include the appointment of a chair and secretary as well as the <strong>generation of agendas and minutes for each meeting</strong>. Schools may also wish to identify individuals with specific expertise to lead and/or support specific initiatives, i.e., Literacy, Math, Data or Resource Support.<br />See: <a href="http://www.robertsrules.org/">http://www.robertsrules.org/</a> for a quick reference to Robert&rsquo;s.</p>
+                      <p>The <strong>guidelines for improvement team members</strong> should include the length of appointment, and an elaboration of the roles and responsibilities associated with membership. For example, the consultative nature of the parent role should be delineated. Meeting norms should be established. Robert&rsquo;s Rules of Order could be applied for this purpose. Norms should include the appointment of a chair and secretary as well as the <strong>generation of agendas and minutes for each meeting</strong>. Schools may also wish to identify individuals with specific expertise to lead and/or support specific initiatives, i.e., Literacy, Math, Data or Resource Support.<br />See: <a target="_blank" href="http://www.robertsrules.org/">http://www.robertsrules.org/</a> for a quick reference to Robert&rsquo;s.</p>
                       </li>
                       <li><strong>Training for improvement team members</strong> - In order for staff, students, families and other stakeholders to understand the process of school improvement, school leaders, with district support where needed, should provide an information session which includes:
                       <ul>
@@ -88,7 +88,7 @@ export const section1: Item[] = [
                       <li>Focusing on student learning and advancing student outcomes.</li>
                       <li>Other areas as determined in collaboration with schools.</li>
                       </ul>
-                      <p>Lack of progress may become apparent through the analysis of the Annual School Progress Report or other factors (assessment results, Our School data, Teacher Perception Survey Data or other evidence).</p>
+                      <p>Lack of progress may become apparent through the analysis of the Annual School Performance Report or other factors (assessment results, Our School data, Teacher Perception Survey Data or other evidence).</p>
                       <p>As noted, each district is required to establish and communicate a process to support improvement planning in schools. As part of this process, an individual or individuals will be identified to act as <strong>school liaison</strong> to provide resources, process knowledge, and/or support. It has been recommended that the Director of Schools, Director of Curriculum and Instruction, Director of Education Support Services, or the Data and Accountability Supervisor be involved, depending on district and school needs. In collaboration with the principal/school team, district personnel could:&nbsp;</p>
                       <ul>
                       <li>Help schools develop and clarify their vision, mission and value statements, where the latter exist.</li>
@@ -106,14 +106,17 @@ export const section1: Item[] = [
         id: "item3",
         name: "Improvement Planning Process Overview",
         selected: false,
-        content: html`<p style="text-align: center;"><img width="70%" src="./manifest/S1-ImprovementPlanningProcessOverview-img.jpg" alt="Improvement Planning Process Overview" /></p>
+        content: html`<p style="text-align: center;">
+                <img width="70%" src="./manifest/S1-ImprovementPlanningProcessOverview-img1.jpg" alt="Improvement Planning Process Overview" />
+                <img width="40%" src="./manifest/S1-ImprovementPlanningProcessOverview-img2.jpg" alt="Legend - Improvement Planning Process Overview" />
+            </p>
                       <p>The graphic inserted above explains the relationship between individual (e.g. school personnel), groups, districts, and cyclical processes. This graphic can also be used to help explain the interplay between short-term (PDCA) cycles of analysis, which are used to analyze data and help schools adapt to changing circumstances within the school year, and the longer cycles of activity which use data/evidence to track long-term progress toward annual and multi-year goals.&nbsp;</p>`,
     },
     {
         id: "item4",
         name: "Roles and Responsibilities",
         selected: false,
-        content: html`<p>Several key individuals and groups are important for the effective implementation of an improvement process at the school level, as outlined below. See also, <a href="http://www2.gnb.ca/content/dam/gnb/Departments/ed/pdf/K12/dec-ced/RolesAndResponsibilities.pdf">Roles and Responsibilities.pdf</a></p>`,
+        content: html`<p>Several key individuals and groups are important for the effective implementation of an improvement process at the school level, as outlined below. See also, <a target="_blank" href="http://www2.gnb.ca/content/dam/gnb/Departments/ed/pdf/K12/dec-ced/RolesAndResponsibilities.pdf">Roles and Responsibilities.pdf</a></p>`,
         children: rolesItem,
     },
 ]

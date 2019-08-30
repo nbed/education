@@ -20,6 +20,10 @@ npm run build
 
 Hot reload:
 npm run watch
+
+Build of IE 11:
+npx tsc --p tsconfig-ie.json && npx webpack --config webpack.ie.js
+
 ```
 
 ### Start a dev server

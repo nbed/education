@@ -26,8 +26,8 @@ export const sharedStyles = css`
 
     /* menu */
     --menu-bg: #eee;
-    --menu-bg-selected: #626f78;
-    --menu-color-selected: #ddd;
+    --menu-bg-selected: rgba(0, 112, 192, 0.8);
+    --menu-color-selected: #eee;
     --menu-color-text: #333;
 }
 

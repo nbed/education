@@ -17,7 +17,7 @@ export const rolesItem: Item[] = [
         <li>Liaise with district staff to source support.</li>
         <li>Ensure school and system alignment.</li>
         <li>Report regularly to the appropriate district personnel on progress and the advancement of student outcomes (academic, behavioural and social-emotional).</li>
-        <li>Ensure the Annual School Progress Report is authored and shared with district personnel.</li>
+        <li>Ensure the Annual School Performance Report is authored and shared with district personnel.</li>
         </ul>`,
     },
     {
@@ -32,12 +32,12 @@ export const rolesItem: Item[] = [
         <li>Identify a few key goals.</li>
         <li>Ensure the establishment of strategies and actions to address identified goals.</li>
         <li>Report to the school principal and/or designate and other stakeholders on the progress of the school plan.</li>
-        <li>Collate and analyze the evidence required for the Annual School Progress Report.</li>
-        <li>Assist with the development, authoring and distribution of the Annual School Progress Report.</li>
+        <li>Collate and analyze the evidence required for the Annual School Performance Report.</li>
+        <li>Assist with the development, authoring and distribution of the Annual School Performance Report.</li>
         </ul>
         <p>Please note the school-wide goals are very broad. There should be alignment of the school-wide goals with the associated strategies and actions enacted at each level within the school. As we progress from schools, to teams, to classrooms and then to individual students, the strategies and actions, as well as the data used to measure progress, become more targeted.</p>
         <p>The following diagram illustrates that the vision and mission are broad concepts that identify the preferred reality and the broad potential steps which personnel could take to advance outcomes. As we move from broad improvement goals and overall school strategies, we become more targeted. Team and individual strategies and actions should support diverse school goals aligned with the vision and mission of the school. The most targeted actions should occur at the individual student level and should be designed to accomplish two tasks: advance overall school goals and, most importantly, address the needs of the diverse clients (individual students) that we serve.</p>
-        <p style="text-align: center;"><img width="70%" src="./manifest/S1-RolesResponsibilities-img.jpg" alt="Roles Responsibilities" /></p>`,
+        <p style="text-align: center;"><img width="50%" src="./manifest/S1-RolesResponsibilities-img.jpg" alt="Roles Responsibilities" /></p>`,
     },
     {
         id: "item3",
@@ -65,7 +65,7 @@ export const rolesItem: Item[] = [
         <p>The school administrative team and improvement committee members should work to identify potential <strong>partners</strong> and actively seek opportunities to communicate with and engage community members, organizations (non-profit), businesses, and other governmental and non-governmental agencies for potential partnerships and support. Many of these partnerships could provide school and community groups with some mutual benefit. For example, students taking Cooperative Education 120 could work with a seniors&rsquo; facility to support online learning for residents as part of their Co-op placement. Opportunities such as these provide practical learning experiences for students while also benefitting the institution hosting the student. It is important that potential partnerships between school and community, which provide the opportunity to advance student outcomes, be examined.&nbsp;</p>
         <p>Regardless of the partner or stakeholders, it is important that team structures are established to promote effective two-way communication between the improvement team and groups with an interest in the improvement plan. To ensure this occurs, improvement teams should solicit feedback from partners and stakeholders prior to generating the plan. Once the improvement plan has been developed in draft form, it is important to communicate the plan to stakeholders for feedback, revisions and support as needed. One goal of this activity would be to examine opportunities for stakeholder support and options for additional partnerships. To accomplish this, schools should:</p>
         <ul>
-        <li>Provide a copy of the plan to all relevant stakeholders. (See <a href="#_Appendix_C:_Sample">Appendix C</a> for a sample improvement planning template.) This would include teachers, para-professionals (EAs, SIWs, administrative assistants, etc.), external partners, family representatives, District Education Council (DEC) and Parent School Support Committee (PSSC) members.</li>
+        <li>Provide a copy of the plan to all relevant stakeholders. (See <a target="_blank" href="./manifest/Appendix-C.pdf">Appendix C</a> for a sample improvement planning template.) This would include teachers, para-professionals (EAs, SIWs, administrative assistants, etc.), external partners, family representatives, District Education Council (DEC) and Parent School Support Committee (PSSC) members.</li>
         <li>Ensure the plan is reviewed at a staff meeting with all staff present. It is recommended this staff meeting take place at the beginning of the school year. During the meeting, demonstrate the alignment of the plan with district and departmental goals, the 10-year Education Plan objectives, and team or teacher growth goals as appropriate.</li>
         <li>Have the improvement planning team or school leaders present the improvement plan to the PSSC and request feedback.</li>
         <li>Consider including a copy of the plan on the school's website. This action may facilitate opportunities for further partnerships.</li>
@@ -93,7 +93,7 @@ export const rolesItem: Item[] = [
         </ul>
         <p><em>School Liaisons/Critical Friends<br /></em>Many of the specific roles and responsibilities of the district staff were previously outlined in this document with the exception of the <em>school liaisons</em> and <em>critical friends</em>. The school liaison is a designated person at the district level who will link schools to critical friends or to act as the critical friend. Critical friends act as a coach, facilitator or challenger and are used to help schools identify needs and build capacity. According to the Glossary of Educational Reform,</p>
         <p class="block">&ldquo;A critical friend is typically a colleague or other educational professional, such as a school coach, who is committed to helping an educator or school improve. A critical friend is someone who is encouraging and supportive, but who also provides honest and often candid feedback that may be uncomfortable or difficult to hear. In short, a critical friend is someone who agrees to speak truthfully, but constructively, about weaknesses, problems, and emotionally charged issues.&rdquo;</p>
-        <p>See: <a href="https://www.edglossary.org/critical-friend/">https://www.edglossary.org/critical-friend/</a></p>
+        <p>See: <a target="_blank" href="https://www.edglossary.org/critical-friend/">https://www.edglossary.org/critical-friend/</a></p>
         <p>Schools may suggest others to act as critical friends, including colleagues working in like-sized or configured schools, working on similar initiatives or challenges, or those identified by the district using promising or exemplary practices in improvement planning, gathering and analysis of evidence, and ongoing monitoring of progress. District personnel acting as critical friends may refer principals, school administrative teams or improvement committee members to others who have expertise or experience in an area identified as a school improvement goal.&nbsp;</p>`,
     },
     {
@@ -129,7 +129,7 @@ export const rolesItem: Item[] = [
         <li>Teacher and teacher-aide assignments.</li>
         <li>Signing agreements.</li>
         </ul>
-        <p>Taken from <a href="http://www2.gnb.ca/content/dam/gnb/Departments/ed/pdf/K12/dec-ced/RolesAndResponsibilities.pdf">New Brunswick Public Education: A Shared Responsibility</a></p>
+        <p>Taken from <a target="_blank" href="http://www2.gnb.ca/content/dam/gnb/Departments/ed/pdf/K12/dec-ced/RolesAndResponsibilities.pdf">New Brunswick Public Education: A Shared Responsibility</a></p>
         <p>The superintendent is the sole employee of the DEC and the superintendent&rsquo;s decisions are made on behalf of, and subject to, any policies of the DEC. Superintendents play an important role in school improvement and monitoring of student learning and achievement by supporting policies and processes that promote school self-assessment, ongoing school growth, the adoption and use of promising practices, and by ensuring a focus on academic excellence and ongoing progress toward advancing student outcomes. Follow-up and support may include ensuring that resources are made available to schools to support the initiatives delineated in the improvement plans and ensuring that school, district and departmental plans are aligned to promote ongoing systemic growth.&nbsp;</p>`,
     },
     {

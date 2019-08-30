@@ -10,7 +10,7 @@ export const section3: Item[] = [
         id: "item1",
         name: "The Self-Assessment Instrument: Indicator Document with Explanatory Notes",
         selected: true,
-        content: html`<p>The self-assessment instrument to be used at the school level is the <a href="https://collabe.nbed.nb.ca/admin/sis/_layouts/15/WopiFrame.aspx?sourcedoc=/admin/sis/SISDocuments/School%20Review%20Indicators%20with%20Explanatory%20Notes%202017-18%20FINAL.docx&amp;action=default">New Brunswick Indicator Document with Explanatory Notes</a> (2017-18 version), supplemented by the Inclusion Look-For document.</p>`,
+        content: html`<p>The self-assessment instrument to be used at the school level is the <a target="_blank" href="https://collabe.nbed.nb.ca/sites/10year/nbsip/Shared%20Documents/2.%20Provincial%20Improvement%20Framework%20and%20Associated%20Documents/School%20Self-assessment%20Documents/School%20Improvement%20Indicators%20with%20Explanatory%20Notes%20March%2021%2C%202019.docx?Web=1">New Brunswick Indicator Document with Explanatory Notes</a>, supplemented by the <a target="_blank" href="https://collabe.nbed.nb.ca/sites/10year/nbsip/Shared%20Documents/2.%20Provincial%20Improvement%20Framework%20and%20Associated%20Documents/School%20Self-assessment%20Documents/Inclusion%20Look-fors%20June%2011%2C%202019.docx?Web=1">Inclusion Look-For</a> document.</p>`,
         children: section3DocItem,
     },
     {
@@ -32,15 +32,15 @@ export const section3: Item[] = [
     },
     {
         id: "item3",
-        name: "Annual School Progress Report",
+        name: "Annual School Performance Report",
         selected: false,
-        content: html`<p>Although it has already been mentioned several times throughout this document, the importance of the Annual School Progress Report must be highlighted.&nbsp;</p>
+        content: html`<p>Although it has already been mentioned several times throughout this document, the importance of the Annual School Performance Report must be highlighted.&nbsp;</p>
         <ul>
-        <li>The Annual School Progress Report is a high-level document that schools would submit to the district in January of each year (See <a href="#_Appendix_F:_Annual">Appendix F</a>).</li>
+        <li>The Annual School Performance Report is a high-level document that schools would submit to the district in January of each year (See <a target="_blank" href="https://collabe.nbed.nb.ca/sites/10year/nbsip/Shared%20Documents/2.%20Provincial%20Improvement%20Framework%20and%20Associated%20Documents/School%20Self-assessment%20Documents/School%20Performance%20Report%20July%2031%2C%202019.docx?Web=1">Appendix F</a>).</li>
         <li>This report will identify overarching school goals and indicate progress toward these goals.</li>
         <li>District will collate this data and author a similar high-level report to be shared with provincial representatives.</li>
         <li>This is a mechanism by which schools and districts will be able to measure progress.</li>
-        <li>Most importantly the Annual School Progress Report will allow for the transfer of information from schools, to districts and then to the province. This information will be used to:
+        <li>Most importantly the Annual School Performance Report will allow for the transfer of information from schools, to districts and then to the province. This information will be used to:
         <ul>
         <li>set ongoing provincial priorities,</li>
         <li>inform resource allocation, and inform PL planning.</li>

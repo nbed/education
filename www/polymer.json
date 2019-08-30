@@ -1,7 +1,6 @@
 {
   "shell": "src/main-element.js",
   "entrypoint": "index.html",
-  "fragments": ["src/lazy-element.js"],
   "npm": true,
   "moduleResolution": "node",
   "sources": ["src/main-element.js",

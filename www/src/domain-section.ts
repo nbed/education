@@ -48,8 +48,8 @@ export class DomainSection extends LitElement {
 
 				text-align: center;
 				border: 1px solid ${this.colorFaded};
-				border-top-left-radius: 17px; 
-				border-top-right-radius: 17px;
+				border-top-left-radius: 16px; 
+				border-top-right-radius: 16px;
 
 				font-weight: bold;
 				font-size: 26px;
@@ -62,8 +62,8 @@ export class DomainSection extends LitElement {
 				padding: 1em 2em;
 
 				border: 1px solid ${this.colorFaded};
-				border-bottom-left-radius: 17px;
-				border-bottom-right-radius: 17px;
+				border-bottom-left-radius: 16px;
+				border-bottom-right-radius: 16px;
 				border-top-width: 0;
 			}
 

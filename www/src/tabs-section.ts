@@ -89,6 +89,24 @@ export class TabsSection extends LitElement {
 				border-bottom-left-radius: 10px;
 				border-bottom-right-radius: 10px;
 			}
+
+			@media only screen and (max-width: 900px) {
+				.nav-section {
+					padding: 0;
+				}
+
+				.tab {
+					padding: 10px;
+				}
+				
+				.tab:hover {
+					padding: 10px;
+				}
+
+				.tab-selected {
+					padding: 10px;
+				}
+			}
 		</style>
 
 		<div class="container">

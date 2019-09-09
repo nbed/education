@@ -28,11 +28,11 @@ export const overviewList: Item[] = [
         id: "item3",
         name: "10-year Education Plan",
         selected: false,
-        content: html`<p>The necessity to align processes and practices are identified in the 10-year Education Plan.&nbsp; The plan notes that we need to:</p>
+        content: html`<p>The necessity to align processes and practices are identified in the 10-year Education Plan. The plan notes that we need to:</p>
         <p class="block">&ldquo;work toward developing a cohesive system that is effective and efficient. We must align programs and services, and promote collaborative planning and professional learning. Existing structures, practices and policies must be examined to ensure they are effectively supporting the needs and strengths of our learners&rdquo; (p.19).</p>
-        <p><a target="_blank" href="http://www2.gnb.ca/content/dam/gnb/Departments/ed/pdf/K12/EveryoneAtTheirBest.pdf">http://www2.gnb.ca/content/dam/gnb/Departments/ed/pdf/K12/EveryoneAtTheirBest.pdf</a> &nbsp;</p>
-        <p>The framework is used to help align all of the components in a complex system.&nbsp; This will include a system-wide approach designed to ensure that we are collectively working to address the objectives outlined in the 10-year Education Plan.&nbsp;</p>
-        <p>(See <a target="_blank" href="./manifest/Appendix-A.pdf">Appendix A</a> for a graphic outlining the objectives of the 10-year Ed Plan.)&nbsp;</p>
+        <p><a target="_blank" href="http://www2.gnb.ca/content/dam/gnb/Departments/ed/pdf/K12/EveryoneAtTheirBest.pdf">EveryoneAtTheirBest.pdf</a></p>
+        <p>The framework is used to help align all of the components in a complex system. This will include a system-wide approach designed to ensure that we are collectively working to address the objectives outlined in the 10-year Education Plan.&nbsp;</p>
+        <p>(See <a target="_blank" href="./manifest/Appendix-A.pdf">Appendix A</a> for a graphic outlining the objectives of the 10-year Ed Plan.)</p>
         <p>The framework will assist districts working with their schools in identifying and working toward these objectives, and will support effective school planning while allowing schools the autonomy to address the specific and varied needs identified at the individual school level.&nbsp;</p>`,
     },
     {

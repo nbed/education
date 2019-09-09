@@ -34,6 +34,8 @@ export class TitlePage extends LitElement {
 			.header {
 				width: 100%;
 				text-align: center;
+				display: flex;
+    			align-items: center;
 				color: white;
 
 				border-top-left-radius: 16px;
@@ -53,6 +55,7 @@ export class TitlePage extends LitElement {
 
 			.inner-header {
 				padding: 0 32px;
+				flex: 1;
 			}
 
 			.box {
@@ -74,7 +77,7 @@ export class TitlePage extends LitElement {
 				border-bottom-right-radius: 16px;
 			}
 
-			@media only screen and (max-width: 1100px) {
+			@media only screen and (max-width: 1220px) {
 				.container {
 					flex-direction: column;
 					align-items: center;
@@ -88,6 +91,16 @@ export class TitlePage extends LitElement {
 				.header {
 					border-top-right-radius: 16px;
 					border-bottom-left-radius: 0;
+				}
+			}
+
+			@media only screen and (max-width: 600px) {
+				.container {
+					padding: 24px 0;
+				}
+
+				.overlay {
+					right: 0;
 				}
 			}
 

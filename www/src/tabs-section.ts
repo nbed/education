@@ -56,7 +56,7 @@ export class TabsSection extends LitElement {
 				margin: 0 5px 0 0;
 				padding: 10pt 25pt;
 
-				background-color: #fff;
+				background-color: var(--tab-color);
 			}
 
 			.tab:hover {

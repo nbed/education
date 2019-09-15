@@ -67,7 +67,7 @@ export class TabsSection extends LitElement {
 			}
 
 			.tab-selected {
-				border-bottom: 1px solid #fff;
+				border-bottom: 1px solid var(--tab-color);
 				border-top-width: 2px;
 				border-top-style: solid;
 				padding: 9pt 25pt;

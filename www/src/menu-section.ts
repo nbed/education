@@ -107,7 +107,7 @@ export class MenuSection extends LitElement {
 			display: relative;
 			cursor: pointer;
 			right: 0;
-			padding: 12px;
+			padding: 0.5em;
 			width: 32px;
 			height: 32px;
 		}

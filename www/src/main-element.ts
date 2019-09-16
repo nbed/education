@@ -48,7 +48,7 @@ export class MainElement extends LitElement {
 		.anchor-ref {
 			position: relative; 
 			top: -50px;
-		}`
+		}`];
 	}
 
 	/**
@@ -67,8 +67,6 @@ export class MainElement extends LitElement {
 
 			<menu-section
 				@change-theme="${(e: Event) => { this.onChangeTheme() }}"></menu-section>
-			<br>
-			<br>
 
 			<a id="anchor_section0" class="anchor-ref"></a>
 			<title-page></title-page>

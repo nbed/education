@@ -111,6 +111,11 @@ export class MenuSection extends LitElement {
 			width: 32px;
 			height: 32px;
 		}
+
+		.theme:hover {
+			background-color: var(--menu-bg-selected);
+			border-radius: 50%;
+		}
 		`];
 	} 
 	  

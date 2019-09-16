@@ -18,6 +18,8 @@ export class TitlePage extends LitElement {
 			:host { 
 				display: block;
 				font-family: sans-serif;
+
+				margin: 32px 0 0 0;
 			}
 			:host([hidden]) { display: none; }
 
@@ -37,6 +39,8 @@ export class TitlePage extends LitElement {
 				display: flex;
     			align-items: center;
 				color: white;
+
+				flex: 1;
 
 				border-top-left-radius: 16px;
 				border-bottom-left-radius: 16px;
@@ -60,7 +64,9 @@ export class TitlePage extends LitElement {
 
 			.box {
 				width: 50%;
+				flex: 1;
 				border-top-right-radius: 16px;
+				border-bottom-right-radius: 16px;
 			}
 
 			.overlay {
@@ -86,15 +92,24 @@ export class TitlePage extends LitElement {
 				.box {
 					width: 100%;
 					border-top-right-radius: 0;
+					border-top-left-radius: 0;
+					border-bottom-right-radius: 16px;
+					border-bottom-left-radius: 16px;
 				}
 
 				.header {
 					border-top-right-radius: 16px;
+					border-top-left-radius: 16px;
+					border-bottom-right-radius: 0;
 					border-bottom-left-radius: 0;
 				}
 			}
 
 			@media only screen and (max-width: 600px) {
+				:host {
+					margin: 64px 0 0 0;
+				}
+
 				.container {
 					padding: 24px 0;
 				}

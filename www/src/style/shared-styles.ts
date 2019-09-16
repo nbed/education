@@ -2,7 +2,7 @@ import { css } from "lit-element";
 
 const CUSTOM_THEME = "custom-theme-name";
 
-export let isLightTheme = false;
+export let isLightTheme = true;
 
 function setTheme(theme: string) {
     isLightTheme = theme === "light";
@@ -14,7 +14,7 @@ function setTheme(theme: string) {
 if (window.localStorage) {
     let s = window.localStorage;
     if (s.getItem(CUSTOM_THEME)) {
-        const currentTheme = s.getItem(CUSTOM_THEME)!;
+        let currentTheme = s.getItem(CUSTOM_THEME)!;
         setTheme(currentTheme);
     }
 }

@@ -53,7 +53,7 @@ class b{constructor(e,t,i){this.__parts=[],this.template=e,this.processor=t,this
  * subject to an additional IP rights grant found at
  * http://polymer.github.io/PATENTS.txt
  */
-const w=e=>null===e||!("object"==typeof e||"function"==typeof e),S=e=>Array.isArray(e)||!(!e||!e[Symbol.iterator]);class P{constructor(e,t,i){this.dirty=!0,this.element=e,this.name=t,this.strings=i,this.parts=[];for(let e=0;e<i.length-1;e++)this.parts[e]=this._createPart()}_createPart(){return new _(this)}_getValue(){const e=this.strings,t=e.length-1;let i="";for(let o=0;o<t;o++){i+=e[o];const t=this.parts[o];if(void 0!==t){const e=t.value;if(w(e)||!S(e))i+="string"==typeof e?e:String(e);else for(const t of e)i+="string"==typeof t?t:String(t)}}return i+=e[t]}commit(){this.dirty&&(this.dirty=!1,this.element.setAttribute(this.name,this._getValue()))}}class _{constructor(e){this.value=void 0,this.committer=e}setValue(e){e===r||w(e)&&e===this.value||(this.value=e,n(e)||(this.committer.dirty=!0))}commit(){for(;n(this.value);){const e=this.value;this.value=r,e(this)}this.value!==r&&this.committer.commit()}}class x{constructor(e){this.value=void 0,this.__pendingValue=void 0,this.options=e}appendInto(e){this.startNode=e.appendChild(g()),this.endNode=e.appendChild(g())}insertAfterNode(e){this.startNode=e,this.endNode=e.nextSibling}appendIntoPart(e){e.__insert(this.startNode=g()),e.__insert(this.endNode=g())}insertAfterPart(e){e.__insert(this.startNode=g()),this.endNode=e.endNode,e.endNode=this.startNode}setValue(e){this.__pendingValue=e}commit(){for(;n(this.__pendingValue);){const e=this.__pendingValue;this.__pendingValue=r,e(this)}const e=this.__pendingValue;e!==r&&(w(e)?e!==this.value&&this.__commitText(e):e instanceof y?this.__commitTemplateResult(e):e instanceof Node?this.__commitNode(e):S(e)?this.__commitIterable(e):e===l?(this.value=l,this.clear()):this.__commitText(e))}__insert(e){this.endNode.parentNode.insertBefore(e,this.endNode)}__commitNode(e){this.value!==e&&(this.clear(),this.__insert(e),this.value=e)}__commitText(e){const t=this.startNode.nextSibling,i="string"==typeof(e=null==e?"":e)?e:String(e);t===this.endNode.previousSibling&&3===t.nodeType?t.data=i:this.__commitNode(document.createTextNode(i)),this.value=e}__commitTemplateResult(e){const t=this.options.templateFactory(e);if(this.value instanceof b&&this.value.template===t)this.value.update(e.values);else{const i=new b(t,e.processor,this.options),o=i._clone();i.update(e.values),this.__commitNode(o),this.value=i}}__commitIterable(e){Array.isArray(this.value)||(this.value=[],this.clear());const t=this.value;let i,o=0;for(const n of e)void 0===(i=t[o])&&(i=new x(this.options),t.push(i),0===o?i.appendIntoPart(this):i.insertAfterPart(t[o-1])),i.setValue(n),i.commit(),o++;o<t.length&&(t.length=o,this.clear(i&&i.endNode))}clear(e=this.startNode){a(this.startNode.parentNode,e.nextSibling,this.endNode)}}class k{constructor(e,t,i){if(this.value=void 0,this.__pendingValue=void 0,2!==i.length||""!==i[0]||""!==i[1])throw new Error("Boolean attributes can only contain a single expression");this.element=e,this.name=t,this.strings=i}setValue(e){this.__pendingValue=e}commit(){for(;n(this.__pendingValue);){const e=this.__pendingValue;this.__pendingValue=r,e(this)}if(this.__pendingValue===r)return;const e=!!this.__pendingValue;this.value!==e&&(e?this.element.setAttribute(this.name,""):this.element.removeAttribute(this.name),this.value=e),this.__pendingValue=r}}class T extends P{constructor(e,t,i){super(e,t,i),this.single=2===i.length&&""===i[0]&&""===i[1]}_createPart(){return new A(this)}_getValue(){return this.single?this.parts[0].value:super._getValue()}commit(){this.dirty&&(this.dirty=!1,this.element[this.name]=this._getValue())}}class A extends _{}let C=!1;try{const e={get capture(){return C=!0,!1}};window.addEventListener("test",e,e),window.removeEventListener("test",e,e)}catch(e){}class I{constructor(e,t,i){this.value=void 0,this.__pendingValue=void 0,this.element=e,this.eventName=t,this.eventContext=i,this.__boundHandleEvent=e=>this.handleEvent(e)}setValue(e){this.__pendingValue=e}commit(){for(;n(this.__pendingValue);){const e=this.__pendingValue;this.__pendingValue=r,e(this)}if(this.__pendingValue===r)return;const e=this.__pendingValue,t=this.value,i=null==e||null!=t&&(e.capture!==t.capture||e.once!==t.once||e.passive!==t.passive),o=null!=e&&(null==t||i);i&&this.element.removeEventListener(this.eventName,this.__boundHandleEvent,this.__options),o&&(this.__options=E(e),this.element.addEventListener(this.eventName,this.__boundHandleEvent,this.__options)),this.value=e,this.__pendingValue=r}handleEvent(e){"function"==typeof this.value?this.value.call(this.eventContext||this.element,e):this.value.handleEvent(e)}}const E=e=>e&&(C?{capture:e.capture,passive:e.passive,once:e.once}:e.capture);
+const w=e=>null===e||!("object"==typeof e||"function"==typeof e),S=e=>Array.isArray(e)||!(!e||!e[Symbol.iterator]);class x{constructor(e,t,i){this.dirty=!0,this.element=e,this.name=t,this.strings=i,this.parts=[];for(let e=0;e<i.length-1;e++)this.parts[e]=this._createPart()}_createPart(){return new P(this)}_getValue(){const e=this.strings,t=e.length-1;let i="";for(let o=0;o<t;o++){i+=e[o];const t=this.parts[o];if(void 0!==t){const e=t.value;if(w(e)||!S(e))i+="string"==typeof e?e:String(e);else for(const t of e)i+="string"==typeof t?t:String(t)}}return i+=e[t]}commit(){this.dirty&&(this.dirty=!1,this.element.setAttribute(this.name,this._getValue()))}}class P{constructor(e){this.value=void 0,this.committer=e}setValue(e){e===r||w(e)&&e===this.value||(this.value=e,n(e)||(this.committer.dirty=!0))}commit(){for(;n(this.value);){const e=this.value;this.value=r,e(this)}this.value!==r&&this.committer.commit()}}class _{constructor(e){this.value=void 0,this.__pendingValue=void 0,this.options=e}appendInto(e){this.startNode=e.appendChild(g()),this.endNode=e.appendChild(g())}insertAfterNode(e){this.startNode=e,this.endNode=e.nextSibling}appendIntoPart(e){e.__insert(this.startNode=g()),e.__insert(this.endNode=g())}insertAfterPart(e){e.__insert(this.startNode=g()),this.endNode=e.endNode,e.endNode=this.startNode}setValue(e){this.__pendingValue=e}commit(){for(;n(this.__pendingValue);){const e=this.__pendingValue;this.__pendingValue=r,e(this)}const e=this.__pendingValue;e!==r&&(w(e)?e!==this.value&&this.__commitText(e):e instanceof y?this.__commitTemplateResult(e):e instanceof Node?this.__commitNode(e):S(e)?this.__commitIterable(e):e===l?(this.value=l,this.clear()):this.__commitText(e))}__insert(e){this.endNode.parentNode.insertBefore(e,this.endNode)}__commitNode(e){this.value!==e&&(this.clear(),this.__insert(e),this.value=e)}__commitText(e){const t=this.startNode.nextSibling,i="string"==typeof(e=null==e?"":e)?e:String(e);t===this.endNode.previousSibling&&3===t.nodeType?t.data=i:this.__commitNode(document.createTextNode(i)),this.value=e}__commitTemplateResult(e){const t=this.options.templateFactory(e);if(this.value instanceof b&&this.value.template===t)this.value.update(e.values);else{const i=new b(t,e.processor,this.options),o=i._clone();i.update(e.values),this.__commitNode(o),this.value=i}}__commitIterable(e){Array.isArray(this.value)||(this.value=[],this.clear());const t=this.value;let i,o=0;for(const n of e)void 0===(i=t[o])&&(i=new _(this.options),t.push(i),0===o?i.appendIntoPart(this):i.insertAfterPart(t[o-1])),i.setValue(n),i.commit(),o++;o<t.length&&(t.length=o,this.clear(i&&i.endNode))}clear(e=this.startNode){a(this.startNode.parentNode,e.nextSibling,this.endNode)}}class k{constructor(e,t,i){if(this.value=void 0,this.__pendingValue=void 0,2!==i.length||""!==i[0]||""!==i[1])throw new Error("Boolean attributes can only contain a single expression");this.element=e,this.name=t,this.strings=i}setValue(e){this.__pendingValue=e}commit(){for(;n(this.__pendingValue);){const e=this.__pendingValue;this.__pendingValue=r,e(this)}if(this.__pendingValue===r)return;const e=!!this.__pendingValue;this.value!==e&&(e?this.element.setAttribute(this.name,""):this.element.removeAttribute(this.name),this.value=e),this.__pendingValue=r}}class T extends x{constructor(e,t,i){super(e,t,i),this.single=2===i.length&&""===i[0]&&""===i[1]}_createPart(){return new A(this)}_getValue(){return this.single?this.parts[0].value:super._getValue()}commit(){this.dirty&&(this.dirty=!1,this.element[this.name]=this._getValue())}}class A extends P{}let C=!1;try{const e={get capture(){return C=!0,!1}};window.addEventListener("test",e,e),window.removeEventListener("test",e,e)}catch(e){}class I{constructor(e,t,i){this.value=void 0,this.__pendingValue=void 0,this.element=e,this.eventName=t,this.eventContext=i,this.__boundHandleEvent=e=>this.handleEvent(e)}setValue(e){this.__pendingValue=e}commit(){for(;n(this.__pendingValue);){const e=this.__pendingValue;this.__pendingValue=r,e(this)}if(this.__pendingValue===r)return;const e=this.__pendingValue,t=this.value,i=null==e||null!=t&&(e.capture!==t.capture||e.once!==t.once||e.passive!==t.passive),o=null!=e&&(null==t||i);i&&this.element.removeEventListener(this.eventName,this.__boundHandleEvent,this.__options),o&&(this.__options=E(e),this.element.addEventListener(this.eventName,this.__boundHandleEvent,this.__options)),this.value=e,this.__pendingValue=r}handleEvent(e){"function"==typeof this.value?this.value.call(this.eventContext||this.element,e):this.value.handleEvent(e)}}const E=e=>e&&(C?{capture:e.capture,passive:e.passive,once:e.once}:e.capture);
 /**
  * @license
  * Copyright (c) 2017 The Polymer Project Authors. All rights reserved.
@@ -66,7 +66,7 @@ const w=e=>null===e||!("object"==typeof e||"function"==typeof e),S=e=>Array.isAr
  * Code distributed by Google as part of the polymer project is also
  * subject to an additional IP rights grant found at
  * http://polymer.github.io/PATENTS.txt
- */const D=new class{handleAttributeExpressions(e,t,i,o){const n=t[0];if("."===n){return new T(e,t.slice(1),i).parts}return"@"===n?[new I(e,t.slice(1),o.eventContext)]:"?"===n?[new k(e,t.slice(1),i)]:new P(e,t,i).parts}handleTextExpression(e){return new x(e)}};
+ */const D=new class{handleAttributeExpressions(e,t,i,o){const n=t[0];if("."===n){return new T(e,t.slice(1),i).parts}return"@"===n?[new I(e,t.slice(1),o.eventContext)]:"?"===n?[new k(e,t.slice(1),i)]:new x(e,t,i).parts}handleTextExpression(e){return new _(e)}};
 /**
  * @license
  * Copyright (c) 2017 The Polymer Project Authors. All rights reserved.
@@ -79,20 +79,7 @@ const w=e=>null===e||!("object"==typeof e||"function"==typeof e),S=e=>Array.isAr
  * Code distributed by Google as part of the polymer project is also
  * subject to an additional IP rights grant found at
  * http://polymer.github.io/PATENTS.txt
- */function R(e){let t=N.get(e.type);void 0===t&&(t={stringsArray:new WeakMap,keyString:new Map},N.set(e.type,t));let i=t.stringsArray.get(e.strings);if(void 0!==i)return i;const o=e.strings.join(d);return void 0===(i=t.keyString.get(o))&&(i=new m(e,e.getTemplateElement()),t.keyString.set(o,i)),t.stringsArray.set(e.strings,i),i}const N=new Map,F=new WeakMap;
-/**
- * @license
- * Copyright (c) 2017 The Polymer Project Authors. All rights reserved.
- * This code may only be used under the BSD style license found at
- * http://polymer.github.io/LICENSE.txt
- * The complete set of authors may be found at
- * http://polymer.github.io/AUTHORS.txt
- * The complete set of contributors may be found at
- * http://polymer.github.io/CONTRIBUTORS.txt
- * Code distributed by Google as part of the polymer project is also
- * subject to an additional IP rights grant found at
- * http://polymer.github.io/PATENTS.txt
- */
+ */function R(e){let t=N.get(e.type);void 0===t&&(t={stringsArray:new WeakMap,keyString:new Map},N.set(e.type,t));let i=t.stringsArray.get(e.strings);if(void 0!==i)return i;const o=e.strings.join(d);return void 0===(i=t.keyString.get(o))&&(i=new m(e,e.getTemplateElement()),t.keyString.set(o,i)),t.stringsArray.set(e.strings,i),i}const N=new Map,L=new WeakMap;
 /**
  * @license
  * Copyright (c) 2017 The Polymer Project Authors. All rights reserved.
@@ -106,7 +93,6 @@ const w=e=>null===e||!("object"==typeof e||"function"==typeof e),S=e=>Array.isAr
  * subject to an additional IP rights grant found at
  * http://polymer.github.io/PATENTS.txt
  */
-(window.litHtmlVersions||(window.litHtmlVersions=[])).push("1.1.1");const L=(e,...t)=>new y(e,t,"html",D),q=133;function O(e,t){const{element:{content:i},parts:o}=e,n=document.createTreeWalker(i,q,null,!1);let s=M(o),a=o[s],r=-1,l=0;const d=[];let c=null;for(;n.nextNode();){r++;const e=n.currentNode;for(e.previousSibling===c&&(c=null),t.has(e)&&(d.push(e),null===c&&(c=e)),null!==c&&l++;void 0!==a&&a.index===r;)a.index=null!==c?-1:a.index-l,a=o[s=M(o,s)]}d.forEach(e=>e.parentNode.removeChild(e))}const $=e=>{let t=11===e.nodeType?0:1;const i=document.createTreeWalker(e,q,null,!1);for(;i.nextNode();)t++;return t},M=(e,t=-1)=>{for(let i=t+1;i<e.length;i++){const t=e[i];if(f(t))return i}return-1};
 /**
  * @license
  * Copyright (c) 2017 The Polymer Project Authors. All rights reserved.
@@ -120,7 +106,7 @@ const w=e=>null===e||!("object"==typeof e||"function"==typeof e),S=e=>Array.isAr
  * subject to an additional IP rights grant found at
  * http://polymer.github.io/PATENTS.txt
  */
-const W=(e,t)=>`${e}--${t}`;let z=!0;void 0===window.ShadyCSS?z=!1:void 0===window.ShadyCSS.prepareTemplateDom&&(console.warn("Incompatible ShadyCSS version detected. Please update to at least @webcomponents/webcomponentsjs@2.0.2 and @webcomponents/shadycss@1.3.1."),z=!1);const B=e=>t=>{const i=W(t.type,e);let o=N.get(i);void 0===o&&(o={stringsArray:new WeakMap,keyString:new Map},N.set(i,o));let n=o.stringsArray.get(t.strings);if(void 0!==n)return n;const s=t.strings.join(d);if(void 0===(n=o.keyString.get(s))){const i=t.getTemplateElement();z&&window.ShadyCSS.prepareTemplateDom(i,e),n=new m(t,i),o.keyString.set(s,n)}return o.stringsArray.set(t.strings,n),n},j=["html","svg"],V=new Set,U=(e,t,i)=>{V.add(e);const o=i?i.element:document.createElement("template"),n=t.querySelectorAll("style"),{length:s}=n;if(0===s)return void window.ShadyCSS.prepareTemplateStyles(o,e);const a=document.createElement("style");for(let e=0;e<s;e++){const t=n[e];t.parentNode.removeChild(t),a.textContent+=t.textContent}(e=>{j.forEach(t=>{const i=N.get(W(t,e));void 0!==i&&i.keyString.forEach(e=>{const{element:{content:t}}=e,i=new Set;Array.from(t.querySelectorAll("style")).forEach(e=>{i.add(e)}),O(e,i)})})})(e);const r=o.content;i?function(e,t,i=null){const{element:{content:o},parts:n}=e;if(null==i)return void o.appendChild(t);const s=document.createTreeWalker(o,q,null,!1);let a=M(n),r=0,l=-1;for(;s.nextNode();){for(l++,s.currentNode===i&&(r=$(t),i.parentNode.insertBefore(t,i));-1!==a&&n[a].index===l;){if(r>0){for(;-1!==a;)n[a].index+=r,a=M(n,a);return}a=M(n,a)}}}(i,a,r.firstChild):r.insertBefore(a,r.firstChild),window.ShadyCSS.prepareTemplateStyles(o,e);const l=r.querySelector("style");if(window.ShadyCSS.nativeShadow&&null!==l)t.insertBefore(l.cloneNode(!0),t.firstChild);else if(i){r.insertBefore(a,r.firstChild);const e=new Set;e.add(a),O(i,e)}};window.JSCompiler_renameProperty=(e,t)=>e;const H={toAttribute(e,t){switch(t){case Boolean:return e?"":null;case Object:case Array:return null==e?e:JSON.stringify(e)}return e},fromAttribute(e,t){switch(t){case Boolean:return null!==e;case Number:return null===e?null:Number(e);case Object:case Array:return JSON.parse(e)}return e}},G=(e,t)=>t!==e&&(t==t||e==e),J={attribute:!0,type:String,converter:H,reflect:!1,hasChanged:G},K=Promise.resolve(!0),Y=1,Q=4,X=8,Z=16,ee=32,te="finalized";class ie extends HTMLElement{constructor(){super(),this._updateState=0,this._instanceProperties=void 0,this._updatePromise=K,this._hasConnectedResolver=void 0,this._changedProperties=new Map,this._reflectingProperties=void 0,this.initialize()}static get observedAttributes(){this.finalize();const e=[];return this._classProperties.forEach((t,i)=>{const o=this._attributeNameForProperty(i,t);void 0!==o&&(this._attributeToPropertyMap.set(o,i),e.push(o))}),e}static _ensureClassProperties(){if(!this.hasOwnProperty(JSCompiler_renameProperty("_classProperties",this))){this._classProperties=new Map;const e=Object.getPrototypeOf(this)._classProperties;void 0!==e&&e.forEach((e,t)=>this._classProperties.set(t,e))}}static createProperty(e,t=J){if(this._ensureClassProperties(),this._classProperties.set(e,t),t.noAccessor||this.prototype.hasOwnProperty(e))return;const i="symbol"==typeof e?Symbol():`__${e}`;Object.defineProperty(this.prototype,e,{get(){return this[i]},set(t){const o=this[e];this[i]=t,this._requestUpdate(e,o)},configurable:!0,enumerable:!0})}static finalize(){const e=Object.getPrototypeOf(this);if(e.hasOwnProperty(te)||e.finalize(),this[te]=!0,this._ensureClassProperties(),this._attributeToPropertyMap=new Map,this.hasOwnProperty(JSCompiler_renameProperty("properties",this))){const e=this.properties,t=[...Object.getOwnPropertyNames(e),..."function"==typeof Object.getOwnPropertySymbols?Object.getOwnPropertySymbols(e):[]];for(const i of t)this.createProperty(i,e[i])}}static _attributeNameForProperty(e,t){const i=t.attribute;return!1===i?void 0:"string"==typeof i?i:"string"==typeof e?e.toLowerCase():void 0}static _valueHasChanged(e,t,i=G){return i(e,t)}static _propertyValueFromAttribute(e,t){const i=t.type,o=t.converter||H,n="function"==typeof o?o:o.fromAttribute;return n?n(e,i):e}static _propertyValueToAttribute(e,t){if(void 0===t.reflect)return;const i=t.type,o=t.converter;return(o&&o.toAttribute||H.toAttribute)(e,i)}initialize(){this._saveInstanceProperties(),this._requestUpdate()}_saveInstanceProperties(){this.constructor._classProperties.forEach((e,t)=>{if(this.hasOwnProperty(t)){const e=this[t];delete this[t],this._instanceProperties||(this._instanceProperties=new Map),this._instanceProperties.set(t,e)}})}_applyInstanceProperties(){this._instanceProperties.forEach((e,t)=>this[t]=e),this._instanceProperties=void 0}connectedCallback(){this._updateState=this._updateState|ee,this._hasConnectedResolver&&(this._hasConnectedResolver(),this._hasConnectedResolver=void 0)}disconnectedCallback(){}attributeChangedCallback(e,t,i){t!==i&&this._attributeToProperty(e,i)}_propertyToAttribute(e,t,i=J){const o=this.constructor,n=o._attributeNameForProperty(e,i);if(void 0!==n){const e=o._propertyValueToAttribute(t,i);if(void 0===e)return;this._updateState=this._updateState|X,null==e?this.removeAttribute(n):this.setAttribute(n,e),this._updateState=this._updateState&~X}}_attributeToProperty(e,t){if(this._updateState&X)return;const i=this.constructor,o=i._attributeToPropertyMap.get(e);if(void 0!==o){const e=i._classProperties.get(o)||J;this._updateState=this._updateState|Z,this[o]=i._propertyValueFromAttribute(t,e),this._updateState=this._updateState&~Z}}_requestUpdate(e,t){let i=!0;if(void 0!==e){const o=this.constructor,n=o._classProperties.get(e)||J;o._valueHasChanged(this[e],t,n.hasChanged)?(this._changedProperties.has(e)||this._changedProperties.set(e,t),!0!==n.reflect||this._updateState&Z||(void 0===this._reflectingProperties&&(this._reflectingProperties=new Map),this._reflectingProperties.set(e,n))):i=!1}!this._hasRequestedUpdate&&i&&this._enqueueUpdate()}requestUpdate(e,t){return this._requestUpdate(e,t),this.updateComplete}async _enqueueUpdate(){let e,t;this._updateState=this._updateState|Q;const i=this._updatePromise;this._updatePromise=new Promise((i,o)=>{e=i,t=o});try{await i}catch(e){}this._hasConnected||await new Promise(e=>this._hasConnectedResolver=e);try{const e=this.performUpdate();null!=e&&await e}catch(e){t(e)}e(!this._hasRequestedUpdate)}get _hasConnected(){return this._updateState&ee}get _hasRequestedUpdate(){return this._updateState&Q}get hasUpdated(){return this._updateState&Y}performUpdate(){this._instanceProperties&&this._applyInstanceProperties();let e=!1;const t=this._changedProperties;try{(e=this.shouldUpdate(t))&&this.update(t)}catch(t){throw e=!1,t}finally{this._markUpdated()}e&&(this._updateState&Y||(this._updateState=this._updateState|Y,this.firstUpdated(t)),this.updated(t))}_markUpdated(){this._changedProperties=new Map,this._updateState=this._updateState&~Q}get updateComplete(){return this._getUpdateComplete()}_getUpdateComplete(){return this._updatePromise}shouldUpdate(e){return!0}update(e){void 0!==this._reflectingProperties&&this._reflectingProperties.size>0&&(this._reflectingProperties.forEach((e,t)=>this._propertyToAttribute(t,this[t],e)),this._reflectingProperties=void 0)}updated(e){}firstUpdated(e){}}ie[te]=!0;const oe="adoptedStyleSheets"in Document.prototype&&"replace"in CSSStyleSheet.prototype,ne=Symbol();class se{constructor(e,t){if(t!==ne)throw new Error("CSSResult is not constructable. Use `unsafeCSS` or `css` instead.");this.cssText=e}get styleSheet(){return void 0===this._styleSheet&&(oe?(this._styleSheet=new CSSStyleSheet,this._styleSheet.replaceSync(this.cssText)):this._styleSheet=null),this._styleSheet}toString(){return this.cssText}}
+(window.litHtmlVersions||(window.litHtmlVersions=[])).push("1.1.1");const F=(e,...t)=>new y(e,t,"html",D),q=133;function O(e,t){const{element:{content:i},parts:o}=e,n=document.createTreeWalker(i,q,null,!1);let s=M(o),a=o[s],r=-1,l=0;const d=[];let c=null;for(;n.nextNode();){r++;const e=n.currentNode;for(e.previousSibling===c&&(c=null),t.has(e)&&(d.push(e),null===c&&(c=e)),null!==c&&l++;void 0!==a&&a.index===r;)a.index=null!==c?-1:a.index-l,a=o[s=M(o,s)]}d.forEach(e=>e.parentNode.removeChild(e))}const $=e=>{let t=11===e.nodeType?0:1;const i=document.createTreeWalker(e,q,null,!1);for(;i.nextNode();)t++;return t},M=(e,t=-1)=>{for(let i=t+1;i<e.length;i++){const t=e[i];if(f(t))return i}return-1};
 /**
  * @license
  * Copyright (c) 2017 The Polymer Project Authors. All rights reserved.
@@ -134,102 +120,124 @@ const W=(e,t)=>`${e}--${t}`;let z=!0;void 0===window.ShadyCSS?z=!1:void 0===wind
  * subject to an additional IP rights grant found at
  * http://polymer.github.io/PATENTS.txt
  */
-(window.litElementVersions||(window.litElementVersions=[])).push("2.2.1");const ae=e=>e.flat?e.flat(1/0):function e(t,i=[]){for(let o=0,n=t.length;o<n;o++){const n=t[o];Array.isArray(n)?e(n,i):i.push(n)}return i}(e);class re extends ie{static finalize(){super.finalize.call(this),this._styles=this.hasOwnProperty(JSCompiler_renameProperty("styles",this))?this._getUniqueStyles():this._styles||[]}static _getUniqueStyles(){const e=this.styles,t=[];if(Array.isArray(e)){ae(e).reduceRight((e,t)=>(e.add(t),e),new Set).forEach(e=>t.unshift(e))}else e&&t.push(e);return t}initialize(){super.initialize(),this.renderRoot=this.createRenderRoot(),window.ShadowRoot&&this.renderRoot instanceof window.ShadowRoot&&this.adoptStyles()}createRenderRoot(){return this.attachShadow({mode:"open"})}adoptStyles(){const e=this.constructor._styles;0!==e.length&&(void 0===window.ShadyCSS||window.ShadyCSS.nativeShadow?oe?this.renderRoot.adoptedStyleSheets=e.map(e=>e.styleSheet):this._needsShimAdoptedStyleSheets=!0:window.ShadyCSS.ScopingShim.prepareAdoptedCssText(e.map(e=>e.cssText),this.localName))}connectedCallback(){super.connectedCallback(),this.hasUpdated&&void 0!==window.ShadyCSS&&window.ShadyCSS.styleElement(this)}update(e){super.update(e);const t=this.render();t instanceof y&&this.constructor.render(t,this.renderRoot,{scopeName:this.localName,eventContext:this}),this._needsShimAdoptedStyleSheets&&(this._needsShimAdoptedStyleSheets=!1,this.constructor._styles.forEach(e=>{const t=document.createElement("style");t.textContent=e.cssText,this.renderRoot.appendChild(t)}))}render(){}}re.finalized=!0,re.render=(e,t,i)=>{if(!i||"object"!=typeof i||!i.scopeName)throw new Error("The `scopeName` option is required.");const o=i.scopeName,n=F.has(t),s=z&&11===t.nodeType&&!!t.host,r=s&&!V.has(o),l=r?document.createDocumentFragment():t;if(((e,t,i)=>{let o=F.get(t);void 0===o&&(a(t,t.firstChild),F.set(t,o=new x(Object.assign({templateFactory:R},i))),o.appendInto(t)),o.setValue(e),o.commit()})(e,l,Object.assign({templateFactory:B(o)},i)),r){const e=F.get(l);F.delete(l);const i=e.value instanceof b?e.value.template:void 0;U(o,l,i),a(t,t.firstChild),t.appendChild(l),F.set(t,e)}!n&&s&&window.ShadyCSS.styleElement(t.host)};const le=((e,...t)=>{const i=t.reduce((t,i,o)=>t+(e=>{if(e instanceof se)return e.cssText;if("number"==typeof e)return e;throw new Error(`Value passed to 'css' function must be a 'css' function result: ${e}. Use 'unsafeCSS' to pass non-literal values, but\n            take care to ensure page security.`)})(i)+e[o+1],e[0]);return new se(i,ne)})`
+const W=(e,t)=>`${e}--${t}`;let z=!0;void 0===window.ShadyCSS?z=!1:void 0===window.ShadyCSS.prepareTemplateDom&&(console.warn("Incompatible ShadyCSS version detected. Please update to at least @webcomponents/webcomponentsjs@2.0.2 and @webcomponents/shadycss@1.3.1."),z=!1);const j=e=>t=>{const i=W(t.type,e);let o=N.get(i);void 0===o&&(o={stringsArray:new WeakMap,keyString:new Map},N.set(i,o));let n=o.stringsArray.get(t.strings);if(void 0!==n)return n;const s=t.strings.join(d);if(void 0===(n=o.keyString.get(s))){const i=t.getTemplateElement();z&&window.ShadyCSS.prepareTemplateDom(i,e),n=new m(t,i),o.keyString.set(s,n)}return o.stringsArray.set(t.strings,n),n},B=["html","svg"],V=new Set,U=(e,t,i)=>{V.add(e);const o=i?i.element:document.createElement("template"),n=t.querySelectorAll("style"),{length:s}=n;if(0===s)return void window.ShadyCSS.prepareTemplateStyles(o,e);const a=document.createElement("style");for(let e=0;e<s;e++){const t=n[e];t.parentNode.removeChild(t),a.textContent+=t.textContent}(e=>{B.forEach(t=>{const i=N.get(W(t,e));void 0!==i&&i.keyString.forEach(e=>{const{element:{content:t}}=e,i=new Set;Array.from(t.querySelectorAll("style")).forEach(e=>{i.add(e)}),O(e,i)})})})(e);const r=o.content;i?function(e,t,i=null){const{element:{content:o},parts:n}=e;if(null==i)return void o.appendChild(t);const s=document.createTreeWalker(o,q,null,!1);let a=M(n),r=0,l=-1;for(;s.nextNode();){for(l++,s.currentNode===i&&(r=$(t),i.parentNode.insertBefore(t,i));-1!==a&&n[a].index===l;){if(r>0){for(;-1!==a;)n[a].index+=r,a=M(n,a);return}a=M(n,a)}}}(i,a,r.firstChild):r.insertBefore(a,r.firstChild),window.ShadyCSS.prepareTemplateStyles(o,e);const l=r.querySelector("style");if(window.ShadyCSS.nativeShadow&&null!==l)t.insertBefore(l.cloneNode(!0),t.firstChild);else if(i){r.insertBefore(a,r.firstChild);const e=new Set;e.add(a),O(i,e)}};window.JSCompiler_renameProperty=(e,t)=>e;const H={toAttribute(e,t){switch(t){case Boolean:return e?"":null;case Object:case Array:return null==e?e:JSON.stringify(e)}return e},fromAttribute(e,t){switch(t){case Boolean:return null!==e;case Number:return null===e?null:Number(e);case Object:case Array:return JSON.parse(e)}return e}},G=(e,t)=>t!==e&&(t==t||e==e),J={attribute:!0,type:String,converter:H,reflect:!1,hasChanged:G},K=Promise.resolve(!0),Y=1,Q=4,X=8,Z=16,ee=32,te="finalized";class ie extends HTMLElement{constructor(){super(),this._updateState=0,this._instanceProperties=void 0,this._updatePromise=K,this._hasConnectedResolver=void 0,this._changedProperties=new Map,this._reflectingProperties=void 0,this.initialize()}static get observedAttributes(){this.finalize();const e=[];return this._classProperties.forEach((t,i)=>{const o=this._attributeNameForProperty(i,t);void 0!==o&&(this._attributeToPropertyMap.set(o,i),e.push(o))}),e}static _ensureClassProperties(){if(!this.hasOwnProperty(JSCompiler_renameProperty("_classProperties",this))){this._classProperties=new Map;const e=Object.getPrototypeOf(this)._classProperties;void 0!==e&&e.forEach((e,t)=>this._classProperties.set(t,e))}}static createProperty(e,t=J){if(this._ensureClassProperties(),this._classProperties.set(e,t),t.noAccessor||this.prototype.hasOwnProperty(e))return;const i="symbol"==typeof e?Symbol():`__${e}`;Object.defineProperty(this.prototype,e,{get(){return this[i]},set(t){const o=this[e];this[i]=t,this._requestUpdate(e,o)},configurable:!0,enumerable:!0})}static finalize(){const e=Object.getPrototypeOf(this);if(e.hasOwnProperty(te)||e.finalize(),this[te]=!0,this._ensureClassProperties(),this._attributeToPropertyMap=new Map,this.hasOwnProperty(JSCompiler_renameProperty("properties",this))){const e=this.properties,t=[...Object.getOwnPropertyNames(e),..."function"==typeof Object.getOwnPropertySymbols?Object.getOwnPropertySymbols(e):[]];for(const i of t)this.createProperty(i,e[i])}}static _attributeNameForProperty(e,t){const i=t.attribute;return!1===i?void 0:"string"==typeof i?i:"string"==typeof e?e.toLowerCase():void 0}static _valueHasChanged(e,t,i=G){return i(e,t)}static _propertyValueFromAttribute(e,t){const i=t.type,o=t.converter||H,n="function"==typeof o?o:o.fromAttribute;return n?n(e,i):e}static _propertyValueToAttribute(e,t){if(void 0===t.reflect)return;const i=t.type,o=t.converter;return(o&&o.toAttribute||H.toAttribute)(e,i)}initialize(){this._saveInstanceProperties(),this._requestUpdate()}_saveInstanceProperties(){this.constructor._classProperties.forEach((e,t)=>{if(this.hasOwnProperty(t)){const e=this[t];delete this[t],this._instanceProperties||(this._instanceProperties=new Map),this._instanceProperties.set(t,e)}})}_applyInstanceProperties(){this._instanceProperties.forEach((e,t)=>this[t]=e),this._instanceProperties=void 0}connectedCallback(){this._updateState=this._updateState|ee,this._hasConnectedResolver&&(this._hasConnectedResolver(),this._hasConnectedResolver=void 0)}disconnectedCallback(){}attributeChangedCallback(e,t,i){t!==i&&this._attributeToProperty(e,i)}_propertyToAttribute(e,t,i=J){const o=this.constructor,n=o._attributeNameForProperty(e,i);if(void 0!==n){const e=o._propertyValueToAttribute(t,i);if(void 0===e)return;this._updateState=this._updateState|X,null==e?this.removeAttribute(n):this.setAttribute(n,e),this._updateState=this._updateState&~X}}_attributeToProperty(e,t){if(this._updateState&X)return;const i=this.constructor,o=i._attributeToPropertyMap.get(e);if(void 0!==o){const e=i._classProperties.get(o)||J;this._updateState=this._updateState|Z,this[o]=i._propertyValueFromAttribute(t,e),this._updateState=this._updateState&~Z}}_requestUpdate(e,t){let i=!0;if(void 0!==e){const o=this.constructor,n=o._classProperties.get(e)||J;o._valueHasChanged(this[e],t,n.hasChanged)?(this._changedProperties.has(e)||this._changedProperties.set(e,t),!0!==n.reflect||this._updateState&Z||(void 0===this._reflectingProperties&&(this._reflectingProperties=new Map),this._reflectingProperties.set(e,n))):i=!1}!this._hasRequestedUpdate&&i&&this._enqueueUpdate()}requestUpdate(e,t){return this._requestUpdate(e,t),this.updateComplete}async _enqueueUpdate(){let e,t;this._updateState=this._updateState|Q;const i=this._updatePromise;this._updatePromise=new Promise((i,o)=>{e=i,t=o});try{await i}catch(e){}this._hasConnected||await new Promise(e=>this._hasConnectedResolver=e);try{const e=this.performUpdate();null!=e&&await e}catch(e){t(e)}e(!this._hasRequestedUpdate)}get _hasConnected(){return this._updateState&ee}get _hasRequestedUpdate(){return this._updateState&Q}get hasUpdated(){return this._updateState&Y}performUpdate(){this._instanceProperties&&this._applyInstanceProperties();let e=!1;const t=this._changedProperties;try{(e=this.shouldUpdate(t))&&this.update(t)}catch(t){throw e=!1,t}finally{this._markUpdated()}e&&(this._updateState&Y||(this._updateState=this._updateState|Y,this.firstUpdated(t)),this.updated(t))}_markUpdated(){this._changedProperties=new Map,this._updateState=this._updateState&~Q}get updateComplete(){return this._getUpdateComplete()}_getUpdateComplete(){return this._updatePromise}shouldUpdate(e){return!0}update(e){void 0!==this._reflectingProperties&&this._reflectingProperties.size>0&&(this._reflectingProperties.forEach((e,t)=>this._propertyToAttribute(t,this[t],e)),this._reflectingProperties=void 0)}updated(e){}firstUpdated(e){}}ie[te]=!0;const oe="adoptedStyleSheets"in Document.prototype&&"replace"in CSSStyleSheet.prototype,ne=Symbol();class se{constructor(e,t){if(t!==ne)throw new Error("CSSResult is not constructable. Use `unsafeCSS` or `css` instead.");this.cssText=e}get styleSheet(){return void 0===this._styleSheet&&(oe?(this._styleSheet=new CSSStyleSheet,this._styleSheet.replaceSync(this.cssText)):this._styleSheet=null),this._styleSheet}toString(){return this.cssText}}const ae=(e,...t)=>{const i=t.reduce((t,i,o)=>t+(e=>{if(e instanceof se)return e.cssText;if("number"==typeof e)return e;throw new Error(`Value passed to 'css' function must be a 'css' function result: ${e}. Use 'unsafeCSS' to pass non-literal values, but\n            take care to ensure page security.`)})(i)+e[o+1],e[0]);return new se(i,ne)};
+/**
+ * @license
+ * Copyright (c) 2017 The Polymer Project Authors. All rights reserved.
+ * This code may only be used under the BSD style license found at
+ * http://polymer.github.io/LICENSE.txt
+ * The complete set of authors may be found at
+ * http://polymer.github.io/AUTHORS.txt
+ * The complete set of contributors may be found at
+ * http://polymer.github.io/CONTRIBUTORS.txt
+ * Code distributed by Google as part of the polymer project is also
+ * subject to an additional IP rights grant found at
+ * http://polymer.github.io/PATENTS.txt
+ */
+(window.litElementVersions||(window.litElementVersions=[])).push("2.2.1");const re=e=>e.flat?e.flat(1/0):function e(t,i=[]){for(let o=0,n=t.length;o<n;o++){const n=t[o];Array.isArray(n)?e(n,i):i.push(n)}return i}(e);class le extends ie{static finalize(){super.finalize.call(this),this._styles=this.hasOwnProperty(JSCompiler_renameProperty("styles",this))?this._getUniqueStyles():this._styles||[]}static _getUniqueStyles(){const e=this.styles,t=[];if(Array.isArray(e)){re(e).reduceRight((e,t)=>(e.add(t),e),new Set).forEach(e=>t.unshift(e))}else e&&t.push(e);return t}initialize(){super.initialize(),this.renderRoot=this.createRenderRoot(),window.ShadowRoot&&this.renderRoot instanceof window.ShadowRoot&&this.adoptStyles()}createRenderRoot(){return this.attachShadow({mode:"open"})}adoptStyles(){const e=this.constructor._styles;0!==e.length&&(void 0===window.ShadyCSS||window.ShadyCSS.nativeShadow?oe?this.renderRoot.adoptedStyleSheets=e.map(e=>e.styleSheet):this._needsShimAdoptedStyleSheets=!0:window.ShadyCSS.ScopingShim.prepareAdoptedCssText(e.map(e=>e.cssText),this.localName))}connectedCallback(){super.connectedCallback(),this.hasUpdated&&void 0!==window.ShadyCSS&&window.ShadyCSS.styleElement(this)}update(e){super.update(e);const t=this.render();t instanceof y&&this.constructor.render(t,this.renderRoot,{scopeName:this.localName,eventContext:this}),this._needsShimAdoptedStyleSheets&&(this._needsShimAdoptedStyleSheets=!1,this.constructor._styles.forEach(e=>{const t=document.createElement("style");t.textContent=e.cssText,this.renderRoot.appendChild(t)}))}render(){}}le.finalized=!0,le.render=(e,t,i)=>{if(!i||"object"!=typeof i||!i.scopeName)throw new Error("The `scopeName` option is required.");const o=i.scopeName,n=L.has(t),s=z&&11===t.nodeType&&!!t.host,r=s&&!V.has(o),l=r?document.createDocumentFragment():t;if(((e,t,i)=>{let o=L.get(t);void 0===o&&(a(t,t.firstChild),L.set(t,o=new _(Object.assign({templateFactory:R},i))),o.appendInto(t)),o.setValue(e),o.commit()})(e,l,Object.assign({templateFactory:j(o)},i)),r){const e=L.get(l);L.delete(l);const i=e.value instanceof b?e.value.template:void 0;U(o,l,i),a(t,t.firstChild),t.appendChild(l),L.set(t,e)}!n&&s&&window.ShadyCSS.styleElement(t.host)};const de="custom-theme-name";let ce=!0;function he(e){ce="light"===e,console.log(`Setting ${e} theme`),window.localStorage.setItem(de,ce?"light":"dark")}if(window.localStorage){let e=window.localStorage;if(e.getItem(de)){he(e.getItem(de))}}const pe=ae`
+    /* Global variables */
+    :host {
+        /* section */
+        --s1-color: #f79646;
+        --s1-color-faded: #f7964655;
+        --s2-color: #9e2cf5;
+        --s2-color-faded: #9e2cf555;
+        --s3-color: #3f902f;
+        --s3-color-faded: #3f902f55;
+        --s4-color: #1e79e4;
+        --s4-color-faded: #1e79e455;
 
-/* Global variables */
-:host {
-    /* section */
-    --s1-color: #f79646;
-    --s1-color-faded: #f7964655;
-    --s2-color: #9e2cf5;
-    --s2-color-faded: #9e2cf555;
-    --s3-color: #3f902f;
-    --s3-color-faded: #3f902f55;
-    --s4-color: #1e79e4;
-    --s4-color-faded: #1e79e455;
+        /* menu */
+        --menu-bg: #eee;
+        --menu-bg-selected: rgba(0, 112, 192, 0.8);
+        --menu-color-selected: #eee;
+        --menu-color-text: #333;
+        --menu-nav-bg: #fffb;
 
-    /* section - neon */
-    // --s1-color: #E6FB04;
-    // --s1-color-faded: #E6FB04cc;
-    // --s2-color: #FF3300;
-    // --s2-color-faded: #FF3300cc;
-    // --s3-color: #33FF00;
-    // --s3-color-faded: #33FF00cc;
-    // --s4-color: #FF0099;
-    // --s4-color-faded: #FF0099cc;
+        /* tab */
+        --tab-color: white;
+    }
 
-    /* menu */
-    --menu-bg: #eee;
-    --menu-bg-selected: rgba(0, 112, 192, 0.8);
-    --menu-color-selected: #eee;
-    --menu-color-text: #333;
-}
+    body {
+        font: 16px/1.25 arial, sans-serif;
+        height: 100vh;
+    }
 
-body {
-    font: 16px/1.25 arial, sans-serif;
-    height: 100vh;
-}
+    hr {
+        width: 40%;
+        text-align: left;
+        position: absolute;
+        border-top: 1px solid;
+    }
 
-hr {
-    width: 40%;
-    text-align: left;
-    position: absolute;
-    border-top: 1px solid;
-}
+    td {
+        vertical-align: top;
+    }
 
-td {
-    vertical-align: top;
-}
+    ul {
+        margin: 0.5em 0;
+    }
 
-ul {
-    margin: 0.5em 0;
-}
+    li {
+        padding: 0 0 0.5em 0;
+    }
 
-li {
-    padding: 0 0 0.5em 0;
-}
+    .block {
+        margin: 1em 5em 1em 2em;
+    }
 
-.block {
-    margin: 1em 5em 1em 2em;
-}
+    .fadeIn {
+        -webkit-animation: fadein 1s; /* Safari, Chrome and Opera > 12.1 */
+        -moz-animation: fadein 1s; /* Firefox < 16 */
+        -ms-animation: fadein 1s; /* Internet Explorer */
+        -o-animation: fadein 1s; /* Opera < 12.1 */
+        animation: fadein 1s;
+    }
 
-.fadeIn {
-    -webkit-animation: fadein 1s; /* Safari, Chrome and Opera > 12.1 */
-    -moz-animation: fadein 1s; /* Firefox < 16 */
-    -ms-animation: fadein 1s; /* Internet Explorer */
-    -o-animation: fadein 1s; /* Opera < 12.1 */
-    animation: fadein 1s;
-}
+    @keyframes fadein {
+        from { opacity: 0; }
+        to   { opacity: 1; }
+    }
 
-@keyframes fadein {
-    from { opacity: 0; }
-    to   { opacity: 1; }
-}
+    /* Firefox < 16 */
+    @-moz-keyframes fadein {
+        from { opacity: 0; }
+        to   { opacity: 1; }
+    }
 
-/* Firefox < 16 */
-@-moz-keyframes fadein {
-    from { opacity: 0; }
-    to   { opacity: 1; }
-}
+    /* Safari, Chrome and Opera > 12.1 */
+    @-webkit-keyframes fadein {
+        from { opacity: 0; }
+        to   { opacity: 1; }
+    }
 
-/* Safari, Chrome and Opera > 12.1 */
-@-webkit-keyframes fadein {
-    from { opacity: 0; }
-    to   { opacity: 1; }
-}
+    /* Internet Explorer */
+    @-ms-keyframes fadein {
+        from { opacity: 0; }
+        to   { opacity: 1; }
+    }`,me=ae`
+    ${pe}
+    /* Global variables */
+    :host {
+        color: white;
+        background-color: #17181c;
 
-/* Internet Explorer */
-@-ms-keyframes fadein {
-    from { opacity: 0; }
-    to   { opacity: 1; }
-}`;customElements.define("title-page",class extends re{render(){return L`
+        /* menu */
+        --menu-bg: #aaa;
+        --menu-nav-bg: #17181cbb;
+
+        /* tab */
+        --tab-color: #17181c;
+    }`,ue=ae`${ce?pe:me}`;customElements.define("title-page",class extends le{render(){return F`
 
 		<style>
-			${le}
+			${ue}
 
 			:host { 
 				display: block;
 				font-family: sans-serif;
+
+				margin: 32px 0 0 0;
 			}
 			:host([hidden]) { display: none; }
 
@@ -246,7 +254,11 @@ li {
 			.header {
 				width: 100%;
 				text-align: center;
+				display: flex;
+    			align-items: center;
 				color: white;
+
+				flex: 1;
 
 				border-top-left-radius: 16px;
 				border-bottom-left-radius: 16px;
@@ -265,11 +277,14 @@ li {
 
 			.inner-header {
 				padding: 0 32px;
+				flex: 1;
 			}
 
 			.box {
 				width: 50%;
+				flex: 1;
 				border-top-right-radius: 16px;
+				border-bottom-right-radius: 16px;
 			}
 
 			.overlay {
@@ -286,7 +301,7 @@ li {
 				border-bottom-right-radius: 16px;
 			}
 
-			@media only screen and (max-width: 1100px) {
+			@media only screen and (max-width: 1220px) {
 				.container {
 					flex-direction: column;
 					align-items: center;
@@ -295,11 +310,30 @@ li {
 				.box {
 					width: 100%;
 					border-top-right-radius: 0;
+					border-top-left-radius: 0;
+					border-bottom-right-radius: 16px;
+					border-bottom-left-radius: 16px;
 				}
 
 				.header {
 					border-top-right-radius: 16px;
+					border-top-left-radius: 16px;
+					border-bottom-right-radius: 0;
 					border-bottom-left-radius: 0;
+				}
+			}
+
+			@media only screen and (max-width: 600px) {
+				:host {
+					margin: 64px 0 0 0;
+				}
+
+				.container {
+					padding: 24px 0;
+				}
+
+				.overlay {
+					right: 0;
 				}
 			}
 
@@ -323,10 +357,10 @@ li {
 			</div>
 
 		</div>
-		`}});customElements.define("accordian-section",class extends re{constructor(){super(...arguments),this.color="",this.list=[],this.lastSelectedId=""}static get properties(){return{list:{type:Array},color:{type:String}}}render(){return L`
+		`}});customElements.define("accordian-section",class extends le{constructor(){super(...arguments),this.color="",this.list=[],this.lastSelectedId=""}static get properties(){return{list:{type:Array},color:{type:String}}}render(){return F`
 
 		<style>
-			${le}
+			${ue}
 
 			:host { 
 				display: block;
@@ -376,19 +410,19 @@ li {
 		</style>
 
 		<div class="container">
-			${this.list.map(e=>(e.selected&&(this.lastSelectedId=e.id),L`
+			${this.list.map(e=>(e.selected&&(this.lastSelectedId=e.id),F`
 					<div class="tab ${e.selected?"tab-selected":""}"
 							data-tab=${e.id} @click=${t=>this.toggle(e.id)}>
 						<div style="flex: 1;">${e.name}</div>
-						<div style="flex: 0;">${e.selected?L`-`:L`+`}</div>
+						<div style="flex: 0;">${e.selected?F`-`:F`+`}</div>
 					</div>
-					${e.selected?L`<div class="tab-content fadeIn">${e.content}</div>`:""}
+					${e.selected?F`<div class="tab-content fadeIn">${e.content}</div>`:""}
 				`))}
 		</div>
-		`}toggle(e){if(this.list=this.list.map(e=>(e.selected=!1,e)),this.lastSelectedId===e)return void(this.lastSelectedId="");const t=this.list.find(t=>t.id===e);if(!t)throw new Error("No match tab id found in tab items");t.selected=!0,this.lastSelectedId=t.id}});customElements.define("tabs-section",class extends re{constructor(){super(...arguments),this.list=[],this.currentTab={id:"",name:"",content:L``,selected:!1},this.color=""}static get properties(){return{list:{type:Array},color:{type:String}}}render(){return L`
+		`}toggle(e){if(this.list=this.list.map(e=>(e.selected=!1,e)),this.lastSelectedId===e)return void(this.lastSelectedId="");const t=this.list.find(t=>t.id===e);if(!t)throw new Error("No match tab id found in tab items");t.selected=!0,this.lastSelectedId=t.id}});customElements.define("tabs-section",class extends le{constructor(){super(...arguments),this.list=[],this.currentTab={id:"",name:"",content:F``,selected:!1},this.color=""}static get properties(){return{list:{type:Array},color:{type:String}}}render(){return F`
 
 		<style>
-			${le}
+			${ue}
 
 			:host { 
 				display: block;
@@ -418,7 +452,7 @@ li {
 				margin: 0 5px 0 0;
 				padding: 10pt 25pt;
 
-				background-color: #fff;
+				background-color: var(--tab-color);
 			}
 
 			.tab:hover {
@@ -429,7 +463,7 @@ li {
 			}
 
 			.tab-selected {
-				border-bottom: 1px solid #fff;
+				border-bottom: 1px solid var(--tab-color);
 				border-top-width: 2px;
 				border-top-style: solid;
 				padding: 9pt 25pt;
@@ -451,26 +485,44 @@ li {
 				border-bottom-left-radius: 10px;
 				border-bottom-right-radius: 10px;
 			}
+
+			@media only screen and (max-width: 900px) {
+				.nav-section {
+					padding: 0;
+				}
+
+				.tab {
+					padding: 10px;
+				}
+				
+				.tab:hover {
+					padding: 10px;
+				}
+
+				.tab-selected {
+					padding: 10px;
+				}
+			}
 		</style>
 
 		<div class="container">
 			<div class="nav-section">
-				${this.list.map(e=>(e.selected&&(this.currentTab=e),L`<div class="tab ${e.selected?"tab-selected":""}"
+				${this.list.map(e=>(e.selected&&(this.currentTab=e),F`<div class="tab ${e.selected?"tab-selected":""}"
 							data-tab=${e.id} @click=${t=>this.showTab(e.id)}>
 						${e.name}
 					</div>`))}
 			</div>
 			<div class="tab-content">
 				<div class="content">${this.currentTab.content}</div>
-				${this.currentTab.children?L`
+				${this.currentTab.children?F`
 					<accordian-section color="#dddddd" .list="${this.currentTab.children}"></accordian-section>
-				`:L``}
+				`:F``}
 			</div>
 		</div>
-		`}selectTab(e){const t=this.list.find(t=>t.id===e);if(!t)throw new Error("No match tab id found in tab items");t.selected=!0,this.currentTab=t}showTab(e){this.list=this.list.map(e=>(e.selected=!1,e)),this.selectTab(e)}});customElements.define("domain-section",class extends re{constructor(){super(...arguments),this.color="",this.colorFaded="",this.tabList=[]}static get properties(){return{color:{type:String},colorFaded:{type:String},tabList:{type:Array}}}render(){return L`
+		`}selectTab(e){const t=this.list.find(t=>t.id===e);if(!t)throw new Error("No match tab id found in tab items");t.selected=!0,this.currentTab=t}showTab(e){this.list=this.list.map(e=>(e.selected=!1,e)),this.selectTab(e)}});customElements.define("domain-section",class extends le{constructor(){super(...arguments),this.color="",this.colorFaded="",this.tabList=[]}static get properties(){return{color:{type:String},colorFaded:{type:String},tabList:{type:Array}}}render(){return F`
 
 		<style>
-			${le}
+			${ue}
 
 			:host { 
 				display: block;
@@ -522,6 +574,26 @@ li {
 				display: flex;
 			}
 
+			@media only screen and (max-width: 900px) {
+				.domain {
+					margin: 1em 1em;
+				}
+			}
+
+			@media only screen and (max-width: 600px) {
+				.domain {
+					margin: 1em 0;
+				}
+
+				.container {
+					padding: 1em;
+				}
+
+				.header {
+					padding: 0;
+				}
+			}
+
 		</style>
 
 		<div class="domain">
@@ -532,98 +604,110 @@ li {
 				<div class="header">
 					<slot name="overview"></slot>
 				</div>
-				${this.tabList.length>0?L`<tabs-section .color="${this.color}" .list="${this.tabList}"></tabs-section>`:L``}
+				${this.tabList.length>0?F`<tabs-section .color="${this.color}" .list="${this.tabList}"></tabs-section>`:F``}
 			</div>
 
 		</div>
-		`}});customElements.define("menu-section",class extends re{constructor(){super(...arguments),this.list=[{id:"anchor_section0",name:"Top",selected:!1,content:L``},{id:"anchor_section1",name:"Framework Overview",selected:!1,content:L``},{id:"anchor_section2",name:"Cycles",selected:!1,content:L``},{id:"anchor_section3",name:"Self-Assessment Instrument",selected:!1,content:L``},{id:"anchor_section4",name:"Appendices and Templates",selected:!1,content:L``}]}static get properties(){return{list:{type:Array}}}render(){return L`
+		`}});customElements.define("menu-section",class extends le{constructor(){super(...arguments),this.list=[{id:"anchor_section0",name:"Top",selected:!1,content:F``},{id:"anchor_section1",name:"Framework Overview",selected:!1,content:F``},{id:"anchor_section2",name:"Cycles",selected:!1,content:F``},{id:"anchor_section3",name:"Self-Assessment Instrument",selected:!1,content:F``},{id:"anchor_section4",name:"Appendices and Templates",selected:!1,content:F``}]}static get properties(){return{list:{type:Array}}}static get styles(){return[ue,ae`
+		:host { 
+			display: block;
+			font-family: sans-serif;
+		}
+		:host([hidden]) { display: none; }
 
-		<style>
-			${le}
+		.container {
+			position: fixed;
 
-			:host { 
-				display: block;
-				font-family: sans-serif;
-			}
-			:host([hidden]) { display: none; }
+			top: 0;
 
-			.container {
-				position: fixed;
+			z-index: 10;
 
-				top: 0;
+			display: flex;
+			flex-direction: row;
 
-				z-index: 10;
+			width: 100%;
+			justify-content: center;
+			align-items: center;
 
-				display: flex;
-				flex-direction: row;
+			background-color: var(--menu-nav-bg);
+		}
 
-				width: 100%;
-    			justify-content: center;
-				align-items: center;
+		.nav-section {
+			padding: 0.5em 0 0 0;
+			display: flex;
+			flex-direction: row;
+		}
 
-				background-color: #fffb;
-			}
+		.nav-item {
+			cursor: pointer;
+			padding: 8px;
+			color: var(--menu-color-text);
+			background-color: var(--menu-bg);
 
-			.nav-section {
-				padding: 0.5em 0 0 0;
-				display: flex;
-				flex-direction: row;
-			}
+			border-radius: 3px;
+		}
 
-			.nav-item {
-				cursor: pointer;
-				padding: 8px;
-				color: var(--menu-color-text);
-				background-color: var(--menu-bg);
+		.right-area {
+			margin-right: 4px;
+		}
 
-				border-radius: 3px;
-			}
+		.nav-item-selected, .nav-item:hover {
+			background-color: var(--menu-bg-selected);
+			color: var(--menu-color-selected);
+		}
+		
+		.theme {
+			position: absolute;
+			display: relative;
+			cursor: pointer;
+			right: 0;
+			padding: 0.5em;
+			width: 32px;
+			height: 32px;
+		}
 
-			.right-area {
-				margin-right: 4px;
-			}
-
-			.nav-item-selected, .nav-item:hover {
-				background-color: var(--menu-bg-selected);
-				color: var(--menu-color-selected);
-			}
-
-		</style>
-
+		.theme:hover {
+			background-color: var(--menu-bg-selected);
+			border-radius: 50%;
+		}
+		`]}render(){return F`
 		<div class="container">
 			<div class="nav-section">
-				${this.list.map((e,t)=>L`<div class="nav-item 
+				${this.list.map((e,t)=>F`<div class="nav-item 
 						${t!==this.list.length-1?"right-area":""} 
 						${e.selected?"nav-item-selected":""}"
 							@click=${t=>this.selectItem(e.id)}>
 						${e.name}
 					</div>`)}
 			</div>
+			<div class="theme" @click="${e=>this.toggleTheme()}">
+				<img src="./manifest/${ce?"moon-solid.svg":"sun-solid.svg"}">
+			</div>
 		</div>
-		`}selectItem(e){window.location.hash=e,this.list=this.list.map(e=>(e.selected=!1,e));const t=this.list.find(t=>t.id===e);if(!t)throw new Error("No match tab id found in tab items");t.selected=!0}});const de=[{id:"item1",name:"Rationale and Consultation",selected:!1,content:L`<p>The desire for a consistent improvement planning framework for schools was identified by means of two major consultations.  The first was a consultation that focused on the 10-year Education Plan implementation.  The 10-year Education Plan implementation committee, which consisted of early childhood educators, representatives from the New Brunswick Teachers’ Association, First Nation educators, families, principals, classroom teachers, and education system leaders, led consultations with over 4800 participants. When the team submitted their recommendations, the overarching request from the system was to establish clear expectations for implementing the 10-year Education Plan.</p>
+		`}selectItem(e){window.location.hash=e,this.list=this.list.map(e=>(e.selected=!1,e));const t=this.list.find(t=>t.id===e);if(!t)throw new Error("No match tab id found in tab items");t.selected=!0}toggleTheme(){this.dispatchEvent(new CustomEvent("change-theme"))}});const fe=[{id:"item1",name:"Rationale and Consultation",selected:!1,content:F`<p>The desire for a consistent improvement planning framework for schools was identified by means of two major consultations.  The first was a consultation that focused on the 10-year Education Plan implementation.  The 10-year Education Plan implementation committee, which consisted of early childhood educators, representatives from the New Brunswick Teachers’ Association, First Nation educators, families, principals, classroom teachers, and education system leaders, led consultations with over 4800 participants. When the team submitted their recommendations, the overarching request from the system was to establish clear expectations for implementing the 10-year Education Plan.</p>
         <p>The second came from a system-wide consultation that occurred between the dates of November 24th and December 1st, 2017. This took into consideration the views of educators working on the front lines, and included 2497 individual and school submissions. Ongoing consultations, including focus groups and individual dialogues, have occurred regularly following the larger consultations. From these consultations, the desire for a consistent improvement framework, to be used provincially throughout the four Anglophone school districts was identified. Suggestions for content to be included in this framework were also gathered from these systemic consultations.</p>
         <p>Many New Brunswick public school policies indicate the responsibilities of school personnel and others to support effective planning practices. These policies include Policy 322 (Inclusive Education) and Policy 703 (Positive Learning and Working Environment), as well as the <em>Education Act</em> and its supporting regulations. Section 27(1) and section 28(2) of the Act requires that teachers and principals “assist in the development and implementation of the school improvement plan and [cooperate] in the preparation of the school performance report.” The content included in this document offers guidelines to assist schools to do this in an efficient and effective manner.</p>
-        <p>Please see <a target="_blank" href="./manifest/Appendix-G.pdf">Appendix G</a> for an elaboration of the obligations associated with improvement planning in New Brunswick schools. </p>`},{id:"item2",name:"The Goals",selected:!1,content:L`<p>The four main goals of the framework are to:</p>
+        <p>Please see <a target="_blank" href="./manifest/Appendix-G.pdf">Appendix G</a> for an elaboration of the obligations associated with improvement planning in New Brunswick schools. </p>`},{id:"item2",name:"The Goals",selected:!1,content:F`<p>The four main goals of the framework are to:</p>
         <ol>
         <li>improve systemic capacity to support the effective implementation of the provincial education plan;</li>
         <li>provide a document which outlines suggested guidelines which assist districts and schools to effectively plan to maximize academic, behavioural and social-emotional outcomes for students;</li>
         <li>provide a framework which balances school autonomy with systemic accountability; and</li>
         <li>collate high-level aggregate data via the Annual School Performance Reports, which will be completed during a provincial School Improvement Plan (SIP) planning day in January. The data from these reports will be shared from schools to the districts and then to the province to better support schools through more effective resource allocation and targeted identification of professional learning (PL) needs for the upcoming school year.</li>
-        </ol>`},{id:"item3",name:"10-year Education Plan",selected:!1,content:L`<p>The necessity to align processes and practices are identified in the 10-year Education Plan.&nbsp; The plan notes that we need to:</p>
+        </ol>`},{id:"item3",name:"10-year Education Plan",selected:!1,content:F`<p>The necessity to align processes and practices are identified in the 10-year Education Plan. The plan notes that we need to:</p>
         <p class="block">&ldquo;work toward developing a cohesive system that is effective and efficient. We must align programs and services, and promote collaborative planning and professional learning. Existing structures, practices and policies must be examined to ensure they are effectively supporting the needs and strengths of our learners&rdquo; (p.19).</p>
-        <p><a target="_blank" href="http://www2.gnb.ca/content/dam/gnb/Departments/ed/pdf/K12/EveryoneAtTheirBest.pdf">http://www2.gnb.ca/content/dam/gnb/Departments/ed/pdf/K12/EveryoneAtTheirBest.pdf</a> &nbsp;</p>
-        <p>The framework is used to help align all of the components in a complex system.&nbsp; This will include a system-wide approach designed to ensure that we are collectively working to address the objectives outlined in the 10-year Education Plan.&nbsp;</p>
-        <p>(See <a target="_blank" href="./manifest/Appendix-A.pdf">Appendix A</a> for a graphic outlining the objectives of the 10-year Ed Plan.)&nbsp;</p>
-        <p>The framework will assist districts working with their schools in identifying and working toward these objectives, and will support effective school planning while allowing schools the autonomy to address the specific and varied needs identified at the individual school level.&nbsp;</p>`},{id:"item4",name:"School Self-assessment Tool and Annual School Performance Report",selected:!1,content:L`<p>Feedback from front line educators indicates that a self-assessment tool, based on the school review indicator document originally established by the New Brunswick School Improvement Service, will serve as the self-assessment instrument for use at schools. Schools and districts will use this document, along with school-based evidence (conversations, observations and products), as a mechanism to help identify their particular areas of focus for improvement. Schools and districts may also choose to use other tools to help support the identification of their distinct areas for growth.</p>
+        <p><a target="_blank" href="http://www2.gnb.ca/content/dam/gnb/Departments/ed/pdf/K12/EveryoneAtTheirBest.pdf">EveryoneAtTheirBest.pdf</a></p>
+        <p>The framework is used to help align all of the components in a complex system. This will include a system-wide approach designed to ensure that we are collectively working to address the objectives outlined in the 10-year Education Plan.&nbsp;</p>
+        <p>(See <a target="_blank" href="./manifest/Appendix-A.pdf">Appendix A</a> for a graphic outlining the objectives of the 10-year Ed Plan.)</p>
+        <p>The framework will assist districts working with their schools in identifying and working toward these objectives, and will support effective school planning while allowing schools the autonomy to address the specific and varied needs identified at the individual school level.&nbsp;</p>`},{id:"item4",name:"School Self-assessment Tool and Annual School Performance Report",selected:!1,content:F`<p>Feedback from front line educators indicates that a self-assessment tool, based on the school review indicator document originally established by the New Brunswick School Improvement Service, will serve as the self-assessment instrument for use at schools. Schools and districts will use this document, along with school-based evidence (conversations, observations and products), as a mechanism to help identify their particular areas of focus for improvement. Schools and districts may also choose to use other tools to help support the identification of their distinct areas for growth.</p>
         <p>It is important to note that an annual review of the framework and the self-assessment tool will be completed to ensure ongoing alignment with current research and changing systemic needs. These annual updates will be done in consultation with districts and school personnel.</p>
-        <p>Schools will be asked to submit an <a target="_blank" href="https://collabe.nbed.nb.ca/sites/10year/nbsip/Shared%20Documents/2.%20Provincial%20Improvement%20Framework%20and%20Associated%20Documents/School%20Self-assessment%20Documents/School%20Performance%20Report%20July%2031%2C%202019.docx?Web=1">Annual School Performance Report</a> to district representatives. This report will outline their strengths and potential areas for growth, as well as their progress toward reaching school goals. Districts will then submit a high-level document to the department outlining the areas of focus they believe need to be prioritized in their district, and suggestions for upcoming resourcing and professional learning needs.</p>`},{id:"item5",name:"Underlying Principles",selected:!1,content:L`<p>The framework is based on the following fundamental principles:</p>
+        <p>Schools will be asked to submit an <a target="_blank" href="https://collabe.nbed.nb.ca/sites/10year/nbsip/Shared%20Documents/2.%20Provincial%20Improvement%20Framework%20and%20Associated%20Documents/School%20Self-assessment%20Documents/School%20Performance%20Report%20July%2031%2C%202019.docx?Web=1">Annual School Performance Report</a> to district representatives. This report will outline their strengths and potential areas for growth, as well as their progress toward reaching school goals. Districts will then submit a high-level document to the department outlining the areas of focus they believe need to be prioritized in their district, and suggestions for upcoming resourcing and professional learning needs.</p>`},{id:"item5",name:"Underlying Principles",selected:!1,content:F`<p>The framework is based on the following fundamental principles:</p>
         <ul>
         <li>Student learning is at the center of the framework. All improvement plans should be focused on advancing student outcomes and working with students within their zone of proximal development to grow academically, behaviourally and socially-emotionally.&nbsp;</li>
         <li>The data identified in school plans will be used to inform the district plan(s), which will then be used to drive provincial priorities.</li>
         <li>The indicator document (which will include links to the 10-year Education Plan objectives) will be used as an assessment tool to identify the highest standards of effective practice and will help schools identify baseline objectives.</li>
         <li>The framework will be used to assist schools to plan effectively. The individuality of the districts and schools will be valued.&nbsp; Schools will self-assess and identify their goals, associated strategies and actions based on their local school context, student profiles, staff capacity and what is relevant to address local needs. Autonomy on how these goals are reached will be based on local circumstances. It is recommended schools limit their global priorities to a manageable number.&nbsp; Research indicates that it is beneficial to establish a maximum of five school-wide goals in each improvement plan with three being the preferred number (Duke; Carr; Sterrett, and Wooleyhand, 2014, p.71).<a href="#_ftn1" name="_ftnref1">[1]</a></li>
         </ul>
-        <p><a href="#_ftnref1" name="_ftn1">[1]</a> Duke, D. L., Carr, M., Sterrett, W., &amp; Wooleyhand, C. (2014). The School Improvement Planning Handbook: Getting Focused for Turnaround and Transition. <em>Principal, 93, </em>4, 42.</p>`}],ce=[{id:"item1",name:"The Principal/School Administrative Team",selected:!1,content:L`<p>The principal and school administrative team consists of the principal and, depending on the size and configuration of the school, could include vice-principals, department heads and those in supplementary positions of responsibility (SPRs). The principal is ultimately responsible for the overall performance and adherence to standards at the school level and must work with her/his team to ensure that effective school improvement processes are in place.</p>
+        <p><a href="#_ftnref1" name="_ftn1">[1]</a> Duke, D. L., Carr, M., Sterrett, W., &amp; Wooleyhand, C. (2014). The School Improvement Planning Handbook: Getting Focused for Turnaround and Transition. <em>Principal, 93, </em>4, 42.</p>`}],ge=[{id:"item1",name:"The Principal/School Administrative Team",selected:!1,content:F`<p>The principal and school administrative team consists of the principal and, depending on the size and configuration of the school, could include vice-principals, department heads and those in supplementary positions of responsibility (SPRs). The principal is ultimately responsible for the overall performance and adherence to standards at the school level and must work with her/his team to ensure that effective school improvement processes are in place.</p>
         <p>The role of the principal and/or designate is to:</p>
         <ul>
         <li>Establish an improvement committee.</li>
@@ -634,7 +718,7 @@ li {
         <li>Ensure school and system alignment.</li>
         <li>Report regularly to the appropriate district personnel on progress and the advancement of student outcomes (academic, behavioural and social-emotional).</li>
         <li>Ensure the Annual School Performance Report is authored and shared with district personnel.</li>
-        </ul>`},{id:"item2",name:"The Improvement Committee",selected:!1,content:L`<p>As noted on page 1, the makeup of the improvement committee is a school-based decision and could include any of the following: Core Leadership Team, Distributive Leadership Team, Dedicated School Improvement Planning (SIP) Team, Combined SIP/PLWEP Team, or a Whole School Team depending on the needs, size and configuration of the school.</p>
+        </ul>`},{id:"item2",name:"The Improvement Committee",selected:!1,content:F`<p>As noted on page 1, the makeup of the improvement committee is a school-based decision and could include any of the following: Core Leadership Team, Distributive Leadership Team, Dedicated School Improvement Planning (SIP) Team, Combined SIP/PLWEP Team, or a Whole School Team depending on the needs, size and configuration of the school.</p>
         <p>The school improvement committee is responsible for supporting the principal and engaging school personnel to conduct the school improvement process, including all of the components listed above with the exception of the establishment of the committee.&nbsp;</p>
         <p>In addition to the components listed above, the role of the school improvement committee is to:</p>
         <ul>
@@ -647,7 +731,7 @@ li {
         </ul>
         <p>Please note the school-wide goals are very broad. There should be alignment of the school-wide goals with the associated strategies and actions enacted at each level within the school. As we progress from schools, to teams, to classrooms and then to individual students, the strategies and actions, as well as the data used to measure progress, become more targeted.</p>
         <p>The following diagram illustrates that the vision and mission are broad concepts that identify the preferred reality and the broad potential steps which personnel could take to advance outcomes. As we move from broad improvement goals and overall school strategies, we become more targeted. Team and individual strategies and actions should support diverse school goals aligned with the vision and mission of the school. The most targeted actions should occur at the individual student level and should be designed to accomplish two tasks: advance overall school goals and, most importantly, address the needs of the diverse clients (individual students) that we serve.</p>
-        <p style="text-align: center;"><img width="50%" src="./manifest/S1-RolesResponsibilities-img.jpg" alt="Roles Responsibilities" /></p>`},{id:"item3",name:"School Personnel",selected:!1,content:L`<p>It is the responsibility of all school personnel to work to advance progress toward the goals outlined in the improvement plan. Teachers, support staff and other school personnel should:</p>
+        <p style="text-align: center;"><img width="50%" src="./manifest/S1-RolesResponsibilities-img.jpg" alt="Roles Responsibilities" /></p>`},{id:"item3",name:"School Personnel",selected:!1,content:F`<p>It is the responsibility of all school personnel to work to advance progress toward the goals outlined in the improvement plan. Teachers, support staff and other school personnel should:</p>
         <ul>
         <li>Develop a working knowledge of the improvement process with the support of the improvement team.</li>
         <li>Participate in the school self-assessment process by examining classroom practices, overall school climate and evidence to help formulate goals and the associated strategies to advance progress towards these goals.</li>
@@ -657,7 +741,7 @@ li {
         <li>Participate in professional learning opportunities designed to advance school goals and student outcomes.</li>
         <li>Work consistently and with fidelity to implement the strategies outlined in the plan.</li>
         <li>Participate in improvement planning meetings as requested.</li>
-        </ul>`},{id:"item4",name:"Stakeholders and Partners",selected:!1,content:L`<p>The improvement team should be collaborative and operate in an interdependent manner with stakeholders and potential partners. Although often grouped together and sometimes overlapping, there are often marked differences between stakeholders and partners.</p>
+        </ul>`},{id:"item4",name:"Stakeholders and Partners",selected:!1,content:F`<p>The improvement team should be collaborative and operate in an interdependent manner with stakeholders and potential partners. Although often grouped together and sometimes overlapping, there are often marked differences between stakeholders and partners.</p>
         <p>A <strong>stakeholder</strong> is defined as &ldquo;any group or individual who can affect or is affected by the achievement of the organization&rsquo;s objectives&rdquo; (Freeman 1984)<a href="#_ftn4" name="_ftnref4">[4]</a>. More recently, when defining the term, proponents of change theory have included those who feel they have or will be influenced by an institution (Initiatives Management, EECD, 2017).</p>
         <p>Friedman and Miles (2006)<a href="#_ftn5" name="_ftnref5">[5]</a> provide an exhaustive list of those who may be considered stakeholders. The main groups include customers/clients (students), employees, local communities, suppliers and distributors, and shareholders. Additionally, Friedman offers the media, the public in general, business partners, future generations, past generations (founders of organizations), academics, competitors, NGOs or activists. In addition, stakeholder representatives from trade unions or trade associations, financiers, competitors, government, regulators and policymakers could be considered.&nbsp;</p>
         <p>The school administrative team and improvement committee members should work to identify potential <strong>partners</strong> and actively seek opportunities to communicate with and engage community members, organizations (non-profit), businesses, and other governmental and non-governmental agencies for potential partnerships and support. Many of these partnerships could provide school and community groups with some mutual benefit. For example, students taking Cooperative Education 120 could work with a seniors&rsquo; facility to support online learning for residents as part of their Co-op placement. Opportunities such as these provide practical learning experiences for students while also benefitting the institution hosting the student. It is important that potential partnerships between school and community, which provide the opportunity to advance student outcomes, be examined.&nbsp;</p>
@@ -669,7 +753,7 @@ li {
         <li>Consider including a copy of the plan on the school's website. This action may facilitate opportunities for further partnerships.</li>
         </ul>
         <p><a href="#_ftnref4" name="_ftn4">[4]</a> Freeman, R.E (1984). &ldquo;Strategic Management: A stakeholder Approach&rdquo;. Boston, MA: Pitman.</p>
-        <p><a href="#_ftnref5" name="_ftn5">[5]</a> Friedman, A. L., &amp; Miles, S. (2006). <em>Stakeholders: Theory and practice</em>. Oxford: Oxford University Press.</p>`},{id:"item5",name:"The District Process and the School Liaison/Critical Friend",selected:!1,content:L`<p><em>The District <br /></em>The work of the district will include helping to promote a culture of self-assessment, evidence-based inquiry and collective responsibility for continuous improvement at district, school and provincial levels. To do this effectively, districts must be collaborative, inclusive and respectful when working with schools. This necessitates a focus on equitable practices while recognizing the distinct nature and needs of each school. Reciprocal communication should be open, honest and focused on a process used primarily for supporting continuous improvement.</p>
+        <p><a href="#_ftnref5" name="_ftn5">[5]</a> Friedman, A. L., &amp; Miles, S. (2006). <em>Stakeholders: Theory and practice</em>. Oxford: Oxford University Press.</p>`},{id:"item5",name:"The District Process and the School Liaison/Critical Friend",selected:!1,content:F`<p><em>The District <br /></em>The work of the district will include helping to promote a culture of self-assessment, evidence-based inquiry and collective responsibility for continuous improvement at district, school and provincial levels. To do this effectively, districts must be collaborative, inclusive and respectful when working with schools. This necessitates a focus on equitable practices while recognizing the distinct nature and needs of each school. Reciprocal communication should be open, honest and focused on a process used primarily for supporting continuous improvement.</p>
         <p>The district processes should:&nbsp;</p>
         <ul>
         <li>Support the notion of continuous improvement for schools and districts.</li>
@@ -686,7 +770,7 @@ li {
         <p><em>School Liaisons/Critical Friends<br /></em>Many of the specific roles and responsibilities of the district staff were previously outlined in this document with the exception of the <em>school liaisons</em> and <em>critical friends</em>. The school liaison is a designated person at the district level who will link schools to critical friends or to act as the critical friend. Critical friends act as a coach, facilitator or challenger and are used to help schools identify needs and build capacity. According to the Glossary of Educational Reform,</p>
         <p class="block">&ldquo;A critical friend is typically a colleague or other educational professional, such as a school coach, who is committed to helping an educator or school improve. A critical friend is someone who is encouraging and supportive, but who also provides honest and often candid feedback that may be uncomfortable or difficult to hear. In short, a critical friend is someone who agrees to speak truthfully, but constructively, about weaknesses, problems, and emotionally charged issues.&rdquo;</p>
         <p>See: <a target="_blank" href="https://www.edglossary.org/critical-friend/">https://www.edglossary.org/critical-friend/</a></p>
-        <p>Schools may suggest others to act as critical friends, including colleagues working in like-sized or configured schools, working on similar initiatives or challenges, or those identified by the district using promising or exemplary practices in improvement planning, gathering and analysis of evidence, and ongoing monitoring of progress. District personnel acting as critical friends may refer principals, school administrative teams or improvement committee members to others who have expertise or experience in an area identified as a school improvement goal.&nbsp;</p>`},{id:"item6",name:"The Minister (supported by Education and Early Childhood Education Staff)",selected:!1,content:L`<p>The Minister&rsquo;s primary role is to set provincial parameters and direction in education. Through the Department of Education and Early Childhood Development, the Minister and designates act to:</p>
+        <p>Schools may suggest others to act as critical friends, including colleagues working in like-sized or configured schools, working on similar initiatives or challenges, or those identified by the district using promising or exemplary practices in improvement planning, gathering and analysis of evidence, and ongoing monitoring of progress. District personnel acting as critical friends may refer principals, school administrative teams or improvement committee members to others who have expertise or experience in an area identified as a school improvement goal.&nbsp;</p>`},{id:"item6",name:"The Minister (supported by Education and Early Childhood Education Staff)",selected:!1,content:F`<p>The Minister&rsquo;s primary role is to set provincial parameters and direction in education. Through the Department of Education and Early Childhood Development, the Minister and designates act to:</p>
         <ul>
         <li>Maintain an environment that supports learning.</li>
         <li>Provide funding and other resources.</li>
@@ -695,7 +779,7 @@ li {
         <li>Identify and communicate provincial expectations to DECs, district staff, families and students.</li>
         <li>Meet with district personnel to discuss data/evidence from their schools and help determine supports to address identified needs.</li>
         <li>Encourage and enable the work of dedicated education professionals.</li>
-        </ul>`},{id:"item7",name:"The Superintendent",selected:!1,content:L`<p>The superintendent is the Chief Executive Officer (CEO) of the school district. As such, the superintendent is accountable to the District Education Council for the management of programs and resources, the quality of learning, and the implementation of the district education plan and district expenditure plan. The duties of the superintendent include responsibility for:</p>
+        </ul>`},{id:"item7",name:"The Superintendent",selected:!1,content:F`<p>The superintendent is the Chief Executive Officer (CEO) of the school district. As such, the superintendent is accountable to the District Education Council for the management of programs and resources, the quality of learning, and the implementation of the district education plan and district expenditure plan. The duties of the superintendent include responsibility for:</p>
         <ul>
         <li>Day-to-day operation of schools.</li>
         <li>Preparing the District Education Plan.</li>
@@ -710,7 +794,7 @@ li {
         <li>Signing agreements.</li>
         </ul>
         <p>Taken from <a target="_blank" href="http://www2.gnb.ca/content/dam/gnb/Departments/ed/pdf/K12/dec-ced/RolesAndResponsibilities.pdf">New Brunswick Public Education: A Shared Responsibility</a></p>
-        <p>The superintendent is the sole employee of the DEC and the superintendent&rsquo;s decisions are made on behalf of, and subject to, any policies of the DEC. Superintendents play an important role in school improvement and monitoring of student learning and achievement by supporting policies and processes that promote school self-assessment, ongoing school growth, the adoption and use of promising practices, and by ensuring a focus on academic excellence and ongoing progress toward advancing student outcomes. Follow-up and support may include ensuring that resources are made available to schools to support the initiatives delineated in the improvement plans and ensuring that school, district and departmental plans are aligned to promote ongoing systemic growth.&nbsp;</p>`},{id:"item8",name:"The District Education Council (DEC)",selected:!1,content:L`<p>DECs are responsible for local decision-making in the operation of schools in their district. At the district level, DECs develop broad policies and their superintendents make day- to-day decisions within these policies. In so doing, the superintendent is accountable to the DEC for the management of services, programs and resources, for the quality of learning, and for the implementation of the annual District Education Plan and District Expenditure Plan.</p>`},{id:"item9",name:"Parent School Support Committee",selected:!1,content:L`<p>The Parent School Support Committee (PSSC) is a parent advisory group whose primary responsibility is to advise on school improvement planning. There are several aspects associated with this role including:</p>
+        <p>The superintendent is the sole employee of the DEC and the superintendent&rsquo;s decisions are made on behalf of, and subject to, any policies of the DEC. Superintendents play an important role in school improvement and monitoring of student learning and achievement by supporting policies and processes that promote school self-assessment, ongoing school growth, the adoption and use of promising practices, and by ensuring a focus on academic excellence and ongoing progress toward advancing student outcomes. Follow-up and support may include ensuring that resources are made available to schools to support the initiatives delineated in the improvement plans and ensuring that school, district and departmental plans are aligned to promote ongoing systemic growth.&nbsp;</p>`},{id:"item8",name:"The District Education Council (DEC)",selected:!1,content:F`<p>DECs are responsible for local decision-making in the operation of schools in their district. At the district level, DECs develop broad policies and their superintendents make day- to-day decisions within these policies. In so doing, the superintendent is accountable to the DEC for the management of services, programs and resources, for the quality of learning, and for the implementation of the annual District Education Plan and District Expenditure Plan.</p>`},{id:"item9",name:"Parent School Support Committee",selected:!1,content:F`<p>The Parent School Support Committee (PSSC) is a parent advisory group whose primary responsibility is to advise on school improvement planning. There are several aspects associated with this role including:</p>
         <ul>
         <li>Providing an avenue to access parent voice.</li>
         <li>Advising on school improvement initiatives and helping identify needs.</li>
@@ -718,7 +802,7 @@ li {
         <li>Liaising with District Education Council members through the PSSC chair regarding school strengths and needs.</li>
         <li>Working to strengthen school community communications.</li>
         <li>Providing input on potential partnerships to advance student outcomes.</li>
-        </ul>`}],he=[{id:"item1",name:"School Team",selected:!0,content:L`<p>Each school will have a team focused on continuous improvement. This could be a team dedicated solely to school improvement, a combined school improvement and positive learning environment team, or a different configuration depending on school and district preference. Ultimately, in consultation with staff, the school principal will determine the configuration of the team based on their individual needs.</p>
+        </ul>`}],ve=[{id:"item1",name:"School Team",selected:!0,content:F`<p>Each school will have a team focused on continuous improvement. This could be a team dedicated solely to school improvement, a combined school improvement and positive learning environment team, or a different configuration depending on school and district preference. Ultimately, in consultation with staff, the school principal will determine the configuration of the team based on their individual needs.</p>
                       <p>Fullan (2000) notes that one of the core components of the school improvement process is &ldquo;(a) professional learning community in which staff work collaboratively to set clear goals for student learning, assess how well students are doing, develop action plans to increase student achievement, all the while being engaged in inquiry and problem-solving&rdquo;( p. 1).<a href="#_ftn2" name="_ftnref2">[2]</a> The improvement team will facilitate the annual self-assessment process and the ongoing monitoring of strategies and actions within the school year to promote continued growth.</p>
                       <p>Improvement team options include the following:&nbsp;</p>
                       <ol type="A">
@@ -782,7 +866,7 @@ li {
                       <p>Note: Team structures should be established to ensure effective two-way communication occurs between improvement teams and stakeholders.</p>
                       <p><a href="#_ftnref2" name="_ftn2">[2]</a> Fullan, M. (2000). <em>The role of the head in school improvement</em>. London, England: National College of School Leadership.&nbsp;</p>
                       <p><a href="#_ftnref3" name="_ftn3">[3]</a> Kilgore, S., &amp; Reynolds, K. J. (2011). From silos to systems: Reframing schools for success. Thousand Oaks, Calif: Corwin.</p>
-                      `},{id:"item2",name:"District Team",selected:!1,content:L`<p>Districts will identify a process to provide feedback and support to school staff as needed. Support should be provided through either the school requesting district support or the district offering to provide support. At any time, schools or districts can seek or offer support or counsel. Where a school is accurate in their self-assessment and is attaining the goals outlined in the improvement plan, the request for consultation or support may more often originate from the school.&nbsp;</p>
+                      `},{id:"item2",name:"District Team",selected:!1,content:F`<p>Districts will identify a process to provide feedback and support to school staff as needed. Support should be provided through either the school requesting district support or the district offering to provide support. At any time, schools or districts can seek or offer support or counsel. Where a school is accurate in their self-assessment and is attaining the goals outlined in the improvement plan, the request for consultation or support may more often originate from the school.&nbsp;</p>
                       <p>In the event that a school may be struggling to effectively analyze data/evidence or accurately identify specific strengths and needs, district personnel may choose to be proactive and contact school personnel to offer guidance and/or support. Further, if a school has not been able to make progress with the goals identified in the Improvement Plan, schools may seek, or districts may offer, collaborative and constructive support in areas such as:</p>
                       <ul>
                       <li>Data (gathering and analysis).</li>
@@ -803,11 +887,11 @@ li {
                       <li>Identify links to supports and funding opportunities.</li>
                       <li>Assist schools to identify partnerships to help facilitate ongoing school improvement and the advancement of student outcomes.</li>
                       <li>Act as a School Liaison and/or Critical Friend (this will be elaborated upon later in this document in the section, Roles and Responsibilities).</li>
-                      </ul>`},{id:"item3",name:"Improvement Planning Process Overview",selected:!1,content:L`<p style="text-align: center;">
+                      </ul>`},{id:"item3",name:"Improvement Planning Process Overview",selected:!1,content:F`<p style="text-align: center;">
                 <img width="70%" src="./manifest/S1-ImprovementPlanningProcessOverview-img1.jpg" alt="Improvement Planning Process Overview" />
                 <img width="40%" src="./manifest/S1-ImprovementPlanningProcessOverview-img2.jpg" alt="Legend - Improvement Planning Process Overview" />
             </p>
-                      <p>The graphic inserted above explains the relationship between individual (e.g. school personnel), groups, districts, and cyclical processes. This graphic can also be used to help explain the interplay between short-term (PDCA) cycles of analysis, which are used to analyze data and help schools adapt to changing circumstances within the school year, and the longer cycles of activity which use data/evidence to track long-term progress toward annual and multi-year goals.&nbsp;</p>`},{id:"item4",name:"Roles and Responsibilities",selected:!1,content:L`<p>Several key individuals and groups are important for the effective implementation of an improvement process at the school level, as outlined below. See also, <a target="_blank" href="http://www2.gnb.ca/content/dam/gnb/Departments/ed/pdf/K12/dec-ced/RolesAndResponsibilities.pdf">Roles and Responsibilities.pdf</a></p>`,children:ce}],pe=[{id:"item1",name:"Plan, Do, Check, Act (PDCA) ",selected:!1,content:L`<p>The Plan, Do, Check, Act (PDCA) cycle, or micro cycle, is a recursive cycle of activities that occurs within the school year (Deming, 1986)<a href="#_ftn6" name="_ftnref6">[6]</a>. This cycle is contingent on the use of data/evidence to ensure progress toward ongoing improvement goals. Blink (2016) notes that &ldquo;school improvement is a continuous process&rdquo; (p.11)<a href="#_ftn7" name="_ftnref7">[7]</a>. It is important for schools to understand that the improvement planning cycle is recursive and the gathering of evidence and analysis of progress toward identified goals repeats within the school year.&nbsp;</p>
+                      <p>The graphic inserted above explains the relationship between individual (e.g. school personnel), groups, districts, and cyclical processes. This graphic can also be used to help explain the interplay between short-term (PDCA) cycles of analysis, which are used to analyze data and help schools adapt to changing circumstances within the school year, and the longer cycles of activity which use data/evidence to track long-term progress toward annual and multi-year goals.&nbsp;</p>`},{id:"item4",name:"Roles and Responsibilities",selected:!1,content:F`<p>Several key individuals and groups are important for the effective implementation of an improvement process at the school level, as outlined below. See also, <a target="_blank" href="http://www2.gnb.ca/content/dam/gnb/Departments/ed/pdf/K12/dec-ced/RolesAndResponsibilities.pdf">Roles and Responsibilities.pdf</a></p>`,children:ge}],be=[{id:"item1",name:"Plan, Do, Check, Act (PDCA) ",selected:!1,content:F`<p>The Plan, Do, Check, Act (PDCA) cycle, or micro cycle, is a recursive cycle of activities that occurs within the school year (Deming, 1986)<a href="#_ftn6" name="_ftnref6">[6]</a>. This cycle is contingent on the use of data/evidence to ensure progress toward ongoing improvement goals. Blink (2016) notes that &ldquo;school improvement is a continuous process&rdquo; (p.11)<a href="#_ftn7" name="_ftnref7">[7]</a>. It is important for schools to understand that the improvement planning cycle is recursive and the gathering of evidence and analysis of progress toward identified goals repeats within the school year.&nbsp;</p>
         <p>It is important for schools to use a variety of evidence to inform planning, including the examination of formative and summative assessments, to ensure their use of evidence/data is effective in identifying the strengths and challenges at all levels. Schools should prioritize high-impact strategies to promote ongoing growth, such as a focus on formative assessment and developing assessment capable learners. Schools could examine the links embedded below for information on balanced and formative assessment. It is recommended that teachers examine page 2 of the Formative Assessment link inserted below for information on the PDCA cycle and triangulation of data related to teaching practice.</p>
         <ul>
             <li><a target="_blank" href="https://collabe.nbed.nb.ca/res/ae/docs/Balanced%20Assessment%20Final%20doc%202014.pdf">Balanced Assessment</a> 
@@ -826,7 +910,7 @@ li {
         <br>
         <br>
         <p><a href="#_ftnref6" name="_ftn6">[6]</a> Deming, W. Edwards (1986). <em>Out of the Crisis</em>. Cambridge, MA: Massachusetts Institute of Technology, Center for Advanced Engineering Study.</p>
-        <p><a href="#_ftnref7" name="_ftn7">[7]</a> Blink, R. J. (2016). <em>Data-driven instructional leadership</em>. New York: Routledge.</p>`},{id:"item2",name:"Annual Cycle",selected:!1,content:L`<p>The first graphic on the previous page outlines the components of the PDCA cycle. The following are suggested major activities schools and districts could complete within the school year:</p>
+        <p><a href="#_ftnref7" name="_ftn7">[7]</a> Blink, R. J. (2016). <em>Data-driven instructional leadership</em>. New York: Routledge.</p>`},{id:"item2",name:"Annual Cycle",selected:!1,content:F`<p>The first graphic on the previous page outlines the components of the PDCA cycle. The following are suggested major activities schools and districts could complete within the school year:</p>
         <ul>
         <li>An improvement committee to oversee the school improvement process is established, or the committee membership from the previous school year is reconfirmed.</li>
         <li>Schools use evidence/data (conversations, observations and products) to identify potential areas of focus.</li>
@@ -838,7 +922,7 @@ li {
         <li>The Annual School Performance Report will be shared with district personnel. These will identify school goals, progress toward these goals, and identified PL needs to promote ongoing improvement (see the template provided in <a target="_blank" href="https://collabe.nbed.nb.ca/sites/10year/nbsip/Shared%20Documents/2.%20Provincial%20Improvement%20Framework%20and%20Associated%20Documents/School%20Self-assessment%20Documents/School%20Performance%20Report%20July%2031%2C%202019.docx?Web=1">Appendix F</a> for details).</li>
         <li>The process culminates in the generation and distribution of the Annual School Performance Report, noted above, and will inform the identification of long-term (yearly and multi-year) goals.</li>
         </ul>
-        <p><strong>In order to ensure that the high-level data is shared from school, to districts and then to the province, and is used to inform long-term provincial planning and fiscal priorities, it is imperative that Annual School Performance Reports be completed during the January professional learning day which is focused on improvement planning</strong>. This school data, in aggregate, is shared with the districts, collated at the district level, and subsequently shared with the province on or before February 1<sup>st</sup>. District and department personnel will continue to collect additional evidence that informs implementation decisions and the allocation of supports.</p>`},{id:"item3",name:"Long-term Cycle (Multi-Year)",selected:!1,content:L`<p>Research has identified that schools improve when they use a collection of data/ evidence (demographic, perception, student learning and school process) derived from a variety of sources (conversations, observations and products) to inform their goal-setting and decision-making processes (Bryk, Gomez, Grunow and LeMahieu, 2015<a href="#_ftn8" name="_ftnref8">[8]</a>; Reeves, 2007<a href="#_ftn9" name="_ftnref9">[9]</a>; DuFour, Dufour and Eaker, 2005<a href="#_ftn10" name="_ftnref10">[10]</a>). The gathering and use of this evidence is a continuous process designed for the adoption of strategies to best meet changing student, school and systemic needs.</p>
+        <p><strong>In order to ensure that the high-level data is shared from school, to districts and then to the province, and is used to inform long-term provincial planning and fiscal priorities, it is imperative that Annual School Performance Reports be completed during the January professional learning day which is focused on improvement planning</strong>. This school data, in aggregate, is shared with the districts, collated at the district level, and subsequently shared with the province on or before February 1<sup>st</sup>. District and department personnel will continue to collect additional evidence that informs implementation decisions and the allocation of supports.</p>`},{id:"item3",name:"Long-term Cycle (Multi-Year)",selected:!1,content:F`<p>Research has identified that schools improve when they use a collection of data/ evidence (demographic, perception, student learning and school process) derived from a variety of sources (conversations, observations and products) to inform their goal-setting and decision-making processes (Bryk, Gomez, Grunow and LeMahieu, 2015<a href="#_ftn8" name="_ftnref8">[8]</a>; Reeves, 2007<a href="#_ftn9" name="_ftnref9">[9]</a>; DuFour, Dufour and Eaker, 2005<a href="#_ftn10" name="_ftnref10">[10]</a>). The gathering and use of this evidence is a continuous process designed for the adoption of strategies to best meet changing student, school and systemic needs.</p>
         <p>Schools and districts may choose to adopt a one, two, three or four-year timeframe for long-term planning. A sample three-year planning cycle is provided in the table on the following page. It is recommended that the cycle be managed by each school and district to best address their particular needs and contexts. Because the Annual School Performance Report is used to inform systemic needs within a fixed budgetary process timeline, the self-assessment and reporting is slated to occur each January. Each school will be asked to identify long-term goals which will be supported by the strategies and actions outlined in the annual plan.&nbsp;</p>
         <p><strong>Sample Three Year Planning Table</strong></p>
         <p>If the framework is implemented over a three-year cycle, then the following actions could be undertaken each year:</p>
@@ -896,15 +980,15 @@ li {
         <p><a href="#_ftnref8" name="_ftn8">[8]</a> Bryk, A. S., Gomez, L. M., Grunow, A., &amp; LeMahieu, P. G. (2015). <em>Learning to improve: How America's schools can get better at getting better</em>. Boston: Harvard Education Publishing.</p>
         <p><a href="#_ftnref9" name="_ftn9">[9]</a> Reeves, D. B. (2007). <em>Ahead of the curve: The power of assessment to transform teaching and learning. </em>Bloomington, IN: Solution Tree</p>
         <p><a href="#_ftnref10" name="_ftn10">[10]</a> DuFour, R., Eaker, R. E., &amp; DuFour, R. B. (2005). <em>On common ground: The power of professional learning communities. </em>Bloomington, Ind: National Educational Service.</p>
-        <p><a href="#_ftnref11" name="_ftn11">[11]</a> Breakspear, S. (2017). Embracing Agile Leadership for Learning - how leaders can create impact despite growing complexity. <em>Australian Educational Leader</em>, 39, 3, 68-71.</p>`}],me=[{id:"item1",name:"Cycles",selected:!0,content:L`<p>There are two cycles schools should consider when planning: the Plan, Do, Check, Act (PDCA) and annual/multi-year cycles.</p>
-            <p>Long-term cycles can include annual and/or multi-year goals.</p>`,children:pe}],ue=[{id:"item1",name:"Overview and Purpose",selected:!1,content:L`<p>The indicator document is used at three different levels of the education system for different purposes.</p>
+        <p><a href="#_ftnref11" name="_ftn11">[11]</a> Breakspear, S. (2017). Embracing Agile Leadership for Learning - how leaders can create impact despite growing complexity. <em>Australian Educational Leader</em>, 39, 3, 68-71.</p>`}],ye=[{id:"item1",name:"Cycles",selected:!0,content:F`<p>There are two cycles schools should consider when planning: the Plan, Do, Check, Act (PDCA) and annual/multi-year cycles.</p>
+            <p>Long-term cycles can include annual and/or multi-year goals.</p>`,children:be}],we=[{id:"item1",name:"Overview and Purpose",selected:!1,content:F`<p>The indicator document is used at three different levels of the education system for different purposes.</p>
         <p>It is used as a means to identify the <em>highest standards of effective practice </em>for schools based on research.&nbsp;</p>
         <p>It is used as a means to identify the preferred standards for schools and makes links to our current provincial strategy document, the 10-year Education Plan.</p>
         <p>At the school level, the indicator document is to be used to promote effective self-assessment. The document can be used to assist schools in identifying strengths and potential areas of focus. Ultimately, and most importantly, it is a mechanism to assist schools to identify and adopt practices which will help improve academic, behavioural, and social-emotional outcomes for students.</p>
         <p>At the district level, it is used to help determine areas where schools are focusing their energies, and can be used to identify areas where additional resourcing or PL support may be needed.</p>
         <p>At the provincial level, it is used as a vehicle to help understand and inform how well we are doing systemically; the challenges that schools and districts are working to address; and, budgetary processes to allow for effective long-term planning, including informing allocation of resources and PL planning.&nbsp;</p>
         <p>The results from the Annual School Performance Reports will be collated at the district level and shared with the department at a high level. No school-specific identifying information will be shared. Results will be used to help determine progress toward the objectives outlined in the 10-year Education Plan.&nbsp;</p>
-        <p>It is important to reiterate that an annual review of the framework and indicator documents, based on current research, will be conducted to ensure ongoing alignment with changing systemic needs. These annual reviews will include input from each of the districts, and will include representation from each of the district staffs, school-based administrative teams and teachers.</p>`},{id:"item2",name:"Self-Assessment Process in Brief",selected:!1,content:L`<p>To ensure understanding at all levels we have broken down the self-assessment process into seven steps. The School Improvement Planning &ldquo;SIP Self-Assessment Process Infographic&rdquo; outlines the seven steps. If school personnel feel they want to examine the process in its entirety they can go to the <a target="_blank" href="https://collabe.nbed.nb.ca/sites/10year/nbsip/_layouts/15/start.aspx#/">School Self-Assessment Module</a>.</p>
+        <p>It is important to reiterate that an annual review of the framework and indicator documents, based on current research, will be conducted to ensure ongoing alignment with changing systemic needs. These annual reviews will include input from each of the districts, and will include representation from each of the district staffs, school-based administrative teams and teachers.</p>`},{id:"item2",name:"Self-Assessment Process in Brief",selected:!1,content:F`<p>To ensure understanding at all levels we have broken down the self-assessment process into seven steps. The School Improvement Planning &ldquo;SIP Self-Assessment Process Infographic&rdquo; outlines the seven steps. If school personnel feel they want to examine the process in its entirety they can go to the <a target="_blank" href="https://collabe.nbed.nb.ca/sites/10year/nbsip/_layouts/15/start.aspx#/">School Self-Assessment Module</a>.</p>
         <p>A general overview of the self-assessment process as follows. Prior to authoring the <a target="_blank" href="https://collabe.nbed.nb.ca/sites/10year/nbsip/Shared%20Documents/2.%20Provincial%20Improvement%20Framework%20and%20Associated%20Documents/School%20Self-assessment%20Documents/School%20Performance%20Report%20July%2031%2C%202019.docx?Web=1">Annual School Performance Report</a>, schools will use the indicator document to self-assess.</p>
         <p><u>If a school is in the first year of the improvement planning process</u>, they should examine the indicator document in its entirety to determine priority domains and areas of focus. Each domain includes guiding questions to assist schools to effectively identify target domains and potential areas for growth.&nbsp;</p>
         <p>Other data should be examined to support analysis. This could include:</p>
@@ -934,7 +1018,7 @@ li {
         <li>Monitoring progress on an ongoing basis.</li>
         <li>Adjusting strategies and actions as needed.</li>
         </ul>
-        <p><u>If school teams are using the document to determine progress toward previously identified goals</u>, (for example, they are in the second year of a two-year plan) they can be more targeted in their approach. In these cases, school teams may choose to focus on specific domains and indicators, and the associated measures already delineated in their current improvement plan to identify progress toward specific goals. This information should be analyzed along with a diversity of supporting data/evidence and can be used to provide content for the <a target="_blank" href="https://collabe.nbed.nb.ca/sites/10year/nbsip/Shared%20Documents/2.%20Provincial%20Improvement%20Framework%20and%20Associated%20Documents/School%20Self-assessment%20Documents/School%20Performance%20Report%20July%2031%2C%202019.docx?Web=1">Annual School Performance Report</a>. Regardless of where a school is in the process, a focus on using a variety of data/evidence to ensure an effective self-assessment occurs is recommended.</p>`}],fe=[{id:"item1",name:"Conversations, Observations and Products",selected:!1,content:L`<p>We have noted that multiple measures help to provide a clearer picture of how a school is performing. The variety of data/evidence must be collected and analyzed on a regular basis. The key to the collection of the data/evidence is determining how the information relates to school improvement and improved student outcomes.&nbsp;</p>
+        <p><u>If school teams are using the document to determine progress toward previously identified goals</u>, (for example, they are in the second year of a two-year plan) they can be more targeted in their approach. In these cases, school teams may choose to focus on specific domains and indicators, and the associated measures already delineated in their current improvement plan to identify progress toward specific goals. This information should be analyzed along with a diversity of supporting data/evidence and can be used to provide content for the <a target="_blank" href="https://collabe.nbed.nb.ca/sites/10year/nbsip/Shared%20Documents/2.%20Provincial%20Improvement%20Framework%20and%20Associated%20Documents/School%20Self-assessment%20Documents/School%20Performance%20Report%20July%2031%2C%202019.docx?Web=1">Annual School Performance Report</a>. Regardless of where a school is in the process, a focus on using a variety of data/evidence to ensure an effective self-assessment occurs is recommended.</p>`}],Se=[{id:"item1",name:"Conversations, Observations and Products",selected:!1,content:F`<p>We have noted that multiple measures help to provide a clearer picture of how a school is performing. The variety of data/evidence must be collected and analyzed on a regular basis. The key to the collection of the data/evidence is determining how the information relates to school improvement and improved student outcomes.&nbsp;</p>
         <p>Blink notes that, &ldquo;the most important things to remember about the collection of data is that someone needs to be in charge&rdquo; (2016, p.18). In the absence of a responsible individual or team skilled in the use and application of data/evidence, schools should source support and/or PL opportunities to assist with gathering, analysis and application of data to build capacity. Further, every person involved in the collection and use of data should understand what they are responsible for and their role in the improvement process.&nbsp;</p>
         <p>DuFour et al, (2005) and Reeves (2009)<a href="#_ftn12" name="_ftnref12">[12]</a> have both been noted as identifying the problem of being &ldquo;data rich and information poor.&rdquo; All data/evidence should serve a specific purpose. If you are taking pains to collect the data/evidence, then you should work to analyze and act on the results. If you are not acting on the data/evidence, then it is likely that it was not worth collecting.</p>
         <p>If school leaders are unsure about their proficiency with data/evidence, it is recommended that they source district support. District personnel could work with school leaders and teams to examine the following factors and provide support where deemed appropriate:</p>
@@ -950,7 +1034,7 @@ li {
         </ul>
         <p>If teams are unsure whether they are effectively using evidence informed decision making, then they should examine whether data/evidence is effectively translating into changes in practice at the school and classroom levels.&nbsp;</p>
         <p>Finally, it is important when using data/evidence to ensure that the team identifies a Present Level of Performance (PLOP). This provides a baseline so teams are able to accurately identify whether they are making progress toward identified goals. The easiest ways to effectively establish a PLOP and monitor progress is to identify baseline measures when first implementing a strategy or when establishing a goal. The essence of creating effective goals and effectively monitoring progress is that it allows teams to not only plan and implement actions strategically but also promotes the importance of close monitoring to ensure teams are moving in the right direction towards achieving the desired results. The cycle for monitoring progress should occur on a regular and ongoing basis throughout the school year.&nbsp;</p>
-        <p><a href="#_ftnref12" name="_ftn12">[12]</a> Reeves, D. B. (2009). <em>Assessing educational leaders: Evaluating performance for improved individual and organizational results</em>. Thousand Oaks, Calif: Corwin Press.</p>`}],ge=[{id:"item1",name:"The Self-Assessment Instrument: Indicator Document with Explanatory Notes",selected:!0,content:L`<p>The self-assessment instrument to be used at the school level is the <a target="_blank" href="https://collabe.nbed.nb.ca/sites/10year/nbsip/Shared%20Documents/2.%20Provincial%20Improvement%20Framework%20and%20Associated%20Documents/School%20Self-assessment%20Documents/School%20Improvement%20Indicators%20with%20Explanatory%20Notes%20March%2021%2C%202019.docx?Web=1">New Brunswick Indicator Document with Explanatory Notes</a>, supplemented by the <a target="_blank" href="https://collabe.nbed.nb.ca/sites/10year/nbsip/Shared%20Documents/2.%20Provincial%20Improvement%20Framework%20and%20Associated%20Documents/School%20Self-assessment%20Documents/Inclusion%20Look-fors%20June%2011%2C%202019.docx?Web=1">Inclusion Look-For</a> document.</p>`,children:ue},{id:"item2",name:"Data/Evidence",selected:!1,content:L`<p>Different schools&rsquo; teams have different levels of proficiency when gathering and analyzing data. If a school leader is new to a school or position, or there is a large change in the makeup of the improvement team, schools should re-examine their proficiency with data and evidence. In it&rsquo;s simplest, data is anything that is quantifiable. Evidence can be considered more subjective, for example, conversations and observations. Once evidence is quantified, it can often be considered data.</p>
+        <p><a href="#_ftnref12" name="_ftn12">[12]</a> Reeves, D. B. (2009). <em>Assessing educational leaders: Evaluating performance for improved individual and organizational results</em>. Thousand Oaks, Calif: Corwin Press.</p>`}],xe=[{id:"item1",name:"The Self-Assessment Instrument: Indicator Document with Explanatory Notes",selected:!0,content:F`<p>The self-assessment instrument to be used at the school level is the <a target="_blank" href="https://collabe.nbed.nb.ca/sites/10year/nbsip/Shared%20Documents/2.%20Provincial%20Improvement%20Framework%20and%20Associated%20Documents/School%20Self-assessment%20Documents/School%20Improvement%20Indicators%20with%20Explanatory%20Notes%20March%2021%2C%202019.docx?Web=1">New Brunswick Indicator Document with Explanatory Notes</a>, supplemented by the <a target="_blank" href="https://collabe.nbed.nb.ca/sites/10year/nbsip/Shared%20Documents/2.%20Provincial%20Improvement%20Framework%20and%20Associated%20Documents/School%20Self-assessment%20Documents/Inclusion%20Look-fors%20June%2011%2C%202019.docx?Web=1">Inclusion Look-For</a> document.</p>`,children:we},{id:"item2",name:"Data/Evidence",selected:!1,content:F`<p>Different schools&rsquo; teams have different levels of proficiency when gathering and analyzing data. If a school leader is new to a school or position, or there is a large change in the makeup of the improvement team, schools should re-examine their proficiency with data and evidence. In it&rsquo;s simplest, data is anything that is quantifiable. Evidence can be considered more subjective, for example, conversations and observations. Once evidence is quantified, it can often be considered data.</p>
         <p>Blink suggests the following guiding questions be used when a school chooses to examine data:</p>
         <ol>
         <li>How and when should data be gathered?</li>
@@ -960,7 +1044,7 @@ li {
         <li>How do we find time (school or District provided) for teachers and administrators to evaluate and analyze the data that they have?</li>
         <li>How does using data to drive instructional decisions affect professional learning?</li>
         <li>How does using data to drive instructional decisions affect goal setting? (Blink, 2016, p.1)</li>
-        </ol>`,children:fe},{id:"item3",name:"Annual School Performance Report",selected:!1,content:L`<p>Although it has already been mentioned several times throughout this document, the importance of the Annual School Performance Report must be highlighted.&nbsp;</p>
+        </ol>`,children:Se},{id:"item3",name:"Annual School Performance Report",selected:!1,content:F`<p>Although it has already been mentioned several times throughout this document, the importance of the Annual School Performance Report must be highlighted.&nbsp;</p>
         <ul>
         <li>The Annual School Performance Report is a high-level document that schools would submit to the district in January of each year (See <a target="_blank" href="https://collabe.nbed.nb.ca/sites/10year/nbsip/Shared%20Documents/2.%20Provincial%20Improvement%20Framework%20and%20Associated%20Documents/School%20Self-assessment%20Documents/School%20Performance%20Report%20July%2031%2C%202019.docx?Web=1">Appendix F</a>).</li>
         <li>This report will identify overarching school goals and indicate progress toward these goals.</li>
@@ -972,7 +1056,7 @@ li {
         <li>inform resource allocation, and inform PL planning.</li>
         </ul>
         </li>
-        </ul>`}],ve=[{id:"item1",name:"Appendices and Templates",selected:!0,content:L`<p>Several Templates are provided to assist schools in monitoring progress. Schools can choose to use these verbatim, modify them, or discard them if they feel they have a more efficient and effective template. The following is a list of the policy content and templates provided in the appendices:</p>
+        </ul>`}],Pe=[{id:"item1",name:"Appendices and Templates",selected:!0,content:F`<p>Several Templates are provided to assist schools in monitoring progress. Schools can choose to use these verbatim, modify them, or discard them if they feel they have a more efficient and effective template. The following is a list of the policy content and templates provided in the appendices:</p>
         <p><a href="${"./manifest/"}Appendix-A.pdf" target="_blank"><strong>Appendix A</strong>: 10-year Plan Cluster of Objectives</a></p>
         <p><a href="${"./manifest/"}Appendix-B.pdf" target="_blank"><strong>Appendix B</strong>: Combined SIP/PLWEP, Relevant Legislation</a></p>
         <p><a href="${"./manifest/"}Appendix-C.pdf" target="_blank"><strong>Appendix C</strong>: Sample Improvement Planning Template</a></p>
@@ -981,38 +1065,32 @@ li {
         <p><a href="https://collabe.nbed.nb.ca/sites/10year/nbsip/Shared%20Documents/2.%20Provincial%20Improvement%20Framework%20and%20Associated%20Documents/School%20Self-assessment%20Documents/School%20Performance%20Report%20July%2031%2C%202019.docx?Web=1" target="_blank"><strong>Appendix F</strong>: Annual School Performance Report Template</a></p>
         <p><a href="${"./manifest/"}Appendix-G.pdf" target="_blank"><strong>Appendix G</strong>: Policy associated with improvement planning</a></p>
         <p><a href="${"./manifest/"}Appendix-H.pdf" target="_blank"><strong>Appendix H</strong>: Consultations</a></p>
-        <p><a href="${"./manifest/"}Appendix-I.pdf" target="_blank"><strong>Appendix I</strong>:  Acronyms</a></p>`}];i.d(t,"MainElement",function(){return be});class be extends re{constructor(){super()}scrollToMe(e){const t=this.shadowRoot.getElementById(e.substr(1));t&&t.scrollIntoView()}render(){return L`
+        <p><a href="${"./manifest/"}Appendix-I.pdf" target="_blank"><strong>Appendix I</strong>:  Acronyms</a></p>`}];i.d(t,"MainElement",function(){return _e});class _e extends le{constructor(){super()}scrollToMe(e){const t=this.shadowRoot.getElementById(e.substr(1));t&&t.scrollIntoView()}onChangeTheme(){console.log("isLightTheme: "+ce),he(ce?"dark":"light"),window.location.reload()}static get styles(){return[ue,ae`
+		.overview {
+			padding: 8px;
+		}
+
+		/* move up so the anchor + menu is above the content */
+		.anchor-ref {
+			position: relative; 
+			top: -50px;
+		}`]}render(){return F`
 		<head>
 			<title>NB School Improvement Indicators</title>
 			<meta name="viewport" http-equiv="Content-Type" content="text/html; charset=UTF-8 width=device-width,initial-scale=1.0"/>
 			<link rel="shortcut icon" type="image/x-icon" href="favicon.png">
 		</head>
 
-		<style>
-			${le}
-		
-			.overview {
-				padding: 8px;
-			}
-
-			/* move up so the anchor + menu is above the content */
-			.anchor-ref {
-				position: relative; 
-				top: -50px;
-			}
-		</style>
-
 		<body>
 
-			<menu-section></menu-section>
-			<br>
-			<br>
+			<menu-section
+				@change-theme="${e=>{this.onChangeTheme()}}"></menu-section>
 
 			<a id="anchor_section0" class="anchor-ref"></a>
 			<title-page></title-page>
 
 			<a id="anchor_section1" class="anchor-ref"></a>
-			<domain-section color="var(--s1-color)" colorFaded="var(--s1-color-faded)" .tabList="${he}">
+			<domain-section color="var(--s1-color)" colorFaded="var(--s1-color-faded)" .tabList="${ve}">
 				<span slot="header">Section I: Framework Overview</span>
 
 				<div slot="overview">
@@ -1021,13 +1099,13 @@ li {
 				
 					<div class="overview">
 						<em>Overview</em>
-						<accordian-section color="#dddddd" .list="${de}"></accordian-section>
+						<accordian-section color="#dddddd" .list="${fe}"></accordian-section>
 					</div>
 				</div>
 			</domain-section>
 
 			<a id="anchor_section2" class="anchor-ref"></a>
-			<domain-section color="var(--s2-color)" colorFaded="var(--s2-color-faded)" .tabList="${me}">
+			<domain-section color="var(--s2-color)" colorFaded="var(--s2-color-faded)" .tabList="${ye}">
 				<span slot="header">Section II: Cycles</span>
 
 				<div slot="overview">
@@ -1037,7 +1115,7 @@ li {
 			</domain-section>
 
 			<a id="anchor_section3" class="anchor-ref"></a>
-			<domain-section color="var(--s3-color)" colorFaded="var(--s3-color-faded)" .tabList="${ge}">
+			<domain-section color="var(--s3-color)" colorFaded="var(--s3-color-faded)" .tabList="${xe}">
 				<span slot="header">Section III: Self-Assessment Instrument</span>
 
 				<div slot="overview">
@@ -1049,7 +1127,7 @@ li {
 			</domain-section>
 
 			<a id="anchor_section4" class="anchor-ref"></a>
-			<domain-section color="var(--s4-color)" colorFaded="var(--s4-color-faded)" .tabList="${ve}">
+			<domain-section color="var(--s4-color)" colorFaded="var(--s4-color-faded)" .tabList="${Pe}">
 				<span slot="header">Section IV: Appendices and Templates</span>
 
 				<div slot="overview">
@@ -1058,4 +1136,4 @@ li {
 				</div>
 			</domain-section>
 		</body>
-		`}}customElements.define("main-element",be)}]);
+		`}}customElements.define("main-element",_e)}]);

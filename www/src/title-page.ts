@@ -36,8 +36,8 @@ export class TitlePage extends LitElement {
 			.header {
 				width: 100%;
 				text-align: center;
+				align-items: center;
 				display: flex;
-    			align-items: center;
 				color: white;
 
 				flex: 1;

@@ -1,0 +1,26 @@
+{
+	"compilerOptions": {
+		"module": "esNext",
+		"moduleResolution": "Node",
+		"traceResolution": false,
+		"target": "ES6",
+		"noImplicitAny": true,
+		"downlevelIteration": true,
+		"removeComments": true,
+		"preserveConstEnums": true,
+		"sourceMap": true,
+		"strict": true,
+		"noUnusedLocals": true,
+		"outDir": "out",
+		"lib": [
+			"es7",
+			"dom"
+		]
+	},
+	"include": [
+		"src/*.ts",
+	],
+	"exclude": [
+		"node_modules"
+	]
+}

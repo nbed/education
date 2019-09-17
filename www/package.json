@@ -7,7 +7,7 @@
     "build": "npx tsc && npx webpack --config webpack.dev.js",
     "serve": "npx webpack-dev-server --open --config webpack.dev.js",
     "watch": "bash serve.sh",
-    "deploy": "bash deploy.sh",
+    "bundle": "bash bundle.sh",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Loft1 Dev Team",

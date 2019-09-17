@@ -5,7 +5,7 @@ output="prod"
 
 # build improvement-frameworks
 cd www
-bash deploy.sh
+bash bundle.sh
 cd ..
 
 # clean output

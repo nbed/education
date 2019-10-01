@@ -1,9 +1,9 @@
 {
 	"compilerOptions": {
-		"module": "esNext",
-		"moduleResolution": "Node",
+		"module": "esnext",
+		"moduleResolution": "node",
 		"traceResolution": false,
-		"target": "ES6",
+		"target": "es2017",
 		"noImplicitAny": true,
 		"downlevelIteration": true,
 		"removeComments": true,
@@ -11,16 +11,14 @@
 		"sourceMap": true,
 		"strict": true,
 		"noUnusedLocals": true,
-		"outDir": "out",
+		"experimentalDecorators": true,
 		"lib": [
-			"es7",
+			"es2017",
 			"dom"
 		]
 	},
 	"include": [
-		"src/*.ts",
+		"src/**/*.ts",
 	],
-	"exclude": [
-		"node_modules"
-	]
+	"exclude": [],
 }

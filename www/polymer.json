@@ -1,22 +1,50 @@
 {
-  "shell": "src/main-element.js",
   "entrypoint": "index.html",
-  "npm": true,
-  "moduleResolution": "node",
-  "sources": ["src/main-element.js",
-	"manifest/**", "manifest.json", "package.json"],
-  "extraDependencies": [
-    "robots.txt",
-	"node_modules/@webcomponents/webcomponentsjs/**"
+  "shell": "src/main-element.js",
+  "sources": [
+    "manifest/**/*"
   ],
-  "builds": [{
-    "bundle": true,
-    "js": {
-      "minify": false,
-      "compile": "es6",
-      "transformModulesToAmd": true
+  "extraDependencies": [
+    "manifest.json",
+    "node_modules/@webcomponents/webcomponentsjs/**"
+  ],
+  "builds": [
+    {
+      "name": "es6-bundled",
+      "browserCapabilities": [
+        "es2015"
+      ],
+      "js": {
+        "compile": "es2015",
+        "minify": true,
+        "transformModulesToAmd": true
+      },
+      "css": {
+        "minify": true
+      },
+      "html": {
+        "minify": true
+      },
+      "bundle": true,
+      "addServiceWorker": true
     },
-    "addServiceWorker": true,
-    "addPushManifest": true
-  }]
+    {
+      "name": "es5-bundled",
+      "js": {
+        "compile": "es5",
+        "minify": true,
+        "transformModulesToAmd": true
+      },
+      "css": {
+        "minify": true
+      },
+      "html": {
+        "minify": true
+      },
+      "bundle": true,
+      "addServiceWorker": true
+    }
+  ],
+  "moduleResolution": "node",
+  "npm": true
 }

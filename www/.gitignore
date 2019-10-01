@@ -3,6 +3,5 @@ node_modules
 *.js.map
 *.js
 !serve.js
-!webpack.config.js
 
 !dist/*.js

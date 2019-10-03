@@ -87,6 +87,19 @@
 			flex-direction: column;
 		}
 
+		/* .ie-warning {
+			display: none;
+
+			position: fixed;
+			bottom: 0;
+			width: 100%;
+			z-index: 10;
+
+			background-color: lightblue;
+			color: black;
+			text-align: center;
+		} */
+
 		@media all and (-ms-high-contrast:none) {
 			html, body, main-element {
 				height: auto;
@@ -121,4 +134,22 @@
 		</noscript>
 
 	</main-element>
+
+	<!-- <div id="ieWarningId" class="ie-warning">
+		<p>
+			For a better viewing experience, it is recommended to use a more modern web browser.
+		</p>
+	</div>
+	<script>
+		var ua = window.navigator.userAgent;
+		if ( /MSIE|Trident/.test(ua) ) {
+			// IE specific code goes here
+			var el = document.getElementById("ieWarningId");
+			el.style.display = "block";
+
+			setTimeout(function() {
+				el.style.display = "none";
+			}, 5000);
+		}
+	</script> -->
 </body>

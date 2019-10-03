@@ -112,6 +112,12 @@ export class MenuSection extends LitElement {
 			height: 32px;
 		}
 
+		@media all and (-ms-high-contrast:none) {
+			.theme {
+				right: 32px;
+			}
+		}
+
 		.theme:hover {
 			background-color: var(--menu-bg-selected);
 			border-radius: 50%;

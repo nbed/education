@@ -83,9 +83,15 @@
 			margin: 0;
 			padding: 0;
 			position: relative;
-			/* display: flex;
-			flex-direction: column; */
-			display: block;
+			display: flex;
+			flex-direction: column;
+		}
+
+		@media all and (-ms-high-contrast:none) {
+			html, body, main-element {
+				height: auto;
+				display: block;
+			}
 		}
 	</style>
 </head>

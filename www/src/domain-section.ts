@@ -8,7 +8,7 @@ import { Item } from "./types";
 export class DomainSection extends LitElement {
 
 	private color: string = "";
-	private colorFaded: string = "";
+	private colorFaded: string = "lightcyan"; // IE11
 	private tabList: Item[] = [];
 
 	// properties getter

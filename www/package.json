@@ -4,28 +4,21 @@
   "description": "Visualization of Monocl",
   "main": "main-element.js",
   "scripts": {
-    "build": "npx tsc && npx webpack --config webpack.dev.js",
-    "serve": "npx webpack-dev-server --open --config webpack.dev.js",
-    "watch": "bash serve.sh",
-    "deploy": "bash deploy.sh",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "npx tsc && npx polymer build",
+    "serve": "polymer serve --port 5000 build/es5-bundled",
+    "bundle": "bash bundle.sh"
   },
   "author": "Loft1 Dev Team",
   "license": "BSD-3-Clause",
   "dependencies": {
-    "@types/route-parser": "^0.1.3",
+    "@polymer/polymer": "^3.3.0",
     "@webcomponents/webcomponentsjs": "latest",
-    "lit-element": "latest",
-    "moment": "^2.24.0",
-    "route-parser": "0.0.5",
-    "webpack": "^4.34.0"
+    "lit-element": "latest"
   },
   "devDependencies": {
+    "@webcomponents/webcomponentsjs": "^2.3.0",
     "express": "^4.17.1",
-    "html-webpack-plugin": "^3.2.0",
-    "typescript": "^3.5.3",
-    "webpack-cli": "^3.3.4",
-    "webpack-dev-server": "^3.8.0",
-    "webpack-merge": "^4.2.1"
+    "polymer-cli": "^1.9.11",
+    "typescript": "^3.5.3"
   }
 }

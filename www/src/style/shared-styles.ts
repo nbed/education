@@ -116,8 +116,9 @@ const darkTheme = css`
         background-color: #17181c;
 
         /* menu */
-        --menu-bg: #aaa;
+        --menu-bg: #222;
         --menu-nav-bg: #17181cbb;
+        --menu-color-text: white;
 
         /* tab */
         --tab-color: #17181c;

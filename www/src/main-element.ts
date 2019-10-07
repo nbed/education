@@ -81,7 +81,7 @@ export class MainElement extends LitElement {
 				
 					<div class="overview">
 						<em>Overview</em>
-						<accordian-section color="#dddddd" .list="${overviewList}"></accordian-section>
+						<accordian-section color="var(--s1-color)" .list="${overviewList}"></accordian-section>
 					</div>
 				</div>
 			</domain-section>

@@ -3,6 +3,11 @@ set -e
 
 output="prod"
 
+# build improvement-frameworks
+cd www
+bash bundle.sh
+cd ..
+
 # clean output
 rm -rf $output
 mkdir $output

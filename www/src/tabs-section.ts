@@ -123,7 +123,7 @@ export class TabsSection extends LitElement {
 			<div class="tab-content">
 				<div class="content">${this.currentTab.content}</div>
 				${ this.currentTab.children ? html`
-					<accordian-section color="#dddddd" .list="${this.currentTab.children}"></accordian-section>
+					<accordian-section .color="${this.color}" .list="${this.currentTab.children}"></accordian-section>
 				` : html``}
 			</div>
 		</div>

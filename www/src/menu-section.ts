@@ -1,7 +1,7 @@
 
 // Import LitElement base class and html helper function
-import { html, LitElement } from "lit-element";
-import { sharedStyles } from "./style/shared-styles";
+import { html, LitElement, css } from "lit-element";
+import { isLightTheme, sharedStyles } from "./style/shared-styles";
 import { Item } from "./types";
 
 export class MenuSection extends LitElement {
@@ -49,7 +49,81 @@ export class MenuSection extends LitElement {
 		return { 
 			list: { type: Array },
 		};
-	  }
+	}
+
+	static get styles() {
+		return [
+		sharedStyles,
+		css`
+		:host { 
+			display: block;
+			font-family: sans-serif;
+		}
+		:host([hidden]) { display: none; }
+
+		.container {
+			position: fixed;
+
+			top: 0;
+
+			z-index: 10;
+
+			display: flex;
+			flex-direction: row;
+
+			width: 100%;
+			justify-content: center;
+			align-items: center;
+
+			background-color: var(--menu-nav-bg);
+		}
+
+		.nav-section {
+			padding: 0.5em 0 0 0;
+			display: flex;
+			flex-direction: row;
+		}
+
+		.nav-item {
+			cursor: pointer;
+			padding: 8px;
+			color: var(--menu-color-text);
+			background-color: var(--menu-bg);
+
+			border-radius: 3px;
+		}
+
+		.right-area {
+			margin-right: 4px;
+		}
+
+		.nav-item-selected, .nav-item:hover {
+			background-color: var(--menu-bg-selected);
+			color: var(--menu-color-selected);
+		}
+		
+		.theme {
+			position: absolute;
+			display: relative;
+			cursor: pointer;
+			right: 0;
+			padding: 0.5em;
+			width: 32px;
+			height: 32px;
+		}
+
+		@media all and (-ms-high-contrast:none) {
+			.theme {
+				right: 32px;
+			}
+		}
+
+		.theme:hover {
+			background-color: var(--menu-bg-selected);
+			border-radius: 50%;
+		}
+		`];
+	} 
 	  
 	/**
 	* Define a template for the new element by implementing LitElement's
@@ -57,59 +131,6 @@ export class MenuSection extends LitElement {
 	*/
 	public render() {
 		return html`
-
-		<style>
-			${sharedStyles}
-
-			:host { 
-				display: block;
-				font-family: sans-serif;
-			}
-			:host([hidden]) { display: none; }
-
-			.container {
-				position: fixed;
-
-				top: 0;
-
-				z-index: 10;
-
-				display: flex;
-				flex-direction: row;
-
-				width: 100%;
-    			justify-content: center;
-				align-items: center;
-
-				background-color: #fffb;
-			}
-
-			.nav-section {
-				padding: 0.5em 0 0 0;
-				display: flex;
-				flex-direction: row;
-			}
-
-			.nav-item {
-				cursor: pointer;
-				padding: 8px;
-				color: var(--menu-color-text);
-				background-color: var(--menu-bg);
-
-				border-radius: 3px;
-			}
-
-			.right-area {
-				margin-right: 4px;
-			}
-
-			.nav-item-selected, .nav-item:hover {
-				background-color: var(--menu-bg-selected);
-				color: var(--menu-color-selected);
-			}
-
-		</style>
-
 		<div class="container">
 			<div class="nav-section">
 				${this.list.map((tab, index) => {
@@ -119,6 +140,9 @@ export class MenuSection extends LitElement {
 							@click=${(e: Event) => this.selectItem(tab.id) }>
 						${tab.name}
 					</div>`})}
+			</div>
+			<div class="theme" @click="${(e: Event) => this.toggleTheme()}">
+				<img src="./manifest/${isLightTheme ? "moon-solid.svg" : "sun-solid.svg" }">
 			</div>
 		</div>
 		`;
@@ -143,6 +167,10 @@ export class MenuSection extends LitElement {
 			throw new Error("No match tab id found in tab items");
 		}
 		selectedTab.selected = true;
+	}
+
+	private toggleTheme() {
+		this.dispatchEvent(new CustomEvent("change-theme"));
 	}
 }
 // Register the element with the browser

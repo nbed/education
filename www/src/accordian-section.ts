@@ -50,11 +50,11 @@ export class AccordianSection extends LitElement {
 
 				display: flex;
 
-				border-top: 1px solid ${this.color}55;
+				border-top: 1px solid ${this.color};
 			}
 
 			.tab-selected, .tab:hover {
-				background-color: ${this.color}55;
+				background-color: ${this.color};
 				border-top: 2px solid ${this.color};
 
 				padding-top: 9px;

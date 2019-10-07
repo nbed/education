@@ -8,7 +8,7 @@ import { Item } from "./types";
 export class DomainSection extends LitElement {
 
 	private color: string = "";
-	private colorFaded: string = "";
+	private colorFaded: string = "lightcyan"; // IE11
 	private tabList: Item[] = [];
 
 	// properties getter
@@ -78,6 +78,26 @@ export class DomainSection extends LitElement {
 
 			.tab-container {
 				display: flex;
+			}
+
+			@media only screen and (max-width: 900px) {
+				.domain {
+					margin: 1em 1em;
+				}
+			}
+
+			@media only screen and (max-width: 600px) {
+				.domain {
+					margin: 1em 0;
+				}
+
+				.container {
+					padding: 1em;
+				}
+
+				.header {
+					padding: 0;
+				}
 			}
 
 		</style>

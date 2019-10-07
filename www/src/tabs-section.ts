@@ -56,7 +56,7 @@ export class TabsSection extends LitElement {
 				margin: 0 5px 0 0;
 				padding: 10pt 25pt;
 
-				background-color: #fff;
+				background-color: var(--tab-color);
 			}
 
 			.tab:hover {
@@ -67,7 +67,7 @@ export class TabsSection extends LitElement {
 			}
 
 			.tab-selected {
-				border-bottom: 1px solid #fff;
+				border-bottom: 1px solid var(--tab-color);
 				border-top-width: 2px;
 				border-top-style: solid;
 				padding: 9pt 25pt;
@@ -89,6 +89,24 @@ export class TabsSection extends LitElement {
 				border-bottom-left-radius: 10px;
 				border-bottom-right-radius: 10px;
 			}
+
+			@media only screen and (max-width: 900px) {
+				.nav-section {
+					padding: 0;
+				}
+
+				.tab {
+					padding: 10px;
+				}
+				
+				.tab:hover {
+					padding: 10px;
+				}
+
+				.tab-selected {
+					padding: 10px;
+				}
+			}
 		</style>
 
 		<div class="container">
@@ -105,7 +123,7 @@ export class TabsSection extends LitElement {
 			<div class="tab-content">
 				<div class="content">${this.currentTab.content}</div>
 				${ this.currentTab.children ? html`
-					<accordian-section color="#dddddd" .list="${this.currentTab.children}"></accordian-section>
+					<accordian-section .color="${this.color}" .list="${this.currentTab.children}"></accordian-section>
 				` : html``}
 			</div>
 		</div>

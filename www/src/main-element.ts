@@ -1,6 +1,6 @@
 
 // Import LitElement base class and html helper function
-import { html, LitElement } from "lit-element";
+import { css, html, LitElement } from "lit-element";
 
 import "./title-page";
 import "./accordian-section";
@@ -13,7 +13,7 @@ import { section2 } from "./docs/section2";
 import { section3 } from "./docs/section3";
 import { section4 } from "./docs/section4";
 
-import { sharedStyles } from "./style/shared-styles";
+import { sharedStyles, toggleTheme } from "./style/shared-styles";
 
 export class MainElement extends LitElement {
 
@@ -32,6 +32,25 @@ export class MainElement extends LitElement {
 		}
 	}
 
+	public onChangeTheme() {
+		toggleTheme();
+	}
+
+	static get styles() {
+		return [
+		sharedStyles,
+		css`
+		.overview {
+			padding: 8px;
+		}
+
+		/* move up so the anchor + menu is above the content */
+		.anchor-ref {
+			position: relative; 
+			top: -50px;
+		}`];
+	}
+
 	/**
 	 * Define a template for the new element by implementing LitElement's
 	 * `render` function. `render` must return a lit-html TemplateResult.
@@ -44,25 +63,10 @@ export class MainElement extends LitElement {
 			<link rel="shortcut icon" type="image/x-icon" href="favicon.png">
 		</head>
 
-		<style>
-			${sharedStyles}
-		
-			.overview {
-				padding: 8px;
-			}
-
-			/* move up so the anchor + menu is above the content */
-			.anchor-ref {
-				position: relative; 
-				top: -50px;
-			}
-		</style>
-
 		<body>
 
-			<menu-section></menu-section>
-			<br>
-			<br>
+			<menu-section
+				@change-theme="${(e: Event) => { this.onChangeTheme() }}"></menu-section>
 
 			<a id="anchor_section0" class="anchor-ref"></a>
 			<title-page></title-page>
@@ -77,7 +81,7 @@ export class MainElement extends LitElement {
 				
 					<div class="overview">
 						<em>Overview</em>
-						<accordian-section color="#dddddd" .list="${overviewList}"></accordian-section>
+						<accordian-section color="var(--s1-color)" .list="${overviewList}"></accordian-section>
 					</div>
 				</div>
 			</domain-section>

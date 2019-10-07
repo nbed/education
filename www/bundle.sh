@@ -11,15 +11,8 @@ mkdir $output
 rm -rf $build
 
 # build
-npx tsc
-npx webpack --config webpack.prod.js
+npm run build
 
 # copy files to output
-# files
-cp ./index.html ./$output/index.html
-cp ./manifest.json ./$output/manifest.json
-# directories
-cp ./$build ./$output/$build -r
-mkdir $output/node_modules
-cp ./node_modules/@webcomponents ./$output/node_modules/@webcomponents -r
-cp ./manifest ./$output/manifest -r
+set -x
+cp -r "${build}/es5-bundled/." "${output}/"

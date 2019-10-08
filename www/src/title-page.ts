@@ -119,6 +119,12 @@ export class TitlePage extends LitElement {
 				}
 			}
 
+			@media all and (-ms-high-contrast:none) and (max-width: 1220px) {
+				.container {
+					display: block;
+				}
+			}
+
 		</style>
 
 		<div class="container">

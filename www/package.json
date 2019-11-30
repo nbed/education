@@ -19,6 +19,7 @@
     "@webcomponents/webcomponentsjs": "^2.3.0",
     "express": "^4.17.1",
     "polymer-cli": "^1.9.11",
+    "replace-in-file": "^4.2.0",
     "typescript": "^3.5.3"
   }
 }

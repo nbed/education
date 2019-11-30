@@ -2,6 +2,7 @@
 # source code
 src/**/*.js.map
 src/**/*.js
+scripts/**/*.js
 
 # generated
 node_modules

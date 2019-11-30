@@ -15,7 +15,7 @@ export const section4: Item[] = [
         <p><a href="${relativePath}Appendix-C.pdf" target="_blank"><strong>Appendix C</strong>: Sample Improvement Planning Template</a></p>
         <p><a href="${relativePath}Appendix-D.pdf" target="_blank"><strong>Appendix D</strong>: PDCA Template</a></p>
         <p><a href="${relativePath}Appendix-E.pdf" target="_blank"><strong>Appendix E</strong>: Meeting Minute Template</a></p>
-        <p><a href="https://collabe.nbed.nb.ca/sites/10year/nbsip/Shared%20Documents/2.%20Provincial%20Improvement%20Framework%20and%20Associated%20Documents/School%20Self-assessment%20Documents/School%20Performance%20Report%20July%2031%2C%202019.docx?Web=1" target="_blank"><strong>Appendix F</strong>: Annual School Performance Report Template</a></p>
+        <p>%LINK_16%</p>
         <p><a href="${relativePath}Appendix-G.pdf" target="_blank"><strong>Appendix G</strong>: Policy associated with improvement planning</a></p>
         <p><a href="${relativePath}Appendix-H.pdf" target="_blank"><strong>Appendix H</strong>: Consultations</a></p>
         <p><a href="${relativePath}Appendix-I.pdf" target="_blank"><strong>Appendix I</strong>:  Acronyms</a></p>`,

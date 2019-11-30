@@ -93,7 +93,7 @@ export const rolesItem: Item[] = [
         </ul>
         <p><em>School Liaisons/Critical Friends<br /></em>Many of the specific roles and responsibilities of the district staff were previously outlined in this document with the exception of the <em>school liaisons</em> and <em>critical friends</em>. The school liaison is a designated person at the district level who will link schools to critical friends or to act as the critical friend. Critical friends act as a coach, facilitator or challenger and are used to help schools identify needs and build capacity. According to the Glossary of Educational Reform,</p>
         <p class="block">&ldquo;A critical friend is typically a colleague or other educational professional, such as a school coach, who is committed to helping an educator or school improve. A critical friend is someone who is encouraging and supportive, but who also provides honest and often candid feedback that may be uncomfortable or difficult to hear. In short, a critical friend is someone who agrees to speak truthfully, but constructively, about weaknesses, problems, and emotionally charged issues.&rdquo;</p>
-        <p>See: <a target="_blank" href="https://www.edglossary.org/critical-friend/">https://www.edglossary.org/critical-friend/</a></p>
+        <p>See: %LINK_3%</p>
         <p>Schools may suggest others to act as critical friends, including colleagues working in like-sized or configured schools, working on similar initiatives or challenges, or those identified by the district using promising or exemplary practices in improvement planning, gathering and analysis of evidence, and ongoing monitoring of progress. District personnel acting as critical friends may refer principals, school administrative teams or improvement committee members to others who have expertise or experience in an area identified as a school improvement goal.&nbsp;</p>`,
     },
     {
@@ -129,7 +129,7 @@ export const rolesItem: Item[] = [
         <li>Teacher and teacher-aide assignments.</li>
         <li>Signing agreements.</li>
         </ul>
-        <p>Taken from <a target="_blank" href="http://www2.gnb.ca/content/dam/gnb/Departments/ed/pdf/K12/dec-ced/RolesAndResponsibilities.pdf">New Brunswick Public Education: A Shared Responsibility</a></p>
+        <p>Taken from %LINK_4%</p>
         <p>The superintendent is the sole employee of the DEC and the superintendent&rsquo;s decisions are made on behalf of, and subject to, any policies of the DEC. Superintendents play an important role in school improvement and monitoring of student learning and achievement by supporting policies and processes that promote school self-assessment, ongoing school growth, the adoption and use of promising practices, and by ensuring a focus on academic excellence and ongoing progress toward advancing student outcomes. Follow-up and support may include ensuring that resources are made available to schools to support the initiatives delineated in the improvement plans and ensuring that school, district and departmental plans are aligned to promote ongoing systemic growth.&nbsp;</p>`,
     },
     {

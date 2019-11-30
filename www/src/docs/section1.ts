@@ -60,7 +60,7 @@ export const section1: Item[] = [
                       <p>Note: Student feedback could include ongoing consultation depending on the age and maturity of the student population. In the absence of direct attendance at committee meetings, schools could decide to use any of the following feedback mechanisms: through class and/or Student Representative Council (SRC) representatives, assemblies, Principal forums, focus groups, surveys, or any other viable means deemed appropriate and effective by the improvement team.</p>
                       </li>
                       <li>
-                      <p>The <strong>guidelines for improvement team members</strong> should include the length of appointment, and an elaboration of the roles and responsibilities associated with membership. For example, the consultative nature of the parent role should be delineated. Meeting norms should be established. Robert&rsquo;s Rules of Order could be applied for this purpose. Norms should include the appointment of a chair and secretary as well as the <strong>generation of agendas and minutes for each meeting</strong>. Schools may also wish to identify individuals with specific expertise to lead and/or support specific initiatives, i.e., Literacy, Math, Data or Resource Support.<br />See: <a target="_blank" href="http://www.robertsrules.org/">http://www.robertsrules.org/</a> for a quick reference to Robert&rsquo;s.</p>
+                      <p>The <strong>guidelines for improvement team members</strong> should include the length of appointment, and an elaboration of the roles and responsibilities associated with membership. For example, the consultative nature of the parent role should be delineated. Meeting norms should be established. Robert&rsquo;s Rules of Order could be applied for this purpose. Norms should include the appointment of a chair and secretary as well as the <strong>generation of agendas and minutes for each meeting</strong>. Schools may also wish to identify individuals with specific expertise to lead and/or support specific initiatives, i.e., Literacy, Math, Data or Resource Support.<br />See: %LINK_5% for a quick reference to Robert&rsquo;s.</p>
                       </li>
                       <li><strong>Training for improvement team members</strong> - In order for staff, students, families and other stakeholders to understand the process of school improvement, school leaders, with district support where needed, should provide an information session which includes:
                       <ul>
@@ -116,7 +116,7 @@ export const section1: Item[] = [
         id: "item4",
         name: "Roles and Responsibilities",
         selected: false,
-        content: html`<p>Several key individuals and groups are important for the effective implementation of an improvement process at the school level, as outlined below. See also, <a target="_blank" href="http://www2.gnb.ca/content/dam/gnb/Departments/ed/pdf/K12/dec-ced/RolesAndResponsibilities.pdf">Roles and Responsibilities.pdf</a></p>`,
+        content: html`<p>Several key individuals and groups are important for the effective implementation of an improvement process at the school level, as outlined below. See also, %LINK_6%</p>`,
         children: rolesItem,
     },
 ]

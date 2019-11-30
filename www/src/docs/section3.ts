@@ -10,7 +10,7 @@ export const section3: Item[] = [
         id: "item1",
         name: "The Self-Assessment Instrument: Indicator Document with Explanatory Notes",
         selected: true,
-        content: html`<p>The self-assessment instrument to be used at the school level is the <a target="_blank" href="https://collabe.nbed.nb.ca/sites/10year/nbsip/Shared%20Documents/2.%20Provincial%20Improvement%20Framework%20and%20Associated%20Documents/School%20Self-assessment%20Documents/School%20Improvement%20Indicators%20with%20Explanatory%20Notes%20March%2021%2C%202019.docx?Web=1">New Brunswick Indicator Document with Explanatory Notes</a>, supplemented by the <a target="_blank" href="https://collabe.nbed.nb.ca/sites/10year/nbsip/Shared%20Documents/2.%20Provincial%20Improvement%20Framework%20and%20Associated%20Documents/School%20Self-assessment%20Documents/Inclusion%20Look-fors%20June%2011%2C%202019.docx?Web=1">Inclusion Look-For</a> document.</p>`,
+        content: html`<p>The self-assessment instrument to be used at the school level is the %LINK_14% document.</p>`,
         children: section3DocItem,
     },
     {
@@ -36,7 +36,7 @@ export const section3: Item[] = [
         selected: false,
         content: html`<p>Although it has already been mentioned several times throughout this document, the importance of the Annual School Performance Report must be highlighted.&nbsp;</p>
         <ul>
-        <li>The Annual School Performance Report is a high-level document that schools would submit to the district in January of each year (See <a target="_blank" href="https://collabe.nbed.nb.ca/sites/10year/nbsip/Shared%20Documents/2.%20Provincial%20Improvement%20Framework%20and%20Associated%20Documents/School%20Self-assessment%20Documents/School%20Performance%20Report%20July%2031%2C%202019.docx?Web=1">Appendix F</a>).</li>
+        <li>The Annual School Performance Report is a high-level document that schools would submit to the district in January of each year (See %LINK_15%).</li>
         <li>This report will identify overarching school goals and indicate progress toward these goals.</li>
         <li>District will collate this data and author a similar high-level report to be shared with provincial representatives.</li>
         <li>This is a mechanism by which schools and districts will be able to measure progress.</li>

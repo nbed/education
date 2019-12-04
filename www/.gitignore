@@ -7,3 +7,4 @@ scripts/**/*.js
 # generated
 node_modules
 build
+dist

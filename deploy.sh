@@ -3,14 +3,21 @@ set -e
 
 output="prod"
 
-# build improvement-frameworks
-cd www
-bash bundle.sh
-cd ..
-
 # clean output
 rm -rf $output
 mkdir $output
+
+# Build
+## build improvement-indicators
+cd single-file
+npm run build
+cd ..
+
+## build improvement-frameworks
+cd www
+npm run bundle
+cd ..
+
 cd $output
 
 # portal
@@ -26,6 +33,8 @@ mkdir $dir1
 cp -r ../single-file/* ./$dir1
 cd $dir1
 mv "${dir1}.html" index.html
+rm main-template.html # unneeded as it is a template
+rm -rf  node_modules
 cd ..
 
 # improvement-frameworks

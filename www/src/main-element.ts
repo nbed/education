@@ -24,7 +24,7 @@ export class MainElement extends LitElement {
 		// Must call superconstructor first.
 		super();
 	}
-	
+
 	public scrollToMe(id: string) {
 		const targetElement = this.shadowRoot!.getElementById(id.substr(1))
 		if(targetElement) {
@@ -46,7 +46,7 @@ export class MainElement extends LitElement {
 
 		/* move up so the anchor + menu is above the content */
 		.anchor-ref {
-			position: relative; 
+			position: relative;
 			top: -50px;
 		}`];
 	}
@@ -78,7 +78,7 @@ export class MainElement extends LitElement {
 				<div slot="overview">
 					<h4>Framework Overview</h4>
 					<p>Section I provides a framework overview including an overview of the improvement planning process. This section also includes information identifying the legislated roles and responsibilities of each individual and group stakeholder. These include: School Principal/School Administrative Team, School Improvement Committee, School Personnel, Stakeholders and Partners, District School Liaisons, Critical Friends, the Superintendent, and the District Education Council (DEC). </p>
-				
+
 					<div class="overview">
 						<em>Overview</em>
 						<accordian-section color="var(--s1-color)" .list="${overviewList}"></accordian-section>
@@ -102,8 +102,8 @@ export class MainElement extends LitElement {
 
 				<div slot="overview">
 					<h4>Self-Assessment Instrument</h4>
-					<p>Section III identifies the process for self-assessment, including the overview and purpose, and the Self-Assessment Process in Brief, including a discussion around the self-assessment instruments and associated documents (<a target="_blank" href="https://collabe.nbed.nb.ca/sites/10year/nbsip/Shared%20Documents/2.%20Provincial%20Improvement%20Framework%20and%20Associated%20Documents/School%20Self-assessment%20Documents/School%20Improvement%20Indicators%20only%20document%20August%2027%2C%202019.docx?Web=1">Indicator Document</a>, <a target="_blank" href=" https://collabe.nbed.nb.ca/sites/10year/nbsip/Shared%20Documents/2.%20Provincial%20Improvement%20Framework%20and%20Associated%20Documents/School%20Self-assessment%20Documents/School%20Improvement%20Indicators%20with%20Explanatory%20Notes%20March%2021%2C%202019.docx?Web=1">Explanatory Notes Document</a>, <a target="_blank" href="https://collabe.nbed.nb.ca/sites/10year/nbsip/Shared%20Documents/2.%20Provincial%20Improvement%20Framework%20and%20Associated%20Documents/School%20Self-assessment%20Documents/Inclusion%20Look-fors%20June%2011%2C%202019.docx?Web=1">Inclusion Look-For</a>).  This section also provides a link to the online tiered document which combines all self-assessment documents into a user-friendly drop-down document.  
-					This section also includes suggestions for the effective use of data/evidence, including information on the triangulation of data (conversations, observations and products).  An explanation of the intent and utility of the Annual School Performance Report is provided at the end of this section. 
+					<p>Section III identifies the process for self-assessment, including the overview and purpose, and the Self-Assessment Process in Brief, including a discussion around the self-assessment instruments and associated documents (%LINK_17%, %LINK_18%, %LINK_19%).  This section also provides a link to the online tiered document which combines all self-assessment documents into a user-friendly drop-down document.
+					This section also includes suggestions for the effective use of data/evidence, including information on the triangulation of data (conversations, observations and products).  An explanation of the intent and utility of the Annual School Performance Report is provided at the end of this section.
 					</p>
 				</div>
 			</domain-section>

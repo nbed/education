@@ -1,8 +1,0 @@
-
-# source code
-src/**/*.js.map
-src/**/*.js
-
-# generated
-node_modules
-build

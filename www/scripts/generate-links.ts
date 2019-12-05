@@ -8,7 +8,7 @@ async function generate() {
 	for (const link of linksObj) {
 		const regex = new RegExp(`%${link.key}%`, "g");
 		const options = {
-			files: "../src/docs/*.js",
+			files: "../src/**/*.js",
 			from: regex,
 			to: link.href,
 		};

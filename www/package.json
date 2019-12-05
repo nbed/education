@@ -4,7 +4,7 @@
   "description": "Visualization of Monocl",
   "main": "main-element.js",
   "scripts": {
-    "build": "npx tsc && npx polymer build",
+    "build": "bash build.sh",
     "serve": "polymer serve --port 5000 build/es5-bundled",
     "bundle": "bash bundle.sh"
   },

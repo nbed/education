@@ -42,12 +42,12 @@ export const linksObj = [
 	},
 	{
 		key: "LINK_10",
-		href: `<a href="https://collabe.nbed.nb.ca/sites/10year/nbsip/Shared%20Documents/2.%20Provincial%20Improvement%20Framework%20and%20Associated%20Documents/School%20Self-assessment%20Documents/Inclusion%20Look-fors%20June%2011%2C%202019.docx?Web=1"
+		href: `<a href="https://collabe.nbed.nb.ca/sites/10year/nbsip/Shared%20Documents/2.%20Provincial%20Improvement%20Framework%20and%20Associated%20Documents/School%20Self-assessment%20Documents/Inclusion%20Look-fors%20FINAL.docx?Web=1"
 										 target="_blank">Inclusion Look-fors</a>`,
 	},
 	{
 		key: "LINK_11",
-		href: `<a href="https://collabe.nbed.nb.ca/sites/10year/nbsip/Shared%20Documents/2.%20Provincial%20Improvement%20Framework%20and%20Associated%20Documents/School%20Self-assessment%20Documents/Inclusion%20Look-fors%20June%2011%2C%202019.docx?Web=1"
+		href: `<a href="https://collabe.nbed.nb.ca/sites/10year/nbsip/Shared%20Documents/2.%20Provincial%20Improvement%20Framework%20and%20Associated%20Documents/School%20Self-assessment%20Documents/Inclusion%20Look-fors%20FINAL.docx?Web=1"
 										 target="_blank">Inclusion Look-fors</a>`,
 	},
 	{
@@ -58,17 +58,17 @@ export const linksObj = [
 	},
 	{
 		key: "LINK_13",
-		href: `<a href="https://collabe.nbed.nb.ca/sites/10year/nbsip/Shared%20Documents/2.%20Provincial%20Improvement%20Framework%20and%20Associated%20Documents/School%20Self-assessment%20Documents/Inclusion%20Look-fors%20June%2011%2C%202019.docx?Web=1"
+		href: `<a href="https://collabe.nbed.nb.ca/sites/10year/nbsip/Shared%20Documents/2.%20Provincial%20Improvement%20Framework%20and%20Associated%20Documents/School%20Self-assessment%20Documents/Inclusion%20Look-fors%20FINAL.docx?Web=1"
 										 target="_blank">Inclusion Look-fors</a>`,
 	},
 	{
 		key: "LINK_14",
-		href: `<a href="https://collabe.nbed.nb.ca/sites/10year/nbsip/Shared%20Documents/2.%20Provincial%20Improvement%20Framework%20and%20Associated%20Documents/School%20Self-assessment%20Documents/Inclusion%20Look-fors%20June%2011%2C%202019.docx?Web=1"
+		href: `<a href="https://collabe.nbed.nb.ca/sites/10year/nbsip/Shared%20Documents/2.%20Provincial%20Improvement%20Framework%20and%20Associated%20Documents/School%20Self-assessment%20Documents/Inclusion%20Look-fors%20FINAL.docx?Web=1"
 										 target="_blank">Inclusion Look-fors</a>`,
 	},
 	{
 		key: "LINK_15",
-		href: `<a href="https://collabe.nbed.nb.ca/sites/10year/nbsip/Shared%20Documents/2.%20Provincial%20Improvement%20Framework%20and%20Associated%20Documents/School%20Self-assessment%20Documents/Inclusion%20Look-fors%20June%2011%2C%202019.docx?Web=1">Inclusion
+		href: `<a href="https://collabe.nbed.nb.ca/sites/10year/nbsip/Shared%20Documents/2.%20Provincial%20Improvement%20Framework%20and%20Associated%20Documents/School%20Self-assessment%20Documents/Inclusion%20Look-fors%20FINAL.docx?Web=1">Inclusion
 										Look-fors</a>`,
 	},
 	{
@@ -78,7 +78,7 @@ export const linksObj = [
 	},
 	{
 		key: "LINK_17",
-		href: `<a href="http://www.trc.ca/websites/trcinstitution/File/2015/Findings/Calls_to_Action_English2.pdf">Truth
+		href: `<a href="http://trc.ca/assets/pdf/Calls_to_Action_English2.pdf">Truth
 											and Reconciliation Commission Calls to Action</a>`,
 	},
 	{
@@ -98,7 +98,7 @@ export const linksObj = [
 	},
 	{
 		key: "LINK_21",
-		href: `<a href="https://collabe.nbed.nb.ca/sites/10year/nbsip/Shared%20Documents/2.%20Provincial%20Improvement%20Framework%20and%20Associated%20Documents/School%20Self-assessment%20Documents/Inclusion%20Look-fors%20June%2011%2C%202019.docx?Web=1"
+		href: `<a href="https://collabe.nbed.nb.ca/sites/10year/nbsip/Shared%20Documents/2.%20Provincial%20Improvement%20Framework%20and%20Associated%20Documents/School%20Self-assessment%20Documents/Inclusion%20Look-fors%20FINAL.docx?Web=1"
 										 target="_blank">Inclusion Look-fors</a>`,
 	},
 	{
@@ -115,7 +115,7 @@ export const linksObj = [
 	},
 	{
 		key: "LINK_24",
-		href: `<a href="https://collabe.nbed.nb.ca/sites/10year/nbsip/Shared%20Documents/2.%20Provincial%20Improvement%20Framework%20and%20Associated%20Documents/School%20Self-assessment%20Documents/Inclusion%20Look-fors%20June%2011%2C%202019.docx?Web=1">Inclusion
+		href: `<a href="https://collabe.nbed.nb.ca/sites/10year/nbsip/Shared%20Documents/2.%20Provincial%20Improvement%20Framework%20and%20Associated%20Documents/School%20Self-assessment%20Documents/Inclusion%20Look-fors%20FINAL.docx?Web=1">Inclusion
 											Look-fors</a>`,
 	},
 	{
@@ -124,12 +124,12 @@ export const linksObj = [
 	},
 	{
 		key: "LINK_26",
-		href: `<a href="https://collabe.nbed.nb.ca/sites/10year/nbsip/Shared%20Documents/2.%20Provincial%20Improvement%20Framework%20and%20Associated%20Documents/School%20Self-assessment%20Documents/Inclusion%20Look-fors%20June%2011%2C%202019.docx?Web=1">Inclusion
+		href: `<a href="https://collabe.nbed.nb.ca/sites/10year/nbsip/Shared%20Documents/2.%20Provincial%20Improvement%20Framework%20and%20Associated%20Documents/School%20Self-assessment%20Documents/Inclusion%20Look-fors%20FINAL.docx?Web=1">Inclusion
 											Look-fors</a>`,
 	},
 	{
 		key: "LINK_27",
-		href: `<a href="https://collabe.nbed.nb.ca/sites/10year/nbsip/Shared%20Documents/2.%20Provincial%20Improvement%20Framework%20and%20Associated%20Documents/School%20Self-assessment%20Documents/Inclusion%20Look-fors%20June%2011%2C%202019.docx?Web=1"
+		href: `<a href="https://collabe.nbed.nb.ca/sites/10year/nbsip/Shared%20Documents/2.%20Provincial%20Improvement%20Framework%20and%20Associated%20Documents/School%20Self-assessment%20Documents/Inclusion%20Look-fors%20FINAL.docx?Web=1"
 										 target="_blank">Inclusion Look-fors</a>`,
 	},
 	{
@@ -140,12 +140,12 @@ export const linksObj = [
 	},
 	{
 		key: "LINK_29",
-		href: `<a href="https://collabe.nbed.nb.ca/sites/10year/nbsip/Shared%20Documents/2.%20Provincial%20Improvement%20Framework%20and%20Associated%20Documents/School%20Self-assessment%20Documents/Inclusion%20Look-fors%20June%2011%2C%202019.docx?Web=1"
+		href: `<a href="https://collabe.nbed.nb.ca/sites/10year/nbsip/Shared%20Documents/2.%20Provincial%20Improvement%20Framework%20and%20Associated%20Documents/School%20Self-assessment%20Documents/Inclusion%20Look-fors%20FINAL.docx?Web=1"
 										 target="_blank">Inclusion Look-fors</a>`,
 	},
 	{
 		key: "LINK_30",
-		href: `<a href="https://collabe.nbed.nb.ca/sites/10year/nbsip/Shared%20Documents/2.%20Provincial%20Improvement%20Framework%20and%20Associated%20Documents/School%20Self-assessment%20Documents/Inclusion%20Look-fors%20June%2011%2C%202019.docx?Web=1">Inclusion
+		href: `<a href="https://collabe.nbed.nb.ca/sites/10year/nbsip/Shared%20Documents/2.%20Provincial%20Improvement%20Framework%20and%20Associated%20Documents/School%20Self-assessment%20Documents/Inclusion%20Look-fors%20FINAL.docx?Web=1">Inclusion
 											Look-fors</a>`,
 	},
 	{
@@ -172,7 +172,7 @@ export const linksObj = [
 	},
 	{
 		key: "LINK_35",
-		href: `<a href="https://portal.nbed.nb.ca/tr/AaE/Documents/FINAL%20Balanced%20Assessment%20Doc%20April%208%202014.pdf">
+		href: `<a href="https://collabe.nbed.nb.ca/res/ae/docs/Balanced%20Assessment%20Final%20doc%202014.pdf ">
 												Balanced Assessment
 											</a>`,
 	},
@@ -184,22 +184,22 @@ export const linksObj = [
 	},
 	{
 		key: "LINK_37",
-		href: `<a href="https://collabe.nbed.nb.ca/sites/10year/nbsip/Shared%20Documents/2.%20Provincial%20Improvement%20Framework%20and%20Associated%20Documents/School%20Self-assessment%20Documents/Inclusion%20Look-fors%20June%2011%2C%202019.docx?Web=1">
+		href: `<a href="https://collabe.nbed.nb.ca/sites/10year/nbsip/Shared%20Documents/2.%20Provincial%20Improvement%20Framework%20and%20Associated%20Documents/School%20Self-assessment%20Documents/Inclusion%20Look-fors%20FINAL.docx?Web=1">
 												Inclusion Look-fors</a>`,
 	},
 	{
 		key: "LINK_38",
-		href: `<a href="https://collabe.nbed.nb.ca/sites/10year/nbsip/Shared%20Documents/2.%20Provincial%20Improvement%20Framework%20and%20Associated%20Documents/School%20Self-assessment%20Documents/Inclusion%20Look-fors%20June%2011%2C%202019.docx?Web=1">
+		href: `<a href="https://collabe.nbed.nb.ca/sites/10year/nbsip/Shared%20Documents/2.%20Provincial%20Improvement%20Framework%20and%20Associated%20Documents/School%20Self-assessment%20Documents/Inclusion%20Look-fors%20FINAL.docx?Web=1">
 												Inclusion Look-fors</a>`,
 	},
 	{
 		key: "LINK_39",
-		href: `<a href="https://collabe.nbed.nb.ca/sites/10year/nbsip/Shared%20Documents/2.%20Provincial%20Improvement%20Framework%20and%20Associated%20Documents/School%20Self-assessment%20Documents/Inclusion%20Look-fors%20June%2011%2C%202019.docx?Web=1">
+		href: `<a href="https://collabe.nbed.nb.ca/sites/10year/nbsip/Shared%20Documents/2.%20Provincial%20Improvement%20Framework%20and%20Associated%20Documents/School%20Self-assessment%20Documents/Inclusion%20Look-fors%20FINAL.docx?Web=1">
 												Inclusion Look-fors</a>`,
 	},
 	{
 		key: "LINK_40",
-		href: `<a href="https://collabe.nbed.nb.ca/sites/10year/nbsip/Shared%20Documents/2.%20Provincial%20Improvement%20Framework%20and%20Associated%20Documents/School%20Self-assessment%20Documents/Inclusion%20Look-fors%20June%2011%2C%202019.docx?Web=1">
+		href: `<a href="https://collabe.nbed.nb.ca/sites/10year/nbsip/Shared%20Documents/2.%20Provincial%20Improvement%20Framework%20and%20Associated%20Documents/School%20Self-assessment%20Documents/Inclusion%20Look-fors%20FINAL.docx?Web=1">
 												Inclusion Look-fors</a>`,
 	},
 	{
@@ -213,7 +213,7 @@ export const linksObj = [
 	},
 	{
 		key: "LINK_43",
-		href: `<a href="https://collabe.nbed.nb.ca/sites/10year/nbsip/Shared%20Documents/2.%20Provincial%20Improvement%20Framework%20and%20Associated%20Documents/School%20Self-assessment%20Documents/Inclusion%20Look-fors%20June%2011%2C%202019.docx?Web=1">
+		href: `<a href="https://collabe.nbed.nb.ca/sites/10year/nbsip/Shared%20Documents/2.%20Provincial%20Improvement%20Framework%20and%20Associated%20Documents/School%20Self-assessment%20Documents/Inclusion%20Look-fors%20FINAL.docx?Web=1">
 										Inclusion Look-fors </a>`,
 	},
 	{
@@ -258,7 +258,7 @@ export const linksObj = [
 	},
 	{
 		key: "LINK_52",
-		href: `<a href="https://portal.nbed.nb.ca/pd/Reading/UDL_PD/UDL%20Docs/October%20PD%20Day/Oct%2010%20Intro/Oct10_Intro%20output/story_content/external_files/guidelines%201.0.pdf">
+		href: `<a href="https://collabe.nbed.nb.ca/sites/ccic/hscp/Shared%20Documents/Professional%20Learning/Universal%20Design%20for%20Learning.pdf">
 										Universal Design for Learning</a>`,
 	},
 	{
@@ -268,17 +268,17 @@ export const linksObj = [
 	},
 	{
 		key: "LINK_54",
-		href: `<a href="https://portal.nbed.nb.ca/pd/Reading/Document%20Library/Formative%20Assessment/story.html">
+		href: `<a href="https://collabe.nbed.nb.ca/res/sa/ela/docs/Formative%20Assessment.pdf">
 										 Formative Assessment</a>`,
 	},
 	{
 		key: "LINK_55",
-		href: `<a href="https://portal.nbed.nb.ca/tr/AaE/Documents/FINAL%20Balanced%20Assessment%20Doc%20April%208%202014.pdf">
+		href: `<a href="https://collabe.nbed.nb.ca/res/ae/docs/Balanced%20Assessment%20Final%20doc%202014.pdf ">
 										Balanced Assessment</a>`,
 	},
 	{
 		key: "LINK_56",
-		href: `<a href="https://portal.nbed.nb.ca/tr/lr/Curriculum%20Support%20Resources/CCLF%20Portal%20Version%20Links.pdf">
+		href: `<a href="https://collabe.nbed.nb.ca/res/sa/ela/docs/Cross-curricular%20Look%20Fors%20Presentation%20kb%20(2).ppt">
 										Cross-Curricular Look-fors</a>`,
 	},
 	{
@@ -298,7 +298,7 @@ export const linksObj = [
 	},
 	{
 		key: "LINK_60",
-		href: `<a href="http://www.evidencebasedteaching.org.au/hattie-his-high-impact-strategies/">
+		href: `<a href="https://education.fcps.org/specialeducation/sites/specialeducation/files/crosswalkofinstructionalstrategies.pdf">
 										Hattie’s High Impact Strategies for Teachers</a>`,
 	},
 	{
@@ -307,11 +307,11 @@ export const linksObj = [
 	},
 	{
 		key: "LINK_62",
-		href: `<a href="https://collabe.nbed.nb.ca/res/curriculum/Pages/default.aspx"><span style="font-weight: 400;">Curriculum Documents </span></a>`,
+		href: `<a href="https://collabe.nbed.nb.ca/res/Pages/curriculumdocuments.aspx"><span style="font-weight: 400;">Curriculum Documents </span></a>`,
 	},
 	{
 		key: "LINK_63",
-		href: `<a href="https://portal.nbed.nb.ca/tr/lr/Curriculum%20Support%20Resources/Cross-Curricular%20Reading%20Tools.pdf"><span style="font-weight: 400;">Cross-Curricular Reading Tools</span></a>`,
+		href: `<a href="https://collabe.nbed.nb.ca/res/sa/gr/gendocs/Cross-Curricular%20Reading%20Tools.pdf"><span style="font-weight: 400;">Cross-Curricular Reading Tools</span></a>`,
 	},
 	{
 		key: "LINK_64",
@@ -323,7 +323,7 @@ export const linksObj = [
 	},
 	{
 		key: "LINK_66",
-		href: `<a href="https://collabe.nbed.nb.ca/admin/sis/_layouts/15/WopiFrame.aspx?sourcedoc=/admin/sis/SISDocuments/Inclusion%20Look-Fors%20Dec%2010%202013%20Final%20Version.doc&amp;action=default"><span style="font-weight: 400;">Inclusion Look-fors</span></a>`,
+		href: `<a href="https://collabe.nbed.nb.ca/sites/10year/nbsip/Shared%20Documents/2.%20Provincial%20Improvement%20Framework%20and%20Associated%20Documents/School%20Self-assessment%20Documents/Inclusion%20Look-fors%20FINAL.docx?Web=1"><span style="font-weight: 400;">Inclusion Look-fors</span></a>`,
 	},
 	{
 		key: "LINK_67",
@@ -335,7 +335,7 @@ export const linksObj = [
 	},
 	{
 		key: "LINK_69",
-		href: `<a href="http://www.reading.org/downloads/positions/ps1036_adolescent.pdf"><span style="font-weight: 400;">http://www.reading.org/downloads/positions/ps1036_adolescent.pdf</span></a>`,
+		href: `<a href="https://www.literacyworldwide.org/get-resources/position-statements"><span style="font-weight: 400;">https://www.literacyworldwide.org/get-resources/position-statements</span></a>`,
 	},
 	{
 		key: "LINK_70",
@@ -351,27 +351,27 @@ export const linksObj = [
 	},
 	{
 		key: "LINK_73",
-		href: `<a href="https://collabe.nbed.nb.ca/res/sa/if/Subject/Grade%205%20IF%20Guide%20May%202016.docx"><span style="font-weight: 400;">Intensive French Look-fors</span></a>`,
+		href: `<a href="https://collabe.nbed.nb.ca/res/sa/if/Subject/Intensive%20French%205.docx"><span style="font-weight: 400;">Intensive French Look-fors</span></a>`,
 	},
 	{
 		key: "LINK_74",
-		href: `<a href="https://collabe.nbed.nb.ca/res/sa/if/Subject/Post-Intensive%20French%20Middle%20School%20Curriculum%20July%202015.docx"><span style="font-weight: 400;">Link to Post Intensive French Look-fors</span></a>`,
+		href: `<a href="https://collabe.nbed.nb.ca/res/sa/if/Subject/Post-Intensive%20French%206-8%20Curriculum.docx"><span style="font-weight: 400;">Link to Post Intensive French Look-fors</span></a>`,
 	},
 	{
 		key: "LINK_75",
-		href: `<a href="https://collabe.nbed.nb.ca/res/sa/if/Subject/Grade%205%20IF%20Guide%20May%202016.docx"><span style="font-weight: 400;">Intensive French Look-fors</span></a>`,
+		href: `<a href="https://collabe.nbed.nb.ca/res/sa/if/Subject/Intensive%20French%205.docx"><span style="font-weight: 400;">Intensive French Look-fors</span></a>`,
 	},
 	{
 		key: "LINK_76",
-		href: `<a href="https://collabe.nbed.nb.ca/res/sa/if/Subject/Post-Intensive%20French%20Middle%20School%20Curriculum%20July%202015.docx"><span style="font-weight: 400;">Link to Post Intensive French Look-fors</span></a>`,
+		href: `<a href="https://collabe.nbed.nb.ca/res/sa/if/Subject/Post-Intensive%20French%206-8%20Curriculum.docx"><span style="font-weight: 400;">Link to Post Intensive French Look-fors</span></a>`,
 	},
 	{
 		key: "LINK_77",
-		href: `<a href="https://portal.nbed.nb.ca/tr/lr/Curriculum%20Support%20Resources/CCLF%20Portal%20Version%20Links.pdf"><span style="font-weight: 400;">Cross-Curricular Look-fors</span></a>`,
+		href: `<a href="https://collabe.nbed.nb.ca/res/sa/ela/docs/Cross-curricular%20Look%20Fors%20Presentation%20kb%20(2).ppt"><span style="font-weight: 400;">Cross-Curricular Look-fors</span></a>`,
 	},
 	{
 		key: "LINK_78",
-		href: `<a href="https://portal.nbed.nb.ca/tr/AaE/Documents/FINAL%20Balanced%20Assessment%20Doc%20April%208%202014.pdf"><span style="font-weight: 400;">Balanced Assessment</span></a>`,
+		href: `<a href="https://collabe.nbed.nb.ca/res/ae/docs/Balanced%20Assessment%20Final%20doc%202014.pdf "><span style="font-weight: 400;">Balanced Assessment</span></a>`,
 	},
 	{
 		key: "LINK_79",
@@ -379,7 +379,7 @@ export const linksObj = [
 	},
 	{
 		key: "LINK_80",
-		href: `<a href="https://portal.nbed.nb.ca/pd/Reading/Document%20Library/Formative%20Assessment/story.html"><span style="font-weight: 400;">Formative Assessment </span></a>`,
+		href: `<a href="https://collabe.nbed.nb.ca/res/sa/ela/docs/Formative%20Assessment.pdf"><span style="font-weight: 400;">Formative Assessment </span></a>`,
 	},
 	{
 		key: "LINK_81",

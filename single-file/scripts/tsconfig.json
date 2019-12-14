@@ -14,11 +14,11 @@
 		"experimentalDecorators": true,
 		"lib": [
 			"es2017",
-			"dom"
+			"es2015.promise"
 		]
 	},
 	"include": [
-		"./*.ts",
+		"**/*.ts",
 	],
 	"exclude": [],
 }

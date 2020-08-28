@@ -10,11 +10,13 @@ mkdir $output
 # Build
 ## build improvement-indicators
 cd single-file
+npm i
 npm run build
 cd ..
 
 ## build improvement-frameworks
 cd www
+npm i
 npm run bundle
 cd ..
 
@@ -34,7 +36,7 @@ cp -r ../single-file/* ./$dir1
 cd $dir1
 mv "${dir1}.html" index.html
 rm main-template.html # unneeded as it is a template
-rm -rf  node_modules
+rm -rf node_modules
 cd ..
 
 # improvement-frameworks

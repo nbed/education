@@ -389,6 +389,10 @@ ul ol {
 	margin: 0em 0em 0em 3em;
 }
 
+ol {
+	margin: 1em 2em;
+}
+
 /* menu */
 #menu {
 	position: fixed;

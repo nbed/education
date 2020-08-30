@@ -387,14 +387,18 @@ export const linksObj = [
 	},
 	{
 		key: "LINK_83",
-		href: `<a href="http://stream.nbed.nb.ca/video/Portal/Mock%20ESS%20Team%20Meeting.wmv"><span style="font-weight: 400;">ASD-East mock - ESS Team meeting</span></a>`,
+		href: `<a target="_blank" href="http://stream.nbed.nb.ca/video/Portal/Mock%20ESS%20Team%20Meeting.wmv"><span style="font-weight: 400;">ASD-East mock - ESS Team meeting</span></a>`,
 	},
 	{
 		key: "LINK_84",
-		href: `<a href="http://cmec.ca/docs/Student-Transition-Benchmark-Self-Assessment-Tool-EN.pdf">CMEC Reference Framework for Successful Transitions</a>`
+		href: `<a target="_blank" href="http://cmec.ca/docs/Student-Transition-Benchmark-Self-Assessment-Tool-EN.pdf">CMEC Reference Framework for Successful Transitions</a>`
 	},
 	{
 		key: "LINK_85",
-		href: `<a href="https://nbacl.nb.ca/wp-content/uploads/2020/07/Creating-An-Inclusive-School-Tool_web.pdf">NBACL - Creating an Inclusive School</a>`
+		href: `<a target="_blank" href="https://nbacl.nb.ca/wp-content/uploads/2020/07/Creating-An-Inclusive-School-Tool_web.pdf">NBACL - Creating an Inclusive School</a>`
+	}
+	{
+		key: "LINK_86",
+		href: `<a target="_blank" href="https://collabe.nbed.nb.ca/sites/10year/nbsip/Shared%20Documents/2.%20Provincial%20Improvement%20Framework%20and%20Associated%20Documents/Return%20to%20School%20Guide%20Parents%20August%202020.pdf?Web=1">Return to School Guide August 2020</a>`
 	}
 ];

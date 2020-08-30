@@ -14,7 +14,7 @@ export const linksObj = [
 	},
 	{
 		key: "LINK_4",
-		href: `<a href="https://collabe.nbed.nb.ca/sites/10year/nbsip/Shared%20Documents/2.%20Provincial%20Improvement%20Framework%20and%20Associated%20Documents/School%20Self-assessment%20Documents/Inclusion%20Look-fors%20FINAL.docx?Web=1" target="_blank">Inclusion Look-fors</a>`,
+		href: `<a href="https://collabe.nbed.nb.ca/sites/10year/nbsip/Shared%20Documents/2.%20Provincial%20Improvement%20Framework%20and%20Associated%20Documents/School%20Self-assessment%20Documents/Inclusion%20Look-fors%20August%2028%2C%202020%20FINAL.docx?Web=1" target="_blank">Inclusion Look-fors</a>`,
 	},
 	{
 		key: "LINK_5",
@@ -103,15 +103,11 @@ export const linksObj = [
 	},
 	{
 		key: "LINK_22",
-		href: `<a href="" target="_blank">
-											<marl>ADD LINK FOR EECD TIME OUT AND SECLUSION GUIDELINES</mark>
-										</a>`,
+		href: `<a href="https://collabe.nbed.nb.ca/res/ess/ESS%20Documents/Guidelines%20Seclusion%20and%20Restraint%20Final%2012018.pdf" target="_blank">EECD Time Out and Seclusion Guidelines</a>`,
 	},
 	{
 		key: "LINK_23",
-		href: `<a href="https://collabe.nbed.nb.ca/res/ess/ESS Documents/INCLUSION series - issue 1.pdf"
-										 target="_blank">Policy 322: Inclusive Education – From Policy to
-											Practice Series</a>`,
+		href: `<a href="https://collabe.nbed.nb.ca/res/ess/ESS%20Documents/INCLUSION%20series%20-%20issue%201.pdf" target="_blank">Policy 322: Inclusive Education &ndash; From Policy to Practice Series</a>`,
 	},
 	{
 		key: "LINK_24",
@@ -391,6 +387,24 @@ export const linksObj = [
 	},
 	{
 		key: "LINK_83",
-		href: `<a href="http://stream.nbed.nb.ca/video/Portal/Mock%20ESS%20Team%20Meeting.wmv"><span style="font-weight: 400;">ASD-East mock - ESS Team meeting</span></a>`,
+		href: `<a target="_blank" href="http://stream.nbed.nb.ca/video/Portal/Mock%20ESS%20Team%20Meeting.wmv"><span style="font-weight: 400;">ASD-East mock - ESS Team meeting</span></a>`,
 	},
+	{
+		key: "LINK_84",
+		href: `<a target="_blank" href="http://cmec.ca/docs/Student-Transition-Benchmark-Self-Assessment-Tool-EN.pdf">CMEC Reference Framework for Successful Transitions</a>`
+	},
+	{
+		key: "LINK_85",
+		href: `<a target="_blank" href="https://nbacl.nb.ca/wp-content/uploads/2020/07/Creating-An-Inclusive-School-Tool_web.pdf">NBACL - Creating an Inclusive School</a>`
+	},
+	{
+		key: "LINK_86",
+		href: `<a target="_blank" href="https://collabe.nbed.nb.ca/sites/10year/nbsip/Shared%20Documents/2.%20Provincial%20Improvement%20Framework%20and%20Associated%20Documents/Return%20to%20School%20Guide%20Parents%20August%202020.pdf?Web=1">Return to School Guide August 2020</a>`
+	},
+	{
+		key: "LINK_87",
+		href: `<a target="_blank" href="https://one-un.nbed.nb.ca/f5-w-68747470733a2f2f636f6c6c6162652e6e6265642e6e622e6361$$/sites/10year/nbsip/Shared%20Documents/2.%20Provincial%20Improvement%20Framework%20and%20Associated%20Documents/Atlantic%20Provinces%20Standards%20of%20Practice%20for%20Educational%20Leaders%20final%20August%202020.pdf?Web=1">
+		Atlantic Provinces Standards of Practice for Educational Leaders</a>`
+	},
+
 ];

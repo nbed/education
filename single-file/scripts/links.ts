@@ -14,7 +14,7 @@ export const linksObj = [
 	},
 	{
 		key: "LINK_4",
-		href: `<a href="https://collabe.nbed.nb.ca/sites/10year/nbsip/Shared%20Documents/2.%20Provincial%20Improvement%20Framework%20and%20Associated%20Documents/School%20Self-assessment%20Documents/Inclusion%20Look-fors%20FINAL.docx?Web=1" target="_blank">Inclusion Look-fors</a>`,
+		href: `<a href="https://collabe.nbed.nb.ca/sites/10year/nbsip/Shared%20Documents/2.%20Provincial%20Improvement%20Framework%20and%20Associated%20Documents/School%20Self-assessment%20Documents/Inclusion%20Look-fors%20August%2028%2C%202020%20FINAL.docx?Web=1" target="_blank">Inclusion Look-fors</a>`,
 	},
 	{
 		key: "LINK_5",

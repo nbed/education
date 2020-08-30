@@ -396,9 +396,15 @@ export const linksObj = [
 	{
 		key: "LINK_85",
 		href: `<a target="_blank" href="https://nbacl.nb.ca/wp-content/uploads/2020/07/Creating-An-Inclusive-School-Tool_web.pdf">NBACL - Creating an Inclusive School</a>`
-	}
+	},
 	{
 		key: "LINK_86",
 		href: `<a target="_blank" href="https://collabe.nbed.nb.ca/sites/10year/nbsip/Shared%20Documents/2.%20Provincial%20Improvement%20Framework%20and%20Associated%20Documents/Return%20to%20School%20Guide%20Parents%20August%202020.pdf?Web=1">Return to School Guide August 2020</a>`
-	}
+	},
+	{
+		key: "LINK_87",
+		href: `<a target="_blank" href="https://one-un.nbed.nb.ca/f5-w-68747470733a2f2f636f6c6c6162652e6e6265642e6e622e6361$$/sites/10year/nbsip/Shared%20Documents/2.%20Provincial%20Improvement%20Framework%20and%20Associated%20Documents/Atlantic%20Provinces%20Standards%20of%20Practice%20for%20Educational%20Leaders%20final%20August%202020.pdf?Web=1">
+		Atlantic Provinces Standards of Practice for Educational Leaders</a>`
+	},
+
 ];

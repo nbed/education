@@ -103,15 +103,11 @@ export const linksObj = [
 	},
 	{
 		key: "LINK_22",
-		href: `<a href="" target="_blank">
-											<marl>ADD LINK FOR EECD TIME OUT AND SECLUSION GUIDELINES</mark>
-										</a>`,
+		href: `<a href="https://collabe.nbed.nb.ca/res/ess/ESS%20Documents/Guidelines%20Seclusion%20and%20Restraint%20Final%2012018.pdf" target="_blank">EECD Time Out and Seclusion Guidelines</a>`,
 	},
 	{
 		key: "LINK_23",
-		href: `<a href="https://collabe.nbed.nb.ca/res/ess/ESS Documents/INCLUSION series - issue 1.pdf"
-										 target="_blank">Policy 322: Inclusive Education – From Policy to
-											Practice Series</a>`,
+		href: `<a href="https://collabe.nbed.nb.ca/res/ess/ESS%20Documents/INCLUSION%20series%20-%20issue%201.pdf" target="_blank">Policy 322: Inclusive Education &ndash; From Policy to Practice Series</a>`,
 	},
 	{
 		key: "LINK_24",

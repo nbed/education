@@ -393,4 +393,8 @@ export const linksObj = [
 		key: "LINK_83",
 		href: `<a href="http://stream.nbed.nb.ca/video/Portal/Mock%20ESS%20Team%20Meeting.wmv"><span style="font-weight: 400;">ASD-East mock - ESS Team meeting</span></a>`,
 	},
+	{
+		key: "LINK_84",
+		href: `<a href="http://cmec.ca/docs/Student-Transition-Benchmark-Self-Assessment-Tool-EN.pdf">CMEC Reference Framework for Successful Transitions</a>`
+	}
 ];

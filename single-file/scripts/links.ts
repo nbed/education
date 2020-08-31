@@ -407,9 +407,18 @@ export const linksObj = [
 		Atlantic Provinces Standards of Practice for Educational Leaders</a>`
 	},
 	{
+		key: "LINK_88",
+		href: `<a target="_blank" href="https://collabe.nbed.nb.ca/sites/10year/nbsip/Shared%20Documents/2.%20Provincial%20Improvement%20Framework%20and%20Associated%20Documents/Characteristics%20of%20a%20Positive%20Learning%20Environment%20Benes%20and%20Alperin%202016.docx?Web=1">
+		Social Emotional Learning (SEL)</a>`
+	},
+	{
+		key: "LINK_89",
+		href: `<a target="_blank" href="https://www.researchgate.net/publication/327580295_Reflective_Practices_in_Teaching_Profession_and_Professionalism%20August%206">
+		Reflective_Practices_in_Teaching_Profession_and_Professionalism</a>`
+	},
+	{
 		key: "LINK_90",
 		href: `<a target="_blank" href="./pdca-template-appendix-d.htm">
 		PDCA Template</a>`
-	}
-
+	},
 ];

@@ -168,7 +168,7 @@ export const linksObj = [
 	},
 	{
 		key: "LINK_35",
-		href: `<a href="https://collabe.nbed.nb.ca/res/ae/docs/Balanced%20Assessment%20Final%20doc%202014.pdf ">
+		href: `<a href="https://collabe.nbed.nb.ca/res/ae/docs/Balanced%20Assessment%20Final%20doc%202014.pdf">
 												Balanced Assessment
 											</a>`,
 	},
@@ -254,7 +254,7 @@ export const linksObj = [
 	},
 	{
 		key: "LINK_52",
-		href: `<a href="https://collabe.nbed.nb.ca/sites/ccic/hscp/Shared%20Documents/Professional%20Learning/Universal%20Design%20for%20Learning.pdf">
+		href: `<a href="https://collabe.nbed.nb.ca/res/pl/udlpd/Pages/default.aspx">
 										Universal Design for Learning</a>`,
 	},
 	{
@@ -415,5 +415,19 @@ export const linksObj = [
 		key: "LINK_89",
 		href: `<a target="_blank" href="https://www.researchgate.net/publication/327580295_Reflective_Practices_in_Teaching_Profession_and_Professionalism%20August%206">
 		Reflective_Practices_in_Teaching_Profession_and_Professionalism</a>`
+	},
+	{
+		key: "LINK_90",
+		href: `<a href="https://schoolguide.casel.org/what-is-sel/indicators-of-schoolwide-sel/">CASEL&rsquo;s
+		Indicators of School Wide SEL</a>`
+	},
+	{
+		key: "LINK_91",
+		href: `<a href="https://schoolguide.casel.org/uploads/sites/2/2020/04/Blank-Rubric-Template-3.30.20.pdf">CASEL
+		School-wide SEL Rubric</a>`
+	},
+	{
+		key: "LINK_92",
+		href: `<a href="https://collabe.nbed.nb.ca/sites/10year/nbsip/Shared%20Documents/2.%20Provincial%20Improvement%20Framework%20and%20Associated%20Documents/Social%20Emotional%20Learning%20Graphic.docx?Web=1">Social Emotional Learning Graphic</a>`
 	}
 ];

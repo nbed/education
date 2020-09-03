@@ -429,5 +429,9 @@ export const linksObj = [
 	{
 		key: "LINK_92",
 		href: `<a href="https://collabe.nbed.nb.ca/sites/10year/nbsip/Shared%20Documents/2.%20Provincial%20Improvement%20Framework%20and%20Associated%20Documents/Social%20Emotional%20Learning%20Graphic.docx?Web=1">Social Emotional Learning Graphic</a>`
+	},
+	{
+		key: "LINK_93",
+		href: `<a href="https://visible-learning.org/hattie-ranking-influences-effect-sizes-learning-achievement/">Hattie&rsquo;s High Impact Strategies for Teachers</a>`
 	}
 ];

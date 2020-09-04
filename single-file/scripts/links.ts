@@ -493,4 +493,9 @@ export const linksObj = [
 		href: `<a href="https://collabe.nbed.nb.ca/sites/ccic/Shared%20Documents/Portrait%20of%20a%20Learner%20-%20Future%20Ready!%20Self-Determined%20and%20Capable.pdf">
 		Portrait of a Learner</a>`
 	},
+	{
+		key: "LINK_106",
+		href: `<a href="https://collabe.nbed.nb.ca/sites/10year/nbsip/Shared%20Documents/2.%20Provincial%20Improvement%20Framework%20and%20Associated%20Documents/Flexible%20Learning%20Draft%20Key%20Principles%20March%206%202020.docx?Web=1">
+		Flexible Learning Key Principles</a>`
+	},
 ];

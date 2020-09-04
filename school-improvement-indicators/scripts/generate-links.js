@@ -18,6 +18,7 @@ async function generate() {
                     console.info("Problem:");
                     console.info(link);
                     console.info(result);
+                    console.info("Note: this means the link id was not found in the document");
                     console.info("----------");
                 }
             }

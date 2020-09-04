@@ -439,4 +439,44 @@ export const linksObj = [
 		href: `<a href="https://schoolguide.casel.org/what-is-sel/indicators-of-schoolwide-sel/">CASEL&rsquo;s
 		Indicators of School Wide SEL</a>`
 	},
+	{
+		key: "LINK_95",
+		href: `<a href="https://www.youtube.com/channel/UCvQkEzcH9f_9OylEdmALiWg">
+		https://www.youtube.com/channel/UCvQkEzcH9f_9OylEdmALiWg</a>`
+	},
+	{
+		key: "LINK_96",
+		href: `<a href="https://www.climate-action.info/">
+		https://www.climate-action.info/</a>`
+	},
+	{
+		key: "LINK_97",
+		href: `<a href="https://globalgoalsweek.org/">
+		https://globalgoalsweek.org/</a>`
+	},
+	{
+		key: "LINK_98",
+		href: `<a href="https://youthchallenge.biomimicry.org/">
+		https://youthchallenge.biomimicry.org/</a>`
+	},
+	{
+		key: "LINK_99",
+		href: `<a href="https://letstalkscience.ca/projects">
+		https://letstalkscience.ca/projects</a>`
+	},
+	{
+		key: "LINK_100",
+		href: `<a href="https://phet.colorado.edu/">
+		https://phet.colorado.edu/</a>`
+	},
+	{
+		key: "LINK_101",
+		href: `<a href="https://www.nationalgeographic.org/funding-opportunities/grants/what-we-fund/ai-earth-innovation/">
+		https://www.nationalgeographic.org/funding-opportunities/grants/what-we-fund/ai-earth-innovation/</a>`
+	},
+	{
+		key: "LINK_102",
+		href: `<a href="https://edudownloads.azureedge.net/msdownloads/Microsoft-EducationReimagined-Paper.pdf">
+		Education reimagined:  https://edudownloads.azureedge.net/msdownloads/Microsoft-EducationReimagined-Paper.pdf</a>`
+	},
 ];

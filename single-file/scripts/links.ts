@@ -46,30 +46,10 @@ export const linksObj = [
 										 target="_blank">Inclusion Look-fors</a>`,
 	},
 	{
-		key: "LINK_11",
-		href: `<a href="https://collabe.nbed.nb.ca/sites/10year/nbsip/Shared%20Documents/2.%20Provincial%20Improvement%20Framework%20and%20Associated%20Documents/School%20Self-assessment%20Documents/Inclusion%20Look-fors%20FINAL.docx?Web=1"
-										 target="_blank">Inclusion Look-fors</a>`,
-	},
-	{
 		key: "LINK_12",
 		href: `<a href="http://www.nbta.ca/resources/documents/policy-598.3.pdf"
 										 target="_blank">A Resource Guide for Educators: Anti-Homophobia and
 											Anti-Heterosexism </a>`,
-	},
-	{
-		key: "LINK_13",
-		href: `<a href="https://collabe.nbed.nb.ca/sites/10year/nbsip/Shared%20Documents/2.%20Provincial%20Improvement%20Framework%20and%20Associated%20Documents/School%20Self-assessment%20Documents/Inclusion%20Look-fors%20FINAL.docx?Web=1"
-										 target="_blank">Inclusion Look-fors</a>`,
-	},
-	{
-		key: "LINK_14",
-		href: `<a href="https://collabe.nbed.nb.ca/sites/10year/nbsip/Shared%20Documents/2.%20Provincial%20Improvement%20Framework%20and%20Associated%20Documents/School%20Self-assessment%20Documents/Inclusion%20Look-fors%20FINAL.docx?Web=1"
-										 target="_blank">Inclusion Look-fors</a>`,
-	},
-	{
-		key: "LINK_15",
-		href: `<a href="https://collabe.nbed.nb.ca/sites/10year/nbsip/Shared%20Documents/2.%20Provincial%20Improvement%20Framework%20and%20Associated%20Documents/School%20Self-assessment%20Documents/Inclusion%20Look-fors%20FINAL.docx?Web=1">Inclusion
-										Look-fors</a>`,
 	},
 	{
 		key: "LINK_16",
@@ -97,11 +77,6 @@ export const linksObj = [
 										 target="_blank">APSEA Position Paper on Timeouts</a>`,
 	},
 	{
-		key: "LINK_21",
-		href: `<a href="https://collabe.nbed.nb.ca/sites/10year/nbsip/Shared%20Documents/2.%20Provincial%20Improvement%20Framework%20and%20Associated%20Documents/School%20Self-assessment%20Documents/Inclusion%20Look-fors%20FINAL.docx?Web=1"
-										 target="_blank">Inclusion Look-fors</a>`,
-	},
-	{
 		key: "LINK_22",
 		href: `<a href="https://collabe.nbed.nb.ca/res/ess/ESS%20Documents/Guidelines%20Seclusion%20and%20Restraint%20Final%2012018.pdf" target="_blank">EECD Time Out and Seclusion Guidelines</a>`,
 	},
@@ -110,23 +85,8 @@ export const linksObj = [
 		href: `<a href="https://collabe.nbed.nb.ca/res/ess/ESS%20Documents/INCLUSION%20series%20-%20issue%201.pdf" target="_blank">Policy 322: Inclusive Education &ndash; From Policy to Practice Series</a>`,
 	},
 	{
-		key: "LINK_24",
-		href: `<a href="https://collabe.nbed.nb.ca/sites/10year/nbsip/Shared%20Documents/2.%20Provincial%20Improvement%20Framework%20and%20Associated%20Documents/School%20Self-assessment%20Documents/Inclusion%20Look-fors%20FINAL.docx?Web=1">Inclusion
-											Look-fors</a>`,
-	},
-	{
 		key: "LINK_25",
 		href: `<a href="https://www.nbhc.ca/">New Brunswick Health Council</a>`,
-	},
-	{
-		key: "LINK_26",
-		href: `<a href="https://collabe.nbed.nb.ca/sites/10year/nbsip/Shared%20Documents/2.%20Provincial%20Improvement%20Framework%20and%20Associated%20Documents/School%20Self-assessment%20Documents/Inclusion%20Look-fors%20FINAL.docx?Web=1">Inclusion
-											Look-fors</a>`,
-	},
-	{
-		key: "LINK_27",
-		href: `<a href="https://collabe.nbed.nb.ca/sites/10year/nbsip/Shared%20Documents/2.%20Provincial%20Improvement%20Framework%20and%20Associated%20Documents/School%20Self-assessment%20Documents/Inclusion%20Look-fors%20FINAL.docx?Web=1"
-										 target="_blank">Inclusion Look-fors</a>`,
 	},
 	{
 		key: "LINK_28",
@@ -135,24 +95,9 @@ export const linksObj = [
 											2017)</a>`,
 	},
 	{
-		key: "LINK_29",
-		href: `<a href="https://collabe.nbed.nb.ca/sites/10year/nbsip/Shared%20Documents/2.%20Provincial%20Improvement%20Framework%20and%20Associated%20Documents/School%20Self-assessment%20Documents/Inclusion%20Look-fors%20FINAL.docx?Web=1"
-										 target="_blank">Inclusion Look-fors</a>`,
-	},
-	{
-		key: "LINK_30",
-		href: `<a href="https://collabe.nbed.nb.ca/sites/10year/nbsip/Shared%20Documents/2.%20Provincial%20Improvement%20Framework%20and%20Associated%20Documents/School%20Self-assessment%20Documents/Inclusion%20Look-fors%20FINAL.docx?Web=1">Inclusion
-											Look-fors</a>`,
-	},
-	{
 		key: "LINK_31",
 		href: `<a href="https://collabe.nbed.nb.ca/admin/sis/_layouts/15/WopiFrame2.aspx?sourcedoc=/admin/sis/SISDocuments/Distributive%20Leadership%20Presentation%20June%202014.pptx&action=default">Distributive
 											Leadership PowerPoint</a>`,
-	},
-	{
-		key: "LINK_32",
-		href: `<a href="https://collabe.nbed.nb.ca/res/sa/gr/gendocs/New%20Brunswick%20Global%20Competencies%20Approved,%20Feb%202018.pdf">NB
-												Global Competencies</a>`,
 	},
 	{
 		key: "LINK_33",
@@ -177,26 +122,6 @@ export const linksObj = [
 		href: `<a href="https://collabe.nbed.nb.ca/res/sa/ela/docs/Formative%20Assessment.pdf">
 												Formative Assessment
 											</a>`,
-	},
-	{
-		key: "LINK_37",
-		href: `<a href="https://collabe.nbed.nb.ca/sites/10year/nbsip/Shared%20Documents/2.%20Provincial%20Improvement%20Framework%20and%20Associated%20Documents/School%20Self-assessment%20Documents/Inclusion%20Look-fors%20FINAL.docx?Web=1">
-												Inclusion Look-fors</a>`,
-	},
-	{
-		key: "LINK_38",
-		href: `<a href="https://collabe.nbed.nb.ca/sites/10year/nbsip/Shared%20Documents/2.%20Provincial%20Improvement%20Framework%20and%20Associated%20Documents/School%20Self-assessment%20Documents/Inclusion%20Look-fors%20FINAL.docx?Web=1">
-												Inclusion Look-fors</a>`,
-	},
-	{
-		key: "LINK_39",
-		href: `<a href="https://collabe.nbed.nb.ca/sites/10year/nbsip/Shared%20Documents/2.%20Provincial%20Improvement%20Framework%20and%20Associated%20Documents/School%20Self-assessment%20Documents/Inclusion%20Look-fors%20FINAL.docx?Web=1">
-												Inclusion Look-fors</a>`,
-	},
-	{
-		key: "LINK_40",
-		href: `<a href="https://collabe.nbed.nb.ca/sites/10year/nbsip/Shared%20Documents/2.%20Provincial%20Improvement%20Framework%20and%20Associated%20Documents/School%20Self-assessment%20Documents/Inclusion%20Look-fors%20FINAL.docx?Web=1">
-												Inclusion Look-fors</a>`,
 	},
 	{
 		key: "LINK_41",
@@ -233,19 +158,9 @@ export const linksObj = [
 										http://www.pbisworld.com/</a>`,
 	},
 	{
-		key: "LINK_48",
-		href: `<a href="https://collabe.nbed.nb.ca/res/sa/gr/gendocs/New%20Brunswick%20Global%20Competencies%20Approved,%20Feb%202018.pdf">
-										NB Global Competencies </a>`,
-	},
-	{
 		key: "LINK_49",
 		href: `<a href="https://collabe.nbed.nb.ca/admin/sis/_layouts/15/WopiFrame2.aspx?sourcedoc=/admin/sis/SISDocuments/Lesson%20Plan%20Information%20Bulletin%20June%2010%202014.docx&action=default">
 										Lesson Planning Bulletin </a>`,
-	},
-	{
-		key: "LINK_50",
-		href: `<a href="https://collabe.nbed.nb.ca/admin/sis/_layouts/15/WopiFrame2.aspx?sourcedoc=/admin/sis/SISDocuments/Lesson%20Plan%20Information%20Bulletin%20June%2010%202014.docx&action=default">
-										Lesson Planning Bulletin</a>`,
 	},
 	{
 		key: "LINK_51",
@@ -258,21 +173,6 @@ export const linksObj = [
 										Universal Design for Learning</a>`,
 	},
 	{
-		key: "LINK_53",
-		href: `<a href="https://collabe.nbed.nb.ca/admin/sis/_layouts/15/WopiFrame2.aspx?sourcedoc=/admin/sis/SISDocuments/Lesson%20Plan%20Information%20Bulletin%20June%2010%202014.docx&action=default">
-										Lesson Planning Bulletin</a>`,
-	},
-	{
-		key: "LINK_54",
-		href: `<a href="https://collabe.nbed.nb.ca/res/sa/ela/docs/Formative%20Assessment.pdf">
-										 Formative Assessment</a>`,
-	},
-	{
-		key: "LINK_55",
-		href: `<a href="https://collabe.nbed.nb.ca/res/ae/docs/Balanced%20Assessment%20Final%20doc%202014.pdf ">
-										Balanced Assessment</a>`,
-	},
-	{
 		key: "LINK_56",
 		href: `<a href="https://collabe.nbed.nb.ca/res/sa/ela/docs/Cross-curricular%20Look%20Fors%20Presentation%20kb%20(2).ppt">
 										Cross-Curricular Look-fors</a>`,
@@ -283,19 +183,9 @@ export const linksObj = [
 										Cross-Curricular Reading Tools</a>`,
 	},
 	{
-		key: "LINK_58",
-		href: `<a href="https://collabe.nbed.nb.ca/res/sa/gr/gendocs/New%20Brunswick%20Global%20Competencies%20Approved,%20Feb%202018.pdf">
-										NB Global Competencies</a>`,
-	},
-	{
 		key: "LINK_59",
 		href: `<a href="http://www.bloomstaxonomy.org/Blooms%20Taxonomy%20questions.pdf">
 										Bloom’s Taxonomy</a>`,
-	},
-	{
-		key: "LINK_60",
-		href: `<a href="https://education.fcps.org/specialeducation/sites/specialeducation/files/crosswalkofinstructionalstrategies.pdf">
-										Hattie’s High Impact Strategies for Teachers</a>`,
 	},
 	{
 		key: "LINK_61",
@@ -306,10 +196,6 @@ export const linksObj = [
 		href: `<a href="https://collabe.nbed.nb.ca/res/Pages/curriculumdocuments.aspx"><span style="font-weight: 400;">Curriculum Documents </span></a>`,
 	},
 	{
-		key: "LINK_63",
-		href: `<a href="https://collabe.nbed.nb.ca/res/sa/gr/gendocs/Cross-Curricular%20Reading%20Tools.pdf"><span style="font-weight: 400;">Cross-Curricular Reading Tools</span></a>`,
-	},
-	{
 		key: "LINK_64",
 		href: `<a href="https://collabe.nbed.nb.ca/admin/sis/resources3/_layouts/15/WopiFrame.aspx?sourcedoc=%2Fadmin%2Fsis%2Fresources3%2FDocuments%2FThe%20Seven%20Cs%20for%20Project%2Edocx&amp;action=view&amp;source=https%3A%2F%2Fcollabe%2Enbed%2Enb%2Eca%2Fadmin%2Fsis%2Fresources3%2FPages%2Fdefault%2Easpx"><span style="font-weight: 400;">Project-based Learning (PBL) The Seven C&rsquo;s</span></a>`,
 	},
@@ -318,20 +204,8 @@ export const linksObj = [
 		href: `<a href="http://tmyles.weebly.com/uploads/2/6/2/6/26261249/role_of_the_esst_.pdf"><span style="font-weight: 400;">School-Based Education Support Services Teams to Support Inclusive Education</span> (September 2014, p.38)</a>`,
 	},
 	{
-		key: "LINK_66",
-		href: `<a href="https://collabe.nbed.nb.ca/sites/10year/nbsip/Shared%20Documents/2.%20Provincial%20Improvement%20Framework%20and%20Associated%20Documents/School%20Self-assessment%20Documents/Inclusion%20Look-fors%20FINAL.docx?Web=1"><span style="font-weight: 400;">Inclusion Look-fors</span></a>`,
-	},
-	{
-		key: "LINK_67",
-		href: `<a href="https://collabe.nbed.nb.ca/admin/sis/resources3/Documents/Cross%20Curricular%20Reading%20Tools.pdf"><span style="font-weight: 400;">https://collabe.nbed.nb.ca/admin/sis/resources3/Documents/Cross%20Curricular%20Reading%20Tools.pdf</span></a>`,
-	},
-	{
 		key: "LINK_68",
 		href: `<a href="https://collabe.nbed.nb.ca/res/sa/ela/_layouts/15/WopiFrame.aspx?sourcedoc=/res/sa/ela/DocumentSets/Literacy%20Look%20Fors/Look%20For%20Conference%20Sheet.doc&amp;action=default"><span style="font-weight: 400;">https://collabe.nbed.nb.ca/res/sa/ela/_layouts/15/WopiFrame.aspx?sourcedoc=/res/sa/ela/DocumentSets/Literacy%20Look%20Fors/Look%20For%20Conference%20Sheet.doc&amp;action=default</span></a>`,
-	},
-	{
-		key: "https://eric.ed.gov/?id=ED437640",
-		href: `<a href="https://www.literacyworldwide.org/get-resources/position-statements"><span style="font-weight: 400;">https://www.literacyworldwide.org/get-resources/position-statements</span></a>`,
 	},
 	{
 		key: "LINK_70",
@@ -354,28 +228,8 @@ export const linksObj = [
 		href: `<a href="https://collabe.nbed.nb.ca/res/sa/if/Subject/Post-%20Intensive%20French%209-12%20Curriculum.doc"><span style="font-weight: 400;">Link to Post Intensive French Look-fors</span></a>`,
 	},
 	{
-		key: "LINK_75",
-		href: `<a href="https://collabe.nbed.nb.ca/res/sa/if/Subject/Intensive%20French%205.docx"><span style="font-weight: 400;">Intensive French Look-fors</span></a>`,
-	},
-	{
-		key: "LINK_76",
-		href: `<a href="https://collabe.nbed.nb.ca/res/sa/if/Subject/Post-Intensive%20French%206-8%20Curriculum.docx"><span style="font-weight: 400;">Link to Post Intensive French Look-fors</span></a>`,
-	},
-	{
-		key: "LINK_77",
-		href: `<a href="https://collabe.nbed.nb.ca/res/sa/ela/docs/Cross-curricular%20Look%20Fors%20Presentation%20kb%20(2).ppt"><span style="font-weight: 400;">Cross-Curricular Look-fors</span></a>`,
-	},
-	{
-		key: "LINK_78",
-		href: `<a href="https://collabe.nbed.nb.ca/res/ae/docs/Balanced%20Assessment%20Final%20doc%202014.pdf "><span style="font-weight: 400;">Balanced Assessment</span></a>`,
-	},
-	{
 		key: "LINK_79",
 		href: `<a href="http://anne-davies.blogspot.ca/2014/03/but-thou-shall-not-use-formative.html"><span style="font-weight: 400;">But... Thou Shall NOT&hellip; Use Formative Assessments...... as Part of the Summative Grade</span></a>`,
-	},
-	{
-		key: "LINK_80",
-		href: `<a href="https://collabe.nbed.nb.ca/res/sa/ela/docs/Formative%20Assessment.pdf"><span style="font-weight: 400;">Formative Assessment </span></a>`,
 	},
 	{
 		key: "LINK_81",

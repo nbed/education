@@ -484,4 +484,9 @@ export const linksObj = [
 		href: `<a href="http://www.mandela.ac.za/cyberhunts/bloom.htm"><span style="font-weight: 400;">
 		Bloom&rsquo;s Taxonomy And The Different Levels Of Questions</span></a>`
 	},
+	{
+		key: "LINK_105",
+		href: `<a href="https://collabe.nbed.nb.ca/sites/ccic/Shared%20Documents/Portrait%20of%20a%20Learner%20-%20Future%20Ready!%20Self-Determined%20and%20Capable.pdf">
+		Portrait of a Learner</a>`
+	},
 ];

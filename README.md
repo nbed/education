@@ -15,11 +15,10 @@ For `www`, see README.md
 
 ## Site Deployment
 
-1. Build `www` directory
-2. `bash bundle.sh` which outputs the full site - portal, school-improvement-indicators, improvement-frameworks to `prod` directory
-3. Copy this directory to the `nbed.github.io` repo under the nbed account
-4. Commit and upload to `master` branch
-5. Test changes at nbed.github.io
+1. `bash deploy.sh` which outputs the full site - portal, school-improvement-indicators, improvement-frameworks to `prod` directory
+2. Copy this directory to the `nbed.github.io` repo under the nbed account
+3. Commit and upload to `master` branch
+4. Test changes at nbed.github.io
 
 ## Navigating the project
 

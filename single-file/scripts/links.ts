@@ -439,4 +439,9 @@ export const linksObj = [
 		href: `<a href="https://schoolguide.casel.org/what-is-sel/indicators-of-schoolwide-sel/">CASEL&rsquo;s
 		Indicators of School Wide SEL</a>`
 	},
+	{
+		key: "LINK_103",
+		href: `<a href="http://www.mandela.ac.za/cyberhunts/bloom.htm"><span style="font-weight: 400;">
+		Bloom&rsquo;s Taxonomy And The Different Levels Of Questions</span></a>`
+	}
 ];

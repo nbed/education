@@ -479,4 +479,9 @@ export const linksObj = [
 		href: `<a href="https://edudownloads.azureedge.net/msdownloads/Microsoft-EducationReimagined-Paper.pdf">
 		Education reimagined:  https://edudownloads.azureedge.net/msdownloads/Microsoft-EducationReimagined-Paper.pdf</a>`
 	},
+	{
+		key: "LINK_103",
+		href: `<a href="http://www.mandela.ac.za/cyberhunts/bloom.htm"><span style="font-weight: 400;">
+		Bloom&rsquo;s Taxonomy And The Different Levels Of Questions</span></a>`
+	},
 ];

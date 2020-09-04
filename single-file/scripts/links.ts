@@ -9,10 +9,6 @@ export const linksObj = [
 		href: `<a href="https://collabe.nbed.nb.ca/admin/_layouts/15/WopiFrame2.aspx?sourcedoc=/admin/SIPDocs/School%20Improvement%20FINAL%20with%20Template%20Jan%203%202014.pptx&action=default" target="_blank">School Improvement Planning Process Guide</a>`,
 	},
 	{
-		key: "LINK_3",
-		href: `<a href="https://collabe.nbed.nb.ca/res/sa/gr/gendocs/New%20Brunswick%20Global%20Competencies%20Approved,%20Feb%202018.pdf" target="_blank">NB Global Competencies</a>`,
-	},
-	{
 		key: "LINK_4",
 		href: `<a href="https://collabe.nbed.nb.ca/sites/10year/nbsip/Shared%20Documents/2.%20Provincial%20Improvement%20Framework%20and%20Associated%20Documents/School%20Self-assessment%20Documents/Inclusion%20Look-fors%20August%2028%2C%202020%20FINAL.docx?Web=1" target="_blank">Inclusion Look-fors</a>`,
 	},

@@ -330,10 +330,6 @@ export const linksObj = [
 		href: `<a href="https://collabe.nbed.nb.ca/res/sa/ela/_layouts/15/WopiFrame.aspx?sourcedoc=/res/sa/ela/DocumentSets/Literacy%20Look%20Fors/Look%20For%20Conference%20Sheet.doc&amp;action=default"><span style="font-weight: 400;">https://collabe.nbed.nb.ca/res/sa/ela/_layouts/15/WopiFrame.aspx?sourcedoc=/res/sa/ela/DocumentSets/Literacy%20Look%20Fors/Look%20For%20Conference%20Sheet.doc&amp;action=default</span></a>`,
 	},
 	{
-		key: "https://eric.ed.gov/?id=ED437640",
-		href: `<a href="https://www.literacyworldwide.org/get-resources/position-statements"><span style="font-weight: 400;">https://www.literacyworldwide.org/get-resources/position-statements</span></a>`,
-	},
-	{
 		key: "LINK_70",
 		href: `<a href="https://www.youtube.com/watch?v=9EfvwZ_bOcY"><span style="font-weight: 400;">https://www.youtube.com/watch?v=9EfvwZ_bOcY</span></a>`,
 	},

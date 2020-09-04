@@ -315,7 +315,7 @@ export const linksObj = [
 	},
 	{
 		key: "LINK_65",
-		href: `<a href="http://tmyles.weebly.com/uploads/2/6/2/6/26261249/role_of_the_esst_.pdf"><span style="font-weight: 400;">School-Based Education Support Services Teams to Support Inclusive Education</span></a>`,
+		href: `<a href="http://tmyles.weebly.com/uploads/2/6/2/6/26261249/role_of_the_esst_.pdf"><span style="font-weight: 400;">School-Based Education Support Services Teams to Support Inclusive Education</span> (September 2014, p.38)</a>`,
 	},
 	{
 		key: "LINK_66",
@@ -330,7 +330,7 @@ export const linksObj = [
 		href: `<a href="https://collabe.nbed.nb.ca/res/sa/ela/_layouts/15/WopiFrame.aspx?sourcedoc=/res/sa/ela/DocumentSets/Literacy%20Look%20Fors/Look%20For%20Conference%20Sheet.doc&amp;action=default"><span style="font-weight: 400;">https://collabe.nbed.nb.ca/res/sa/ela/_layouts/15/WopiFrame.aspx?sourcedoc=/res/sa/ela/DocumentSets/Literacy%20Look%20Fors/Look%20For%20Conference%20Sheet.doc&amp;action=default</span></a>`,
 	},
 	{
-		key: "LINK_69",
+		key: "https://eric.ed.gov/?id=ED437640",
 		href: `<a href="https://www.literacyworldwide.org/get-resources/position-statements"><span style="font-weight: 400;">https://www.literacyworldwide.org/get-resources/position-statements</span></a>`,
 	},
 	{
@@ -351,7 +351,7 @@ export const linksObj = [
 	},
 	{
 		key: "LINK_74",
-		href: `<a href="https://collabe.nbed.nb.ca/res/sa/if/Subject/Post-Intensive%20French%206-8%20Curriculum.docx"><span style="font-weight: 400;">Link to Post Intensive French Look-fors</span></a>`,
+		href: `<a href="https://collabe.nbed.nb.ca/res/sa/if/Subject/Post-%20Intensive%20French%209-12%20Curriculum.doc"><span style="font-weight: 400;">Link to Post Intensive French Look-fors</span></a>`,
 	},
 	{
 		key: "LINK_75",
@@ -483,6 +483,10 @@ export const linksObj = [
 		key: "LINK_103",
 		href: `<a href="http://www.mandela.ac.za/cyberhunts/bloom.htm"><span style="font-weight: 400;">
 		Bloom&rsquo;s Taxonomy And The Different Levels Of Questions</span></a>`
+	},
+	{
+		key: "LINK_104",
+		href: `<a href="https://eric.ed.gov/?id=ED437640">source</a>`
 	},
 	{
 		key: "LINK_105",

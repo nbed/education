@@ -83,20 +83,20 @@
 				allDiv[divIter].style.display = "none";
 			}
 
-			var x = document.getElementById(id);
-			x.style.display = "block";
+			const el = document.getElementById(id);
+			el.style.display = "block";
 
-			var idToFind = "Domain" + headerID.split('-')[0];
+			const idToFind = "Domain" + headerID.split('-')[0];
 			console.log(idToFind);
-			var x = document.querySelectorAll('[id^=' + idToFind + '-]');
-			console.log(x);
-			for (divIter = 0; divIter < x.length; divIter++) {
-				console.log(x[divIter].innerText);
-				x[divIter].classList.remove("tab-selected");
+			const foundEl = document.querySelectorAll('[id^=' + idToFind + '-]');
+			console.log(foundEl);
+			for (divIter = 0; divIter < foundEl.length; divIter++) {
+				console.log(foundEl[divIter].innerText);
+				foundEl[divIter].classList.remove("tab-selected");
 			}
 
-			var x = document.getElementById("Domain" + headerID);
-			x.classList.add("tab-selected");
+			const domainEl = document.getElementById("Domain" + headerID);
+			domainEl.classList.add("tab-selected");
 		}
 
 		function toggleMenu() {
@@ -4730,6 +4730,7 @@
 								<p>Ryan, R. M., &amp; Deci, E. L. (2000). Self-determination theory and the
 									facilitation of intrinsic motivation, social development, and well-being.
 									<em>American psychologist</em>,&nbsp;<em>55</em>(1), 68.</p>
+							</div>
 						</div>
 
 						<div class="header-section" ; onclick="onHeaderSelected('indicator24-3', 'ind24-3')"
@@ -5036,7 +5037,7 @@
 								<br>
 								<span class="blue-text">Objective 1, 3, 4, 5, 6, 7, 8 and 9</span>
 							</h3>
-							<h3 class="inline-child2" style="float:right; " id="ind25MAIN">+</h3>
+							<h3 class="inline-child2" style="float:right;" id="ind25MAIN">+</h3>
 						</div>
 						<div class="header-subsection" ; id="indicator25MAIN" ; style="display:none; margin:0">
 							<div class="header-subsection-text">

@@ -488,4 +488,9 @@ export const linksObj = [
 		key: "LINK_104",
 		href: `<a href="https://eric.ed.gov/?id=ED437640">source</a>`
 	},
+	{
+		key: "LINK_105",
+		href: `<a href="https://collabe.nbed.nb.ca/sites/ccic/Shared%20Documents/Portrait%20of%20a%20Learner%20-%20Future%20Ready!%20Self-Determined%20and%20Capable.pdf">
+		Portrait of a Learner</a>`
+	},
 ];

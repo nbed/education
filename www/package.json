@@ -1,0 +1,25 @@
+{
+  "name": "visual-loft1",
+  "version": "1.0.0",
+  "description": "Visualization of Monocl",
+  "main": "main-element.js",
+  "scripts": {
+    "build": "bash build.sh",
+    "serve": "polymer serve --port 5000 build/es5-bundled",
+    "bundle": "bash bundle.sh"
+  },
+  "author": "Loft1 Dev Team",
+  "license": "BSD-3-Clause",
+  "dependencies": {
+    "@polymer/polymer": "^3.3.0",
+    "@webcomponents/webcomponentsjs": "latest",
+    "lit-element": "latest"
+  },
+  "devDependencies": {
+    "@webcomponents/webcomponentsjs": "^2.3.0",
+    "express": "^4.17.1",
+    "polymer-cli": "^1.9.11",
+    "replace-in-file": "^4.2.0",
+    "typescript": "^3.5.3"
+  }
+}

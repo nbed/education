@@ -1,5 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
+exports.linksObj = void 0;
 exports.linksObj = [
     {
         key: "LINK_1",
